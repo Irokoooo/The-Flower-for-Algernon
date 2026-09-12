@@ -1,6 +1,6 @@
 {
-  "status": "review",
-  "progress": 100,
-  "note": "Delivered assets/models/diary.glb (open) and book.glb (closed), ~2.14MB each, same verified CC0 DaDrood/Poly Haven source. Original retained; PH stamp patched with neighboring leather; matte material. Texture inspected, transforms/bounds documented, manifest proposal ready. No game tests. Lead final review/build.",
-  "updatedAt": "2026-09-12T08:37:45.168598+00:00"
+  "status": "blocked",
+  "updatedAt": "2026-09-12T16:57:13.3232351+08:00",
+  "progress": 70,
+  "note": "Pencil-writing.wav saved 41940 bytes and Lead manifest merged. Exactly one diary TTS diagnostic returned HTTP429 upstream_rate_limit: current group upstream saturated. No MP3 saved, no batch or retries. $0.01 reserved under diary-murmurs-v1 $1; actual billing unknown. diaryVoiceForFragment remains empty; DIARY_WRITING_ASSET ready."
 }

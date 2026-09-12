@@ -84,7 +84,13 @@
       "reserveUSD": 1,
       "status": "generated",
       "output": "assets/stimuli/inkblot-test-v1.png"
+    },
+    {
+      "id": "diary-murmurs-v1",
+      "model": "tts-1-hd",
+      "reserveUSD": 1,
+      "status": "single-diagnostic-failed-http429-no-retry"
     }
   ],
-  "reservedUSD": 14
+  "reservedUSD": 15
 }

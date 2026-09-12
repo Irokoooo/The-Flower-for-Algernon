@@ -1,6 +1,6 @@
 # User playtest feedback — 2026-09-12
 
-Status: FB-01 activated by the user's subsequent request; implementation in progress. FB-02/FB-03 remain recorded and deferred. User also requested licensed GLB reuse for desk books/diary. Existing image-production authorization applies; this record itself grants no additional spending authority.
+Status: FB-01 image and licensed desk GLBs are integrated, awaiting user review. The user's subsequent request activates FB-02 handwriting, visible drag placement and diary audio. FB-03 physical bread pickup remains deferred. Existing production authorization applies; this record itself grants no additional spending authority.
 
 ## FB-01 — A visible psychological-test stimulus
 - Current experience shows abstract word nodes instead of something the player can actually examine.
@@ -15,6 +15,7 @@ Status: FB-01 activated by the user's subsequent request; implementation in prog
 - Make letter/character baselines, spacing, rotation and scale uneven, like uncertain handwriting. Preserve readability and reliable hit areas; do not distort player controls.
 - Maintain the phase arc: early limited expression → richer language → decline with memory of previously available words. Keep saved player-composed text unchanged.
 - Owners: Narrative word bank; diary component presentation. PRD §13.
+- Latest request: visibly drag scattered paper fragments onto the page, with pencil audio and saved English Charlie murmurs where production audio is available. Introduce a distinct ascending entry between early and peak writing. NPC prompts must use character names. Functional playtesting remains with the user.
 
 ## FB-03 — Physical bread packing
 - Current “bag a loaf” button and count are placeholders, not the final interaction.

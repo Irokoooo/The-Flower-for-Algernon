@@ -1,5 +1,7 @@
 # Decision Log
 
+- 2026-09-12 diary production: user activates early handwriting/wordbank polish, requests visible drag-and-drop collage, phase-specific diary, writing sound and Charlie English fragment murmurs. LOW has fewer authored fragments and plausible homophone slips; drift belongs to glyphs, never unreliable controls. Core owns audio playback/persistence; diary emits placement events. NPC prompts use authored names, never raw IDs. This round Hubble owns DiaryCollage/CSS, Darwin content, Kepler saved audio/SFX, Harvey room labels, Carson App/mainline/checkpoint integration. Lead schema/manifest/review. No functional playtests.
+
 - 2026-09-12 stimulus / model reuse: user activates FB-01 now. Generate an original raster test card using the existing authorized production budget; show the stable image before interpretation and reuse it on callbacks. Source licensed external book/diary GLBs and load them through the existing visual registry/Three scene, retaining hotspot contracts. User-owned functional testing remains in force. Early handwriting and bread pickup polish remain deferred.
 
 - 2026-09-12 user playtest follow-up: record test-stimulus, early Chinese spelling/handwriting and physical bread-packing improvements in docs/PLAYTEST_FEEDBACK.md; defer their polish while focusing on core interactions. User owns functional playtesting; agents run typecheck/build for code changes only, no browser playthroughs unless requested again.

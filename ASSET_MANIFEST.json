@@ -323,6 +323,34 @@
       "orientation": "Y-up, flat XZ, minY=0, centered XZ; original source had no rotation",
       "adaptation": "Selected binder_notebook_closed from same source; matte nonmetal material, tinted; small emblem patched from adjacent leather; original retained",
       "visualReview": "Diffuse texture inspected; no rendered model or game test performed"
+    },
+    {
+      "id": "audio.diary.pencil",
+      "filename": "assets/audio/pencil-writing.wav",
+      "kind": "sfx",
+      "status": "available",
+      "durationSeconds": 0.9500226757369614,
+      "bytes": 41940,
+      "sha256": "52a3e5c5206863bd62c4c638a2c3f83d7f411fddf955da899809377b18df20e6",
+      "review": "Original procedural writing SFX; human listening pending",
+      "provenance": {
+        "source": {
+          "kind": "original",
+          "url": null,
+          "creator": "ALGERNON procedural pencil sound"
+        },
+        "license": {
+          "identifier": "LicenseRef-ALGERNON-Original-Prototype",
+          "evidence": "assets/audio/DIARY_AUDIO.md",
+          "attribution": "Original ALGERNON pencil-writing synthesis",
+          "reviewed": true
+        },
+        "adaptations": [
+          "Seeded filtered noise with five writing-stroke envelopes, saved as PCM WAV; no external sample"
+        ]
+      },
+      "source": "ALGERNON original pencil-writing synthesis",
+      "license": "LicenseRef-ALGERNON-Original-Prototype"
     }
   ]
 }

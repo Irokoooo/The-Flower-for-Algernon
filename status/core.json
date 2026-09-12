@@ -1,6 +1,6 @@
 {
-  "note": "Critical raw hotspot adapter fixed, all 7 renderer IDs covered and book/paper distinct. ACTUAL browser verified book→paper→NPC→test graph→first DiaryCollage (我想要学会更多的字)→save→automatic bakery arrival with Gimpy dialogue. Shared ensureAudio added to resume; final memory zh-Hans/raw including blank. Typecheck passes. Later mainline and reload/audio listening still need Lead acceptance; not full PRD done.",
-  "status": "review",
-  "updatedAt": "2026-09-12T08:10:41.3677011Z",
-  "progress": 95
+  "progress": 95,
+  "updatedAt": "2026-09-12T08:53:55.0417655Z",
+  "note": "App/checkpoint ready: gain→ascending DiaryCollage→saved machine checkpoint, additive v1 compatibility/intact prior reports. Darwin conferenceChoices/conferenceConvergence integrated with EvidencePlacement prerequisite, local consequences then quiet-lab cage action. npcName passed. Diary placement uses pencil then exact-English saved murmur lookup with generation guards/cancellation on close/new placement/transition. Typecheck passes; no browser/functional tests/commit/build (Lead owns final build). Audio mapping may remain empty; no recordings claimed.",
+  "status": "review"
 }

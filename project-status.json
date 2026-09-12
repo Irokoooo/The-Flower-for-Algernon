@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-12T08:37:26.371081+00:00",
+  "updatedAt": "2026-09-12T08:59:38.7907780Z",
   "overall": 0,
   "agents": [
     {
@@ -12,7 +12,7 @@
     },
     {
       "id": "cognition",
-      "name": "Cognition",
+      "name": "Diary interaction",
       "status": "in_progress",
       "progress": 0,
       "note": "用户未验收旧原型；按新的视觉与交互要求重做",
@@ -36,7 +36,7 @@
     },
     {
       "id": "audio-assets",
-      "name": "Diary interaction / Audio",
+      "name": "Audio / Assets",
       "status": "in_progress",
       "progress": 0,
       "note": "用户未验收旧原型；按新的视觉与交互要求重做",
@@ -168,7 +168,7 @@
       "kind": "experience",
       "priority": "P0",
       "status": "in_progress",
-      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
+      "evidence": "四阶段词片日记、自由拖放与写字声已接入；旧原文保留，上升期新增检查点。类型检查与构建通过，人工试玩待验收。"
     },
     {
       "id": "prd-14",
@@ -177,7 +177,7 @@
       "kind": "experience",
       "priority": "P0",
       "status": "in_progress",
-      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
+      "evidence": "四阶段词片日记、自由拖放与写字声已接入；旧原文保留，上升期新增检查点。类型检查与构建通过，人工试玩待验收。"
     },
     {
       "id": "prd-15",
@@ -258,7 +258,7 @@
       "kind": "experience",
       "priority": "P0",
       "status": "in_progress",
-      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
+      "evidence": "四阶段词片日记、自由拖放与写字声已接入；旧原文保留，上升期新增检查点。类型检查与构建通过，人工试玩待验收。"
     },
     {
       "id": "prd-24",
@@ -330,7 +330,7 @@
       "kind": "experience",
       "priority": "P0",
       "status": "in_progress",
-      "evidence": "；待补：ChapterAction supports choose, but chapter-two currently defines no choice requirements/options."
+      "evidence": "src/content/conference-choice.ts + src/App.tsx：三种回应、公开证据放置与共同收敛，待用户试玩；后段仍复用场景。"
     },
     {
       "id": "prd-32",
@@ -420,7 +420,7 @@
       "kind": "experience",
       "priority": "P0",
       "status": "in_progress",
-      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
+      "evidence": "四阶段词片日记、自由拖放与写字声已接入；旧原文保留，上升期新增检查点。类型检查与构建通过，人工试玩待验收。"
     },
     {
       "id": "prd-42",
@@ -716,17 +716,17 @@
       "status": "decided"
     }
   ],
-  "milestone": "原创测试图与CC0书本/日记模型已接入；等待用户试玩反馈",
+  "milestone": "日记自由拖放、四阶段书写、NPC名字与会议主线已接入；待用户试玩",
   "production": {
     "budgetLimitUSD": 100,
-    "reservationUSD": 14,
+    "reservationUSD": 15,
     "actualBilledUSD": null,
-    "voice": "尚无正式MP3：speech POST曾返回403，单次SDK诊断超时；无自动批量重试。",
-    "music": "20秒原创循环配乐已接入；待人工听感与混音验收。",
+    "voice": "英文碎念单次诊断返回429：服务商当前分组负载已满。没有MP3，未启动批量/自动重试。",
+    "music": "20秒循环配乐与0.95秒原创铅笔书写声已接入；待人工听感与混音验收。",
     "art": "新增原创心理测试图及CC0摊开/合上笔记本GLB；可在素材库查看来源。"
   },
   "currentIteration": {
-    "title": "本轮交互反馈落实",
+    "title": "日记与主线推进",
     "items": [
       {
         "title": "悬浮完整迷宫盒",
@@ -750,7 +750,7 @@
       },
       {
         "title": "中文词片拼贴日记",
-        "note": "短词片组句/重排/撤回/保存，首篇→面包店转场与刷新恢复已验证。",
+        "note": "四阶段词库9/10/15/10张；早期谐音错字、歪斜字形、自由拖放、撤回/改位、边缘自动滚动，保留旧日记原文；待用户试玩。",
         "status": "review"
       },
       {
@@ -760,8 +760,8 @@
       },
       {
         "title": "试玩反馈：早期错字与手写感",
-        "status": "planned",
-        "note": "先记录，暂不实施：更少词汇、更多谐音错字、错位字形；保留易读性与可靠操作。"
+        "status": "review",
+        "note": "四阶段词库9/10/15/10张；早期谐音错字、歪斜字形、自由拖放、撤回/改位、边缘自动滚动，保留旧日记原文；待用户试玩。"
       },
       {
         "title": "试玩反馈：面包实物拿取",
@@ -772,6 +772,16 @@
         "title": "书本与日记GLB复用",
         "status": "review",
         "note": "Poly Haven / DaDrood CC0：同源摊开与合上两种GLB已接入；暖纸、旧皮封面、哑光处理。"
+      },
+      {
+        "title": "上升期日记与会议回应",
+        "status": "review",
+        "note": "面包店发现→上升期日记→机器；会议回应→公开放置证据→问题反转→实验室开笼，待用户试玩。"
+      },
+      {
+        "title": "NPC角色名与书写声",
+        "status": "review",
+        "note": "角色名提示与原创铅笔WAV已接入。英文碎念单次请求429阻塞，没有MP3。"
       }
     ]
   }

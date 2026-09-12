@@ -1,0 +1,30 @@
+{
+  "assets": [
+    {
+      "id": "audio.diary.pencil",
+      "filename": "assets/audio/pencil-writing.wav",
+      "kind": "sfx",
+      "status": "available",
+      "durationSeconds": 0.9500226757369614,
+      "bytes": 41940,
+      "sha256": "52a3e5c5206863bd62c4c638a2c3f83d7f411fddf955da899809377b18df20e6",
+      "review": "Original procedural writing SFX; human listening pending",
+      "provenance": {
+        "source": {
+          "kind": "original",
+          "url": null,
+          "creator": "ALGERNON procedural pencil sound"
+        },
+        "license": {
+          "identifier": "LicenseRef-ALGERNON-Original-Prototype",
+          "evidence": "assets/audio/DIARY_AUDIO.md",
+          "attribution": "Original ALGERNON pencil-writing synthesis",
+          "reviewed": true
+        },
+        "adaptations": [
+          "Seeded filtered noise with five writing-stroke envelopes, saved as PCM WAV; no external sample"
+        ]
+      }
+    }
+  ]
+}

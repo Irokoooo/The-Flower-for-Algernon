@@ -13,11 +13,23 @@ export interface ExplorableRoomProps {
   paused?: boolean;
   /** Swap to a same-size, aligned whole-figure expression PNG (not a face overlay). */
   npcReacting?: boolean;
+  /** Display label only; interaction callbacks still emit npc. */
+  npcName?: string;
 }
 const EMPTY_ASSETS: RoomAssets = {};
 
 /** Metre-scale blockout geometry; illustrated art exists ONLY when supplied as raster textures. */
-export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract, paused = false, npcReacting = false }: ExplorableRoomProps) {
+export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract, paused = false, npcReacting = false, npcName }: ExplorableRoomProps) {
+  const hotspotLabels: Record<string, string> = {
+    npc: npcName ?? (room === 'bakery' ? 'Gimpy / 金皮' : 'Dr. Strauss / 施特劳斯医生'),
+    book: 'Book / 书籍',
+    paper: 'Diary / 日记本',
+    test: 'Test desk / 测试桌',
+    mouse: "Algernon’s habitat / 阿尔吉侬的居所",
+    machine: room === 'bakery' ? 'Oven / 烤炉' : 'Research equipment / 实验设备',
+    bread: 'Bread counter / 面包柜台',
+  };
+  const hotspotLabel = (id: string) => hotspotLabels[id] ?? 'Inspect object / 查看物品';
   const host = useRef<HTMLDivElement>(null);
   const enter = useRef<() => void>(() => {});
   const pauseRef = useRef(paused);
@@ -318,27 +330,13 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
     <div ref={host} className="explorable-room__canvas" />
     <div className="explorable-room__label">{room} · 3D blockout / provisional art slots</div>
     {!entered && !paused && <div className="explorable-room__entry"><button onClick={()=>enter.current()}>Enter room</button><p>Click visible objects to inspect · Drag to look · Hold WASD to walk</p></div>}
-    {entered && !paused && <div className="explorable-room__aim" aria-live="polite"><span>+</span>{target && <p>E · {target.replace(/-/g,' ')}</p>}</div>}
+    {entered && !paused && <div className="explorable-room__aim" aria-live="polite"><span>+</span>{target && <p>E · {hotspotLabel(target)}</p>}</div>}
     {entered && !paused && <button style={{position:'absolute',right:16,top:16,zIndex:2}} onClick={async () => {
       const control=controlsRef.current;
       if (control?.locked) { control.exitPointerLock(); return; }
       if (!await control?.requestPointerLock()) setError('Mouse lock unavailable; drag to look remains available.');
     }}>Toggle mouse lock (optional)</button>}
-    {entered && !paused && <div className="explorable-room__help">{hoverTarget ? 'Click to inspect · '+hoverTarget : 'Click visible objects · Drag to look · Hold WASD to walk · E to inspect'}</div>}
+    {entered && !paused && <div className="explorable-room__help">{hoverTarget ? 'Click / 点击 · '+hotspotLabel(hoverTarget) : 'Click visible objects · Drag to look · Hold WASD to walk · E to inspect'}</div>}
     {error && <p className="explorable-room__error" role="alert">{error}</p>}
   </div>;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

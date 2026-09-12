@@ -1,6 +1,6 @@
 {
   "status": "review",
   "progress": 95,
-  "note": "GLTFLoader implementation ready: RoomAssets.bookModel/diaryModel local URLs hot-load without camera reset; uniform X/Z fit .24x.32 / .4x.3, Y-up source bottom anchored table y=.975, original thickness retained; every mesh book/paper hotspot; multi-material visibility picking; failed/pending model retains clickable blockout; unload and late completion cleanup. Await Kepler final filenames + Lead registry hookup. No browser tests. Final typecheck/build passed once. assets/models not present at last check; source filenames unconfirmed.",
-  "updatedAt": "2026-09-12T08:27:43.4294101Z"
+  "note": "Room NPC/hotspot labels final; no blockers. Optional npcName defaults to Dr. Strauss / 施特劳斯医生 or Gimpy / 金皮. E and hover labels bilingual for book/paper/test/mouse/machine/bread/npc; raw callback IDs unchanged. Lead integrates. Diary belongs Hubble and audio Kepler; no further edits to those areas. No tests required for this handoff.",
+  "updatedAt": "2026-09-12T08:53:57.1177236Z"
 }

@@ -18,7 +18,7 @@ Intercept `shared-procedure.nextStepId` (`research`): allow the quiet revelation
 
 ### Diary integration dependency
 
-Kepler owns the collage UI; `src/content/diary-collage.ts` exports `diaryEntries.first|peak|last`. First goes after the initial test/maze; peak between classroom free exploration and mouse failure; last immediately before broken transition/empty room. See KEPLER_DIARY_COLLAGE_HANDOFF.md. Keep free writing for peak/last PRD compliance; final memory stays completely separate and unchanged.
+Kepler owns the collage UI; `src/content/diary-collage.ts` exports `diaryEntries.first|peak|last`. First goes after the initial test/maze; peak between classroom free exploration and mouse failure; last immediately before broken transition/empty room. See KEPLER_DIARY_COLLAGE_HANDOFF.md. The user-requested diary mode is collage composition; no extra free-form diary feature is implied. This differs from original PRD typing language. Final memory alone is the separate unrestricted writing screen, with exact text preservation.
 
 Ready for source review, not verified gameplay. Narrative task progress 90 is a task estimate, not overall PRD completion. Later investigation/research/conference content is unchanged. Coverage gaps remain in PRD_COVERAGE_PROPOSAL.json.
 

@@ -1,0 +1,63 @@
+{
+  "reservation": "diary-murmurs-v1",
+  "allocationUSD": 1,
+  "model": "tts-1-hd",
+  "voice": "echo",
+  "speed": 0.85,
+  "jobs": [
+    {
+      "id": "voice.diary.first-i",
+      "fragmentId": "first-i",
+      "text": "I",
+      "speaker": "charlie"
+    },
+    {
+      "id": "voice.diary.first-mouse",
+      "fragmentId": "first-mouse",
+      "text": "the little mouse",
+      "speaker": "charlie"
+    },
+    {
+      "id": "voice.diary.first-try",
+      "fragmentId": "first-try",
+      "text": "still want to",
+      "speaker": "charlie"
+    },
+    {
+      "id": "voice.diary.first-again",
+      "fragmentId": "first-again",
+      "text": "try again",
+      "speaker": "charlie"
+    },
+    {
+      "id": "voice.diary.first-test",
+      "fragmentId": "first-test",
+      "text": "do well on the test",
+      "speaker": "charlie"
+    },
+    {
+      "id": "voice.diary.first-route",
+      "fragmentId": "first-route",
+      "text": "run fast",
+      "speaker": "charlie"
+    },
+    {
+      "id": "voice.diary.first-smart",
+      "fragmentId": "first-smart",
+      "text": "get smarter",
+      "speaker": "charlie"
+    },
+    {
+      "id": "voice.diary.first-remember",
+      "fragmentId": "first-remember",
+      "text": "remember today",
+      "speaker": "charlie"
+    },
+    {
+      "id": "voice.diary.first-today",
+      "fragmentId": "first-today",
+      "text": "today",
+      "speaker": "charlie"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "status": "review",
-  "note": "Kepler revision ready: diary collage now short phrase/word assembly, counts first14/peak15/last14; minFragments=3 throughout. Reorder freely, no per-card punctuation or fixed sentence answer. See docs/KEPLER_DIARY_COLLAGE_HANDOFF.md. Structural checks passed; component integration pending.",
   "progress": 90,
-  "updatedAt": "2026-09-12T07:57:28.855Z"
+  "note": "Updated diary first9/ascending10/peak15/last10; ALL fragments include english. Conference 3 choices + evidence/reversal/release contract ready. Exact contracts/audio retry limits: docs/NARRATIVE_LATEST_HANDOFF.md. Existing diary audio map empty; Kepler diagnostic pending. No App edits/tests/browser/commit.",
+  "updatedAt": "2026-09-12T08:51:45.0068036Z",
+  "status": "review"
 }
