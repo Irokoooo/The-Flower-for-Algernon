@@ -1,0 +1,16 @@
+{
+  "scenes": [
+    {"id":"opening-lab","title":"Opening Lab","priority":"P0"},
+    {"id":"psychological-test","title":"Psychological Test","priority":"P0"},
+    {"id":"algernon-maze","title":"Algernon Maze","priority":"P0"},
+    {"id":"progress-report","title":"Progress Report","priority":"P0"},
+    {"id":"transition","title":"Signature Transition","priority":"P0"},
+    {"id":"bakery-1-2","title":"Bakery Visits 1 + 2","priority":"P0"},
+    {"id":"classroom","title":"University Classroom","priority":"P0"},
+    {"id":"investigation","title":"Algernon Investigation","priority":"P0"},
+    {"id":"research","title":"Research Race","priority":"P0"},
+    {"id":"conference","title":"Academic Conference","priority":"P0"},
+    {"id":"decline","title":"Decline Betrayals","priority":"P0"},
+    {"id":"ending","title":"Empty Room / Flowers / Final Question","priority":"P0"}
+  ]
+}

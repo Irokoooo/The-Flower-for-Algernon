@@ -1,0 +1,15 @@
+{
+  "updatedAt": "2026-09-12",
+  "overall": 0,
+  "agents": [
+    {"id":"core","name":"Core / Architecture","status":"in_progress","progress":0,"note":"Contracts and repository foundation"},
+    {"id":"cognition","name":"Cognition","status":"planned","progress":0,"note":"Shared Cognition Graph"},
+    {"id":"narrative","name":"Narrative / Content","status":"planned","progress":0,"note":"Bilingual dialogue model"},
+    {"id":"scene-kit","name":"Scene Kit","status":"planned","progress":0,"note":"2.5D scene primitives"},
+    {"id":"audio-assets","name":"Audio / Assets","status":"planned","progress":0,"note":"English voice and asset registry"}
+  ],
+  "coverage": [
+    {"title":"Opening Lab","status":"planned","priority":"P0"},{"title":"Psychological Test","status":"planned","priority":"P0"},{"title":"Algernon Maze","status":"planned","priority":"P0"},{"title":"Progress Report + Transition","status":"planned","priority":"P0"},{"title":"Bakery Visits 1 + 2","status":"planned","priority":"P0"},{"title":"Classroom","status":"planned","priority":"P0"},{"title":"Investigation + Research","status":"planned","priority":"P0"},{"title":"Conference","status":"planned","priority":"P0"},{"title":"Decline + Ending","status":"planned","priority":"P0"}
+  ],
+  "assets": []
+}
