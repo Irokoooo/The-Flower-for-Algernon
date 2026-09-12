@@ -1,5 +1,7 @@
 # Decision Log
 
+- 2026-09-12 stimulus / model reuse: user activates FB-01 now. Generate an original raster test card using the existing authorized production budget; show the stable image before interpretation and reuse it on callbacks. Source licensed external book/diary GLBs and load them through the existing visual registry/Three scene, retaining hotspot contracts. User-owned functional testing remains in force. Early handwriting and bread pickup polish remain deferred.
+
 - 2026-09-12 user playtest follow-up: record test-stimulus, early Chinese spelling/handwriting and physical bread-packing improvements in docs/PLAYTEST_FEEDBACK.md; defer their polish while focusing on core interactions. User owns functional playtesting; agents run typecheck/build for code changes only, no browser playthroughs unless requested again.
 
 - ADR-018 (supersedes prototype presentation): User rejected SVG characters and environment art. Generate raster literary illustrations; compose them in genuinely explorable 3D rooms. Charlie hand design is now required. Expandable maze with mouse interaction is required. Final English audio must be pre-generated recordings, not browser synthesis. Art production blocked until an available generation service is configured; do not claim prototype acceptance or silently substitute art.

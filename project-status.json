@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-12T08:21:41.340173+00:00",
+  "updatedAt": "2026-09-12T08:37:26.371081+00:00",
   "overall": 0,
   "agents": [
     {
@@ -716,14 +716,14 @@
       "status": "decided"
     }
   ],
-  "milestone": "收到试玩反馈：三项改进已记录待办；功能试玩由用户反馈，继续优先核心交互",
+  "milestone": "原创测试图与CC0书本/日记模型已接入；等待用户试玩反馈",
   "production": {
     "budgetLimitUSD": 100,
-    "reservationUSD": 13,
+    "reservationUSD": 14,
     "actualBilledUSD": null,
     "voice": "尚无正式MP3：speech POST曾返回403，单次SDK诊断超时；无自动批量重试。",
     "music": "20秒原创循环配乐已接入；待人工听感与混音验收。",
-    "art": "研究员、Alice、面包师、查理双手及墙面地板已生成；表情与动作变体持续接入。"
+    "art": "新增原创心理测试图及CC0摊开/合上笔记本GLB；可在素材库查看来源。"
   },
   "currentIteration": {
     "title": "本轮交互反馈落实",
@@ -755,8 +755,8 @@
       },
       {
         "title": "试玩反馈：真实测试图像",
-        "status": "planned",
-        "note": "先记录，暂不实施：固定的原创测试图像，认知只改变解读；文字节点不能替代观察对象。"
+        "status": "review",
+        "note": "原创暖纸墨迹卡已生成并接入测试/回调，支持点击近看；待用户试玩。"
       },
       {
         "title": "试玩反馈：早期错字与手写感",
@@ -767,6 +767,11 @@
         "title": "试玩反馈：面包实物拿取",
         "status": "planned",
         "note": "先记录，暂不实施：面包模型、拿取/移动/放入纸袋和手部动作；当前计数按钮非最终交互。"
+      },
+      {
+        "title": "书本与日记GLB复用",
+        "status": "review",
+        "note": "Poly Haven / DaDrood CC0：同源摊开与合上两种GLB已接入；暖纸、旧皮封面、哑光处理。"
       }
     ]
   }

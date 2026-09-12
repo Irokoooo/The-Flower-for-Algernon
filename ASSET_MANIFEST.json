@@ -270,6 +270,59 @@
       "license": "Generated asset; provider terms review pending",
       "adaptation": "Border-connected white background extracted; original raster retained.",
       "prompt": "assets/prompts/alice-encouraging.txt"
+    },
+    {
+      "id": "art.test.inkblot",
+      "filename": "assets/stimuli/inkblot-test-v1.png",
+      "kind": "image",
+      "status": "review",
+      "source": "OpenDev / gpt-image-2",
+      "license": "Generated asset; provider terms review pending",
+      "description": "原创心理测试墨迹卡：暖纸、深褐手工墨迹；测试与后期回调共享，点击近看。",
+      "prompt": "assets/prompts/inkblot-test-v1.txt",
+      "adaptation": "No cognition-specific image edits; interpretations remain in shared cognition graph."
+    },
+    {
+      "id": "model.desk.diary",
+      "kind": "model",
+      "status": "review",
+      "description": "Poly Haven 旧皮封面笔记本：摊开日记；已接入桌面，待用户试玩。",
+      "filename": "assets/models/diary.glb",
+      "source": "https://polyhaven.com/a/binder_notebook",
+      "author": "DaDrood",
+      "license": "CC0-1.0",
+      "licenseEvidence": "https://polyhaven.com/license",
+      "bytes": 2136648,
+      "sha256": "d8e7c580f70e680d64c82ac40c64bb3ebeec6fa5674231ec08f00874ce9d9351",
+      "dimensionsXYZ": [
+        0.36523866653442383,
+        0.017854944802820683,
+        0.19995830953121185
+      ],
+      "orientation": "Y-up, flat XZ, minY=0, centered XZ; original source had no rotation",
+      "adaptation": "Selected binder_notebook from same source; matte nonmetal material, tinted; small emblem patched from adjacent leather; original retained",
+      "visualReview": "Diffuse texture inspected; no rendered model or game test performed"
+    },
+    {
+      "id": "model.desk.book",
+      "kind": "model",
+      "status": "review",
+      "description": "Poly Haven 旧皮封面笔记本：合上书本；已接入桌面，待用户试玩。",
+      "filename": "assets/models/book.glb",
+      "source": "https://polyhaven.com/a/binder_notebook",
+      "author": "DaDrood",
+      "license": "CC0-1.0",
+      "licenseEvidence": "https://polyhaven.com/license",
+      "bytes": 2136656,
+      "sha256": "cdec6c2e917b70869ee4c8c185692b8a7236b37ab8850811af335c69cd21b287",
+      "dimensionsXYZ": [
+        0.1706455759704113,
+        0.025289426557719707,
+        0.19995832443237305
+      ],
+      "orientation": "Y-up, flat XZ, minY=0, centered XZ; original source had no rotation",
+      "adaptation": "Selected binder_notebook_closed from same source; matte nonmetal material, tinted; small emblem patched from adjacent leather; original retained",
+      "visualReview": "Diffuse texture inspected; no rendered model or game test performed"
     }
   ]
 }

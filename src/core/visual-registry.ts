@@ -1,7 +1,7 @@
 import manifest from '../../ASSET_MANIFEST.json';
 import { InMemoryAssetRegistry } from './asset-registry';
 
-const files = import.meta.glob(['../../assets/characters/*-cutout.png', '../../assets/environments/*.png'], {
+const files = import.meta.glob(['../../assets/characters/*-cutout.png', '../../assets/environments/*.png', '../../assets/stimuli/*.png', '../../assets/models/book.glb', '../../assets/models/diary.glb'], {
   eager: true, query: '?url', import: 'default',
 }) as Record<string, string>;
 const slots = {
@@ -15,12 +15,15 @@ const slots = {
   'lab-wall': 'assets/environments/lab-wall.png',
   'bakery-wall': 'assets/environments/bakery-wall.png',
   'wood-floor': 'assets/environments/wood-floor.png',
+  'test-inkblot': 'assets/stimuli/inkblot-test-v1.png',
+  'desk-book': 'assets/models/book.glb',
+  'desk-diary': 'assets/models/diary.glb',
 } as const;
 export type VisualAssetId = keyof typeof slots;
 export const visualRegistry = new InMemoryAssetRegistry();
 for (const [id, filename] of Object.entries(slots)) {
   const metadata = manifest.assets.find(entry => 'filename' in entry && entry.filename === filename);
-  visualRegistry.register({ id, kind: 'image', source: filename,
+  visualRegistry.register({ id, kind: filename.endsWith('.glb') ? 'model' : 'image', source: filename,
     license: metadata?.license ?? 'Generated asset; provenance review pending',
     status: files[`../../${filename}`] ? 'available' : 'planned' });
 }
@@ -34,5 +37,6 @@ export function getRoomVisuals(scene: 'laboratory' | 'bakery') {
     walls: resolveVisualAsset(scene === 'laboratory' ? 'lab-wall' : 'bakery-wall'),
     npc: resolveVisualAsset(scene === 'laboratory' ? 'researcher' : 'baker'),
     npcReaction: resolveVisualAsset(scene === 'laboratory' ? 'researcher-reaction' : 'baker-reaction'),
-    hands: resolveVisualAsset('charlie-hands') };
+    hands: resolveVisualAsset('charlie-hands'),
+    bookModel: resolveVisualAsset('desk-book'), diaryModel: resolveVisualAsset('desk-diary') };
 }

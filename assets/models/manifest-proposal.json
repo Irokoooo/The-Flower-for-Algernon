@@ -1,0 +1,76 @@
+{
+  "assets": [
+    {
+      "filename": "assets/models/diary.glb",
+      "source": "https://polyhaven.com/a/binder_notebook",
+      "author": "DaDrood",
+      "license": "CC0-1.0",
+      "licenseEvidence": "https://polyhaven.com/license",
+      "bytes": 2136648,
+      "sha256": "d8e7c580f70e680d64c82ac40c64bb3ebeec6fa5674231ec08f00874ce9d9351",
+      "dimensionsXYZ": [
+        0.36523866653442383,
+        0.017854944802820683,
+        0.19995830953121185
+      ],
+      "orientation": "Y-up, flat XZ, minY=0, centered XZ; original source had no rotation",
+      "adaptation": "Selected binder_notebook from same source; matte nonmetal material, tinted; small emblem patched from adjacent leather; original retained",
+      "visualReview": "Diffuse texture inspected; no rendered model or game test performed",
+      "id": "model.diary",
+      "kind": "model",
+      "status": "available",
+      "provenance": {
+        "source": {
+          "kind": "public-domain",
+          "url": "https://polyhaven.com/a/binder_notebook",
+          "creator": "DaDrood"
+        },
+        "license": {
+          "identifier": "CC0-1.0",
+          "evidence": "assets/models/SOURCING.md",
+          "reviewed": true,
+          "attribution": "DaDrood / Poly Haven"
+        },
+        "adaptations": [
+          "Selected binder_notebook from same source; matte nonmetal material, tinted; small emblem patched from adjacent leather; original retained"
+        ]
+      }
+    },
+    {
+      "filename": "assets/models/book.glb",
+      "source": "https://polyhaven.com/a/binder_notebook",
+      "author": "DaDrood",
+      "license": "CC0-1.0",
+      "licenseEvidence": "https://polyhaven.com/license",
+      "bytes": 2136656,
+      "sha256": "cdec6c2e917b70869ee4c8c185692b8a7236b37ab8850811af335c69cd21b287",
+      "dimensionsXYZ": [
+        0.1706455759704113,
+        0.025289426557719707,
+        0.19995832443237305
+      ],
+      "orientation": "Y-up, flat XZ, minY=0, centered XZ; original source had no rotation",
+      "adaptation": "Selected binder_notebook_closed from same source; matte nonmetal material, tinted; small emblem patched from adjacent leather; original retained",
+      "visualReview": "Diffuse texture inspected; no rendered model or game test performed",
+      "id": "model.book",
+      "kind": "model",
+      "status": "available",
+      "provenance": {
+        "source": {
+          "kind": "public-domain",
+          "url": "https://polyhaven.com/a/binder_notebook",
+          "creator": "DaDrood"
+        },
+        "license": {
+          "identifier": "CC0-1.0",
+          "evidence": "assets/models/SOURCING.md",
+          "reviewed": true,
+          "attribution": "DaDrood / Poly Haven"
+        },
+        "adaptations": [
+          "Selected binder_notebook_closed from same source; matte nonmetal material, tinted; small emblem patched from adjacent leather; original retained"
+        ]
+      }
+    }
+  ]
+}

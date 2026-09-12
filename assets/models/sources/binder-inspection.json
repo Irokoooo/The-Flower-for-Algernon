@@ -1,0 +1,68 @@
+{
+  "filename": "assets/models/binder-notebook-1k.glb",
+  "bytes": 1888132,
+  "sha256": "d427bfa5b0c580a1dc0e3c8a635c89e6783e1e84da8eb66ac4556d767ff4d10f",
+  "source": "https://polyhaven.com/a/binder_notebook",
+  "author": "DaDrood",
+  "license": "CC0-1.0",
+  "adaptation": "Embedded original 1k glTF buffer and JPEGs into GLB; no geometry/material changes",
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "binder_notebook"
+    },
+    {
+      "mesh": 1,
+      "name": "binder_notebook_closed",
+      "translation": [
+        0.2673295736312866,
+        0,
+        0
+      ]
+    }
+  ],
+  "meshLocalPositionBounds": [
+    {
+      "min": [
+        -0.15681171417236328,
+        -0.0020946459844708443,
+        -0.09961403161287308
+      ],
+      "max": [
+        0.20842695236206055,
+        0.015760298818349838,
+        0.10034427791833878
+      ]
+    },
+    {
+      "min": [
+        -0.010758023709058762,
+        -0.0020946459844708443,
+        -0.09961403161287308
+      ],
+      "max": [
+        0.15988755226135254,
+        0.023194780573248863,
+        0.10034429281949997
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "binder_notebook",
+      "normalTexture": {
+        "index": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 1
+        },
+        "metallicRoughnessTexture": {
+          "index": 2
+        }
+      }
+    }
+  ],
+  "visualReview": "Not performed"
+}

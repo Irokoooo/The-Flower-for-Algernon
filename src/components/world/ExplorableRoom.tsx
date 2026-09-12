@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { FirstPersonControls } from '../../core/first-person-controls';
 import './explorable-room.css';
+import { loadDeskModel } from './desk-model';
 
-export type RoomAssets = Partial<Record<'floor' | 'walls' | 'backdrop' | 'npc' | 'npcReaction' | 'hands' | 'foreground', string>>;
+export type RoomAssets = Partial<Record<'floor' | 'walls' | 'backdrop' | 'npc' | 'npcReaction' | 'hands' | 'foreground' | 'bookModel' | 'diaryModel', string>>;
 export interface ExplorableRoomProps {
   scene: 'laboratory' | 'bakery';
   /** URLs resolved by the caller's Asset Registry. NPC/foreground require transparent raster images. */
@@ -31,7 +32,8 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
   const controlsRef = useRef<FirstPersonControls | null>(null);
   useEffect(() => { callback.current = onInteract; }, [onInteract]);
   useEffect(() => { pauseRef.current = paused; controlsRef.current?.setPaused(paused || !entered); }, [paused, entered]);
-  const {floor, walls, backdrop, npc, npcReaction, hands, foreground} = assets;
+  const {floor, walls, backdrop, npc, npcReaction, hands, foreground, bookModel, diaryModel} = assets;
+  const updateModels = useRef<(book?: string, diary?: string) => void>(() => {});
   useEffect(() => {
     const mount = host.current;
     if (!mount) return;
@@ -108,8 +110,14 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
     box([1.8,1.85,.5],[2.85,.925,-3.9],timber,true,'book');
     box([.65,.48,.65],[.5,.24,-2],dark,true);
     box([1.2,.85,.65],[-3,.425,-3.9],timber,true,'machine');
-    box([.33,.018,.24],[-1.9,.99,-.9],material('#d9cfb2'),false,'paper');
-    box([.24,.06,.32],[-1.25,1.015,-1.2],material('#6b5745'),false,'book');
+    const diaryBlockout = box([.4,.025,.3],[-1.9,.9875,-.9],material('#d9cfb2'),false,'paper');
+    const bookBlockout = box([.24,.06,.32],[-1.25,1.005,-1.2],material('#6b5745'),false,'book');
+    let disposeModels: Array<() => void> = [];
+    updateModels.current = (book, diary) => {
+      disposeModels.forEach(dispose => dispose()); disposeModels=[];
+      if (book) disposeModels.push(loadDeskModel({url:book,world,surfaces,fallback:bookBlockout,hotspot:'book',footprint:[.24,.32],center:[-1.25,-1.2],tableY:.975}));
+      if (diary) disposeModels.push(loadDeskModel({url:diary,world,surfaces,fallback:diaryBlockout,hotspot:'paper',footprint:[.4,.3],center:[-1.9,-.9],tableY:.975}));
+    };
     // Mouse habitat is a labelled interaction volume, not an invented mouse illustration.
     box([.48,.27,.35],[-2.9,.995,-3.9],material('#738675'),false,'mouse');
     for (const y of [.45,1,1.55]) box([1.85,.07,.58],[2.85,y,-3.86],dark,false);
@@ -191,8 +199,10 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
       for(const [ox,oy] of [[0,0],[-dx,0],[dx,0],[0,-dy],[0,dy],[-dx,-dy],[dx,-dy],[-dx,dy],[dx,dy]]) {
         ray.setFromCamera(pointerAim.set(x+ox,y+oy),camera);
         const hit=ray.intersectObjects(surfaces,false).find(hit=>{
-          const mat=(hit.object as THREE.Mesh).material as THREE.MeshStandardMaterial;
-          return !mat.transparent || mat.opacity>0;
+          for(let parent:THREE.Object3D|null=hit.object;parent;parent=parent.parent) if(!parent.visible)return false;
+          const source=(hit.object as THREE.Mesh).material;
+          const mat=Array.isArray(source)?source[hit.face?.materialIndex ?? 0]:source;
+          return !!mat && mat.visible && (!mat.transparent || mat.opacity>0);
         });
         const id=(hit?.object.userData.hotspot ?? '') as string;
         if(!ox&&!oy) central=id;
@@ -286,6 +296,7 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
     });
     return () => {
       alive=false; renderer.setAnimationLoop(null); resize.disconnect();
+      disposeModels.forEach(dispose => dispose()); updateModels.current=()=>{};
       controls.dispose(); controlsRef.current=null; enter.current=()=>{}; updateReaction.current=()=>{};
       renderer.domElement.removeEventListener('keydown',down);
       renderer.domElement.removeEventListener('pointerdown',pointerDown);
@@ -296,6 +307,9 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
       materials.forEach(m=>m.dispose()); textures.forEach(t=>t.dispose()); renderer.dispose(); renderer.domElement.remove();
     };
   }, [room,floor,walls,backdrop,npc,hands,foreground]);
+  useEffect(() => {
+    updateModels.current(bookModel,diaryModel);
+  }, [bookModel,diaryModel,room,floor,walls,backdrop,npc,hands,foreground]);
   // The expression URL can arrive after generation without rebuilding the room or resetting the camera.
   useEffect(() => {
     updateReaction.current(npcReaction);
@@ -314,6 +328,8 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
     {error && <p className="explorable-room__error" role="alert">{error}</p>}
   </div>;
 }
+
+
 
 
 

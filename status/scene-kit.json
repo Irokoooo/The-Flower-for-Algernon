@@ -1,6 +1,6 @@
 {
   "status": "review",
   "progress": 95,
-  "note": "Room raw IDs unchanged for Carson Core adapter. Visible-object inspection range 9m (room scale), each candidate uses nearest-surface raycast so walls/furniture occlude; center E cue shares click tolerance. Hold-WASD instructions; canvas focus border removed only. Typecheck/build passed. Latest 430px browser acceptance pending.",
-  "updatedAt": "2026-09-12T08:04:52.2877626Z"
+  "note": "GLTFLoader implementation ready: RoomAssets.bookModel/diaryModel local URLs hot-load without camera reset; uniform X/Z fit .24x.32 / .4x.3, Y-up source bottom anchored table y=.975, original thickness retained; every mesh book/paper hotspot; multi-material visibility picking; failed/pending model retains clickable blockout; unload and late completion cleanup. Await Kepler final filenames + Lead registry hookup. No browser tests. Final typecheck/build passed once. assets/models not present at last check; source filenames unconfirmed.",
+  "updatedAt": "2026-09-12T08:27:43.4294101Z"
 }

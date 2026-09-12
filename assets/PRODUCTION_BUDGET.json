@@ -6,7 +6,7 @@
   "authorizedLimit": 100,
   "spentByThisWorkflow": null,
   "pricingVerified": false,
-  "status": "ten-images-generated-voice-blocked",
+  "status": "eleven-images-generated-voice-blocked",
   "policy": "Verify provider model availability and pricing before paid calls. Reserve a known upper bound per request before dispatch. No automatic paid retries without accounting for the previous attempt. Stop before total reserved plus spent exceeds 100 USD.",
   "requests": [
     {
@@ -76,7 +76,15 @@
       "model": "gpt-image-2",
       "reserveUSD": 1,
       "status": "generated"
+    },
+    {
+      "id": "inkblot-test-v1",
+      "model": "gpt-image-2",
+      "listedBasePrice": 0.07,
+      "reserveUSD": 1,
+      "status": "generated",
+      "output": "assets/stimuli/inkblot-test-v1.png"
     }
   ],
-  "reservedUSD": 13
+  "reservedUSD": 14
 }

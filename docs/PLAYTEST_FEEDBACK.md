@@ -1,6 +1,6 @@
 # User playtest feedback — 2026-09-12
 
-Status: recorded / planned, not implemented or accepted. This batch is intentionally deferred while core interaction development takes priority. No new image generation or paid requests authorized by this record alone.
+Status: FB-01 activated by the user's subsequent request; implementation in progress. FB-02/FB-03 remain recorded and deferred. User also requested licensed GLB reuse for desk books/diary. Existing image-production authorization applies; this record itself grants no additional spending authority.
 
 ## FB-01 — A visible psychological-test stimulus
 - Current experience shows abstract word nodes instead of something the player can actually examine.
