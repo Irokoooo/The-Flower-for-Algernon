@@ -1,0 +1,35 @@
+# Carson: corrected university progression
+
+Ready for source review, not verified gameplay. Narrative task progress 90 is a task estimate, not overall PRD completion. Later investigation/research/conference content is unchanged. Coverage gaps remain in PRD_COVERAGE_PROPOSAL.json.
+
+## Imports
+```ts
+import { chapterTwoEntryId, chapterTwoSteps, chapterTwoDialogue } from '../content/chapter-two';
+import { applyChapterAction } from '../narrative/chapter-two';
+```
+
+Core stores `{ completed: [] }` per step. Call `applyChapterAction(step, progress, action)` for an actual player interaction. Save returned `progress`; use `accepted` for feedback. Only `ready` permits transition to returned `nextStepId`. Do not infer completion from number of clicks. Graph edge IDs and requirement IDs are distinct.
+
+## Exact actions
+
+| Step / phase | Ordered action payloads |
+|---|---|
+| classroom-a / ASCENDING | `{kind:'inspect',targetId:'memory-study'}` → `{kind:'place',itemId:'category-cue',targetId:'recall-results'}` → `{kind:'connect',edgeId:'classroom-a.connection'}` |
+| classroom-b / PEAK | `{kind:'inspect',targetId:'trial-cards'}` → `{kind:'place',itemId:'cue-retest',targetId:'prediction-desk'}` → `{kind:'connect',edgeId:'classroom-b.connection'}` |
+| classroom-c / PEAK | `{kind:'inspect',targetId:'connection-notebook'}` → three connect events in ANY order, edgeId = `classroom-c.connection`, `classroom-c.bakery`, `classroom-c.maze` |
+
+A: show the two word-list trials and category cue as manipulable evidence. Player understands a university memory concept; this is not an elementary vocabulary lesson.
+
+B: show the professor's unfinished explanation first. Withhold `presentation.conclusion` until completed contains `presentation.holdConclusionUntilRequirementId` (`classroom-b.connect`). Hold the chalk/conclusion naturally without a countdown or failure timeout. After the connection, show the professor's response BEFORE changing scenes, even though `ready` is already true. The connection is the completion action; do not add a generic next-button task. The conclusion is bilingual text only and needs a new registered recording if voiced; do not replay the unfinished sentence as its voice.
+
+C: use four nodes and all three edges from `step.graph`; do not render a hard-coded two-node graph. After opening the notebook, expose all links concurrently. Resolve the player's chosen edge to its own `meaning`; allow test/bakery/maze links in any order, and retain completed links visibly. Inkblot, machine and route recollections should remain identifiable. Preserve time to enjoy the final connection before transitioning, rather than cutting feedback off immediately.
+
+Render placement with object selection/drop or keyboard-equivalent item-to-target action. Inspect events should open the corresponding world evidence. Do not substitute a sequence of dialogue-dismiss buttons for these actions.
+
+## Copy and voice
+
+Use `step.stimulus.facts` as stable world evidence; `step.perception[phase]` gives aligned English/Chinese interpretation. Resolve `step.dialogueIds` and `step.perceptionLineIds[phase]` against `chapterTwoDialogue`; use both subtitle languages from the SAME entry. The 40 entries remain script-only. Changed classroom scripts require fresh audio validation; stable IDs do not guarantee older recordings match. Do not play declined interpretations during PEAK. Peak should feel curious, quick, expansive and enjoyable.
+
+## Validation and remaining coverage
+
+Typecheck passed. Focused checks cover prerequisite rejection, B's conclusion requirement ID, and C connections in multiple orders. No browser/human verification is claimed. Classroom B's optional interpersonal branches and the full PRD C web beyond the three prior domains remain gaps. Do not mark the whole university PRD requirement verified based on this handoff.

@@ -1,0 +1,14 @@
+{
+  "reservedUSD": 0.01,
+  "attempts": [
+    {
+      "id": "voice.lines.test",
+      "status": "failed-no-retry",
+      "reservedUSD": 0.01,
+      "voice": "onyx",
+      "at": "2026-09-12T07:26:42.218554+00:00",
+      "errorType": "APITimeoutError"
+    }
+  ],
+  "diagnosticSucceeded": false
+}

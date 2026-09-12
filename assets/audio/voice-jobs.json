@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "model": "tts-1-hd",
+  "language": "en",
+  "productionRecordingsPresent": false,
+  "sourceHashes": {
+    "src/content/experience.ts": "65b8697459ec031851f4ee8b7655f271b037b03b5bf9673a97f221c8cc4c6dd6",
+    "src/App.tsx": "901150cda29b153e4fd4aefb9eee9a7f828481b175cc401786456a95c30efd6c"
+  },
+  "speakers": {
+    "charlie": {
+      "voice": "echo",
+      "casting": "Proposed adult warm voice; stable across cognition phases"
+    },
+    "dr-strauss": {
+      "voice": "onyx",
+      "casting": "Proposed restrained professional voice"
+    },
+    "gimpy": {
+      "voice": "fable",
+      "casting": "Proposed contrasting conversational voice"
+    }
+  },
+  "castingNote": "Distinct stock voices are proposals, not canonical accents. tts-1-hd has no acting-instructions parameter. Audition required. No browser speech fallback.",
+  "budget": {
+    "sharedProjectCapUSD": 100,
+    "referenceUSDPerMillionCharacters": 30,
+    "referenceSource": "https://developers.openai.com/api/docs/models/tts-1-hd",
+    "referenceFetched": "2026-09-12",
+    "providerRateVerified": true,
+    "recommendedBatchAllocationUSD": 1,
+    "note": "OpenDev billing not verified; reference estimate is not a guaranteed maximum. Require confirmed provider rate and Lead allocation before --execute. No automatic retries.",
+    "confirmedUSDPerMillionCharacters": 70.5,
+    "rateMeaning": "Conservative reserved upper estimate across exposed eligible groups, not actual account rate",
+    "allocationUSD": 3
+  },
+  "jobs": [
+    {
+      "id": "voice.observations.book",
+      "speaker": "charlie",
+      "text": "A big book. The words are very small.",
+      "source": "src/content/experience.ts:observations.book",
+      "status": "failed-unknown-no-retry",
+      "filename": "assets/audio/production/voice.observations.book.mp3"
+    },
+    {
+      "id": "voice.observations.paper",
+      "speaker": "charlie",
+      "text": "Some important paper. I hope they let me stay.",
+      "source": "src/content/experience.ts:observations.paper",
+      "status": "failed-http-403-no-retry",
+      "filename": "assets/audio/production/voice.observations.paper.mp3"
+    },
+    {
+      "id": "voice.observations.mouse",
+      "speaker": "charlie",
+      "text": "A little white mouse. They say he knows the way.",
+      "source": "src/content/experience.ts:observations.mouse",
+      "status": "planned",
+      "filename": "assets/audio/production/voice.observations.mouse.mp3"
+    },
+    {
+      "id": "voice.lines.welcome",
+      "speaker": "dr-strauss",
+      "text": "Charlie? Take your time. You can look around.",
+      "source": "src/content/experience.ts:lines.welcome",
+      "status": "planned",
+      "filename": "assets/audio/production/voice.lines.welcome.mp3"
+    },
+    {
+      "id": "voice.lines.test",
+      "speaker": "dr-strauss",
+      "text": "What do you see?",
+      "source": "src/content/experience.ts:lines.test",
+      "status": "planned",
+      "filename": "assets/audio/production/voice.lines.test.mp3"
+    },
+    {
+      "id": "voice.lines.bakery",
+      "speaker": "gimpy",
+      "text": "Charlie, three loaves for the counter. Take your time.",
+      "source": "src/content/experience.ts:lines.bakery",
+      "status": "planned",
+      "filename": "assets/audio/production/voice.lines.bakery.mp3"
+    },
+    {
+      "id": "voice.lines.laughter",
+      "speaker": "charlie",
+      "text": "Everybody is laughing. I must have done something funny.",
+      "source": "src/content/experience.ts:lines.laughter",
+      "status": "planned",
+      "filename": "assets/audio/production/voice.lines.laughter.mp3"
+    },
+    {
+      "id": "voice.lines.gain",
+      "speaker": "charlie",
+      "text": "The parts belong together. I can follow them now.",
+      "source": "src/content/experience.ts:lines.gain",
+      "status": "planned",
+      "filename": "assets/audio/production/voice.lines.gain.mp3"
+    },
+    {
+      "id": "voice.lines.success",
+      "speaker": "charlie",
+      "text": "I did it right. Why is he looking at me like that?",
+      "source": "src/content/experience.ts:lines.success",
+      "status": "planned",
+      "filename": "assets/audio/production/voice.lines.success.mp3"
+    },
+    {
+      "id": "voice.lines.return",
+      "speaker": "charlie",
+      "text": "The laugh was already there. So was that glance.",
+      "source": "src/content/experience.ts:lines.return",
+      "status": "planned",
+      "filename": "assets/audio/production/voice.lines.return.mp3"
+    },
+    {
+      "id": "voice.lines.decline",
+      "speaker": "charlie",
+      "text": "I know how this worked. I know that I knew.",
+      "source": "src/content/experience.ts:lines.decline",
+      "status": "planned",
+      "filename": "assets/audio/production/voice.lines.decline.mp3"
+    },
+    {
+      "id": "voice.inline.diary",
+      "speaker": "charlie",
+      "text": "Maybe I did all right. I should write it down.",
+      "source": "src/App.tsx:diary",
+      "status": "planned",
+      "filename": "assets/audio/production/voice.inline.diary.mp3"
+    },
+    {
+      "id": "voice.inline.choice-away",
+      "speaker": "charlie",
+      "text": "He looks away. Nobody asks how I did it.",
+      "source": "src/App.tsx:choice-away",
+      "status": "planned",
+      "filename": "assets/audio/production/voice.inline.choice-away.mp3"
+    },
+    {
+      "id": "voice.inline.choice-angry",
+      "speaker": "charlie",
+      "text": "“Nobody is angry,” he says, without looking at me.",
+      "source": "src/App.tsx:choice-angry",
+      "status": "planned",
+      "filename": "assets/audio/production/voice.inline.choice-angry.mp3"
+    },
+    {
+      "id": "voice.inline.choice-silent",
+      "speaker": "charlie",
+      "text": "I stay quiet. So does he.",
+      "source": "src/App.tsx:choice-silent",
+      "status": "planned",
+      "filename": "assets/audio/production/voice.inline.choice-silent.mp3"
+    }
+  ],
+  "nonSpoken": {
+    "experienceGraphLabelsAndMeanings": [
+      "Two dark shapes",
+      "Wings",
+      "Maybe a butterfly. Both sides look the same.",
+      "Lever",
+      "Gear",
+      "I knew this…",
+      "Roller",
+      "…",
+      "Dough thickness",
+      "The lever turns the gear.",
+      "The gear moves the rollers together.",
+      "The gap controls the thickness. I can do this."
+    ],
+    "note": "Enumerated experience graph text is visual-only in current App; no say() path consumes it. App UI labels, chapter labels, buttons, report headings and player-entered reports are unvoiced. All current say/go/bridge English dialogue inputs are covered by jobs."
+  },
+  "integrationNotes": [
+    "Use exact English text -> job ID mapping and the job speaker, not current default say speaker. Replay reuses the existing asset.",
+    "welcome/test belong to Dr. Strauss; bakery to Gimpy; success is Charlie even when current NPC interaction mislabels it Gimpy.",
+    "Inline choice-angry is Charlie narration including a quote; keep one Charlie recording matching current subtitle.",
+    "Remove browser preview imports/toggle/fallback in App; load static MP3 through Core registry. No client-side provider requests or env access."
+  ],
+  "provenance": {
+    "source": "Original project dialogue synthesized via api.openai-next.com; no generation performed",
+    "license": "Provider output terms require Lead review before distribution; no third-party recording license claimed",
+    "status": "planned"
+  },
+  "frozenDialogueSha256": "623fea009c3e08cff0554f7e39b168d78b7caa950c58970e3d462e9db75e55f2"
+}

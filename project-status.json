@@ -1,45 +1,45 @@
 {
-  "updatedAt": "2026-09-12T06:12:00Z",
-  "overall": 18,
+  "updatedAt": "2026-09-12T07:35:20.104982+00:00",
+  "overall": 0,
   "agents": [
     {
       "id": "core",
       "name": "Core / Architecture",
-      "status": "complete",
-      "progress": 100,
-      "note": "Vite shell, shared contracts, deterministic flow, and build pass",
+      "status": "in_progress",
+      "progress": 0,
+      "note": "用户未验收旧原型；按新的视觉与交互要求重做",
       "nickname": "Carson"
     },
     {
       "id": "cognition",
       "name": "Cognition",
-      "status": "review",
-      "progress": 75,
-      "note": "Functional Three.js maze and click-to-connect Graph; app integration review pending",
+      "status": "in_progress",
+      "progress": 0,
+      "note": "用户未验收旧原型；按新的视觉与交互要求重做",
       "nickname": "Hubble"
     },
     {
       "id": "narrative",
       "name": "Narrative / Content",
-      "status": "review",
-      "progress": 90,
-      "note": "First slice bilingual content, report save logic, and decline transformation ready",
+      "status": "in_progress",
+      "progress": 0,
+      "note": "用户未验收旧原型；按新的视觉与交互要求重做",
       "nickname": "Darwin"
     },
     {
       "id": "scene-kit",
       "name": "Scene Kit",
-      "status": "review",
-      "progress": 65,
-      "note": "Interactive illustrated NPC prototype and lab/bakery stages ready; final raster art pending",
+      "status": "in_progress",
+      "progress": 0,
+      "note": "用户未验收旧原型；按新的视觉与交互要求重做",
       "nickname": "Harvey"
     },
     {
       "id": "audio-assets",
       "name": "Audio / Assets",
-      "status": "review",
-      "progress": 95,
-      "note": "AudioManager, English voice profiles, three original WAV prototypes, and provenance ready",
+      "status": "in_progress",
+      "progress": 0,
+      "note": "用户未验收旧原型；按新的视觉与交互要求重做",
       "nickname": "Kepler"
     }
   ],
@@ -131,8 +131,8 @@
       "title": "COGNITION GRAPH — CORE SYSTEM",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/cognition/CognitionGraph.tsx; src/cognition/contracts.ts；待补：Domain component exists; scene-specific meanings and perceived affordances require play review."
     },
     {
       "id": "prd-10",
@@ -140,8 +140,8 @@
       "title": "OPENING — LABORATORY",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/App.tsx: interact / observed; src/content/experience.ts: observations；待补：First-person prototype; verify authored scene assets, dialogue delivery and discovery order."
     },
     {
       "id": "prd-11",
@@ -149,8 +149,8 @@
       "title": "PSYCHOLOGICAL TEST",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/App.tsx: test; src/content/experience.ts: testGraph；待补：No verified PEAK/DECLINE retest callbacks."
     },
     {
       "id": "prd-12",
@@ -158,8 +158,8 @@
       "title": "ALGERNON MAZE",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/cognition/MazeBox.tsx; src/cognition/movement.ts；待补：Verify full 3D interaction, camera isolation, behavior progression and empty-maze narrative integration."
     },
     {
       "id": "prd-13",
@@ -167,8 +167,8 @@
       "title": "PROGRESS REPORT / DIARY",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/narrative/report.ts: saveProgressReport; src/components/narrative/SubtitleBlock.tsx: ReportEditor；待补：Component/logic ready; full betrayal pacing unverified."
     },
     {
       "id": "prd-14",
@@ -176,8 +176,8 @@
       "title": "PROGRESS REPORT TRANSITION",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/App.tsx: bridge；待补：Timed bridge exists; full signature visual/audio treatment unverified."
     },
     {
       "id": "prd-15",
@@ -185,8 +185,8 @@
       "title": "COGNITION RUN",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "；待补：Not supplied by chapter-two graph gates."
     },
     {
       "id": "prd-16",
@@ -194,8 +194,8 @@
       "title": "BAKERY — VISIT ONE",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/App.tsx: bread, machine, revisit; src/content/experience.ts: machineGraph；待补：Prototype integration; identical objective stimulus and full sensory continuity need play verification."
     },
     {
       "id": "prd-17",
@@ -203,8 +203,8 @@
       "title": "BAKERY — VISIT TWO",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/App.tsx: bread, machine, revisit; src/content/experience.ts: machineGraph；待补：Prototype integration; identical objective stimulus and full sensory continuity need play verification."
     },
     {
       "id": "prd-18",
@@ -212,8 +212,8 @@
       "title": "BAKERY DIALOGUE CHOICES",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/App.tsx: revisit choices and peak-report convergence；待补：Local first-slice branches exist; chapter-two choices not yet authored."
     },
     {
       "id": "prd-19",
@@ -221,8 +221,8 @@
       "title": "BAKERY CORE REALIZATION",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/App.tsx: bread, machine, revisit; src/content/experience.ts: machineGraph；待补：Prototype integration; identical objective stimulus and full sensory continuity need play verification."
     },
     {
       "id": "prd-20",
@@ -230,8 +230,8 @@
       "title": "BAKERY OPTIONAL THIRD VISIT",
       "kind": "experience",
       "priority": "P2",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "；待补：Backlog; no approved cancellation."
     },
     {
       "id": "prd-21",
@@ -248,8 +248,8 @@
       "title": "PEAK FREE EXPLORATION",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "；待补：Not the same as mandatory inspection steps."
     },
     {
       "id": "prd-23",
@@ -257,8 +257,8 @@
       "title": "PEAK PROGRESS REPORT",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/narrative/report.ts; src/App.tsx: peak-report；待补：Raw-preserving implementation; pacing unverified."
     },
     {
       "id": "prd-24",
@@ -293,8 +293,8 @@
       "title": "THE RACE AGAINST HIMSELF",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "；待补：Current chapter data transitions directly into research; quiet interval and intentional initiation missing."
     },
     {
       "id": "prd-28",
@@ -311,8 +311,8 @@
       "title": "OPTIONAL VISIT TO ALGERNON",
       "kind": "experience",
       "priority": "P1",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "；待补：Not implemented; do not count investigation as this encounter."
     },
     {
       "id": "prd-30",
@@ -329,8 +329,8 @@
       "title": "CONFERENCE CHOICE",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "；待补：ChapterAction supports choose, but chapter-two currently defines no choice requirements/options."
     },
     {
       "id": "prd-32",
@@ -338,8 +338,8 @@
       "title": "“WHAT DO YOU SEE?” CALLBACK",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "；待补：Current conference script does not supply this callback."
     },
     {
       "id": "prd-33",
@@ -347,8 +347,8 @@
       "title": "FREE ALGERNON",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "；待补：Maze capability alone does not implement this story event."
     },
     {
       "id": "prd-34",
@@ -356,8 +356,8 @@
       "title": "FIRST SIGNS OF CHARLIE'S DECLINE",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/App.tsx: decline; src/narrative/report.ts: transformDeclinedReport；待补：Short graph/report callback only; ordered decline, social/memory/control sequence missing."
     },
     {
       "id": "prd-35",
@@ -365,8 +365,8 @@
       "title": "THREE BETRAYALS",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/App.tsx: decline; src/narrative/report.ts: transformDeclinedReport；待补：Short graph/report callback only; ordered decline, social/memory/control sequence missing."
     },
     {
       "id": "prd-36",
@@ -374,8 +374,8 @@
       "title": "DECLINE ORDER",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/App.tsx: decline; src/narrative/report.ts: transformDeclinedReport；待补：Short graph/report callback only; ordered decline, social/memory/control sequence missing."
     },
     {
       "id": "prd-37",
@@ -383,8 +383,8 @@
       "title": "SOCIAL DECLINE",
       "kind": "experience",
       "priority": "P1",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/App.tsx: decline; src/narrative/report.ts: transformDeclinedReport；待补：Short graph/report callback only; ordered decline, social/memory/control sequence missing."
     },
     {
       "id": "prd-38",
@@ -392,8 +392,8 @@
       "title": "MEMORY DECLINE",
       "kind": "experience",
       "priority": "P1",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/App.tsx: decline; src/narrative/report.ts: transformDeclinedReport；待补：Short graph/report callback only; ordered decline, social/memory/control sequence missing.；；待补：Backlog; no approved cancellation."
     },
     {
       "id": "prd-39",
@@ -401,8 +401,8 @@
       "title": "CONTROL DECLINE CALLBACK",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/App.tsx: decline; src/narrative/report.ts: transformDeclinedReport；待补：Short graph/report callback only; ordered decline, social/memory/control sequence missing."
     },
     {
       "id": "prd-40",
@@ -410,8 +410,8 @@
       "title": "RESEARCH LEGACY",
       "kind": "experience",
       "priority": "P1",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "；待补：Backlog; no approved cancellation."
     },
     {
       "id": "prd-41",
@@ -419,8 +419,8 @@
       "title": "LAST PROGRESS REPORT",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/App.tsx: last-report; src/components/narrative/SubtitleBlock.tsx；待补：Prototype callback is not full authored last-report ending."
     },
     {
       "id": "prd-42",
@@ -428,8 +428,8 @@
       "title": "EMPTY ROOM",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "；待补：First-study finish screen is not the ending."
     },
     {
       "id": "prd-43",
@@ -437,8 +437,8 @@
       "title": "EXIT",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "；待补：First-study finish screen is not the ending."
     },
     {
       "id": "prd-44",
@@ -446,8 +446,8 @@
       "title": "FLOWERS FOR ALGERNON — EPILOGUE",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "；待补：First-study finish screen is not the ending."
     },
     {
       "id": "prd-45",
@@ -455,8 +455,8 @@
       "title": "FINAL META ENDING",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/narrative/report.ts: preserveFinalMemory; src/components/narrative/SubtitleBlock.tsx: FinalMemoryEditor；待补：Exact-preservation API/component exists; ending integration missing."
     },
     {
       "id": "prd-46",
@@ -473,8 +473,8 @@
       "title": "OPTIONAL P3 — “A MEMORY”",
       "kind": "experience",
       "priority": "P3",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "；待补：Backlog; no approved cancellation."
     },
     {
       "id": "prd-48",
@@ -536,8 +536,8 @@
       "title": "AUDIO ARCHITECTURE",
       "kind": "constraint",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/content/chapter-two.ts: chapterTwoDialogue; src/audio/AudioManager.ts; src/components/narrative/SubtitleBlock.tsx；待补：Script-only chapter-two refs; recordings, voice consistency, accents and playback not verified."
     },
     {
       "id": "prd-55",
@@ -545,8 +545,8 @@
       "title": "TTS / SOUND GENERATION",
       "kind": "constraint",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/content/chapter-two.ts: chapterTwoDialogue; src/audio/AudioManager.ts; src/components/narrative/SubtitleBlock.tsx；待补：Script-only chapter-two refs; recordings, voice consistency, accents and playback not verified."
     },
     {
       "id": "prd-56",
@@ -554,8 +554,8 @@
       "title": "CONTENT ARCHITECTURE",
       "kind": "constraint",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "src/content/chapter-two.ts: chapterTwoDialogue; src/audio/AudioManager.ts; src/components/narrative/SubtitleBlock.tsx；待补：Script-only chapter-two refs; recordings, voice consistency, accents and playback not verified."
     },
     {
       "id": "prd-57",
@@ -608,8 +608,8 @@
       "title": "PRIORITY LEVELS",
       "kind": "constraint",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "；待补：Backlog; no approved cancellation.；；待补：Backlog; no approved cancellation."
     },
     {
       "id": "prd-63",
@@ -716,5 +716,13 @@
       "status": "decided"
     }
   ],
-  "milestone": "Wave 1 — first playable study integrated; human playtest pending"
+  "milestone": "插画角色与第一人称3D切片整合；课堂推理接入；英语录音服务阻塞",
+  "production": {
+    "budgetLimitUSD": 100,
+    "reservationUSD": 13,
+    "actualBilledUSD": null,
+    "voice": "尚无正式MP3：speech POST曾返回403，单次SDK诊断超时；无自动批量重试。",
+    "music": "20秒原创循环配乐已接入；待人工听感与混音验收。",
+    "art": "研究员、Alice、面包师、查理双手及墙面地板已生成；表情与动作变体持续接入。"
+  }
 }

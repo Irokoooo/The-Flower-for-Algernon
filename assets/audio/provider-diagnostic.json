@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-09-12T07:30:50.288741+00:00",
+  "sdkResult": "APITimeoutError",
+  "timeoutSeconds": 60,
+  "maxRetries": 0,
+  "diagnosticText": "What do you see?",
+  "voice": "onyx",
+  "diagnosticRequests": 1,
+  "remainingBatchStarted": false,
+  "savedMP3": 0,
+  "newReservationUSD": 0.01,
+  "combinedUpperReservationUSD": 0.0158515,
+  "actualBilling": "unknown",
+  "cause": "No HTTP status/body returned; prior urllib 403 cause remains unresolved",
+  "musicIntegration": "Verified manifest, nested registry glob, App Start loop and duplicate-loop guard in code; human listening pending"
+}

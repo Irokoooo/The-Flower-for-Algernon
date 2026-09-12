@@ -128,6 +128,148 @@
       "source": "Casting and recording pending",
       "license": "Pending",
       "description": "Distinct recorded English voices are not yet produced"
+    },
+    {
+      "id": "art.researcher.generated.v1",
+      "filename": "assets/characters/researcher-v1.png",
+      "kind": "image",
+      "status": "review",
+      "source": "OpenDev / gpt-image-2",
+      "license": "Generated asset; provider terms apply, review pending",
+      "description": "用户认可的研究员画风原图；透明衍生图已接入3D实验室",
+      "prompt": "assets/prompts/researcher-v1.txt"
+    },
+    {
+      "id": "art.alice.generated",
+      "filename": "assets/characters/alice-cutout.png",
+      "kind": "image",
+      "status": "review",
+      "description": "Alice：倾听姿态、朴素服装",
+      "source": "OpenDev / gpt-image-2",
+      "license": "Generated; provider terms review pending",
+      "prompt": "assets/prompts/production-wave2.jsonl"
+    },
+    {
+      "id": "art.charlie.hands",
+      "filename": "assets/characters/charlie-hands-cutout.png",
+      "kind": "image",
+      "status": "review",
+      "description": "查理第一人称双手",
+      "source": "OpenDev / gpt-image-2",
+      "license": "Generated; provider terms review pending",
+      "prompt": "assets/prompts/production-wave2.jsonl"
+    },
+    {
+      "id": "art.lab.wall",
+      "filename": "assets/environments/lab-wall.png",
+      "kind": "image",
+      "status": "review",
+      "description": "实验室插画墙面",
+      "source": "OpenDev / gpt-image-2",
+      "license": "Generated; provider terms review pending",
+      "prompt": "assets/prompts/production-wave2.jsonl"
+    },
+    {
+      "id": "art.bakery.wall",
+      "filename": "assets/environments/bakery-wall.png",
+      "kind": "image",
+      "status": "review",
+      "description": "面包店插画墙面",
+      "source": "OpenDev / gpt-image-2",
+      "license": "Generated; provider terms review pending",
+      "prompt": "assets/prompts/production-wave2.jsonl"
+    },
+    {
+      "id": "art.floor.wood",
+      "filename": "assets/environments/wood-floor.png",
+      "kind": "image",
+      "status": "review",
+      "description": "木地板插画纹理",
+      "source": "OpenDev / gpt-image-2",
+      "license": "Generated; provider terms review pending",
+      "prompt": "assets/prompts/production-wave2.jsonl"
+    },
+    {
+      "id": "audio.music.still-room",
+      "kind": "ambience",
+      "filename": "assets/audio/music/still-room.wav",
+      "status": "review",
+      "durationSeconds": 20,
+      "loop": true,
+      "sha256": "32b6cd21912e322ca0a94c35ece56f6d62a0b25300254ef7714ed1dae4113d08",
+      "review": "Original composition; final human listening review pending",
+      "provenance": {
+        "source": {
+          "kind": "original",
+          "url": null,
+          "creator": "ALGERNON / Still Room procedural composition"
+        },
+        "license": {
+          "identifier": "LicenseRef-ALGERNON-Original-Prototype",
+          "evidence": "assets/audio/music/PROVENANCE.md",
+          "reviewed": true,
+          "attribution": "Still Room — original ALGERNON composition"
+        },
+        "adaptations": [
+          "Layered original harmony and sparse synthesized piano-like notes; circular release tails and reflections; no external samples"
+        ]
+      },
+      "source": "ALGERNON original composition",
+      "license": "LicenseRef-ALGERNON-Original-Prototype"
+    },
+    {
+      "id": "art.researcher.cutout",
+      "filename": "assets/characters/researcher-cutout.png",
+      "kind": "image",
+      "status": "review",
+      "description": "研究员：克制、专注；已接入实验室",
+      "source": "OpenDev / gpt-image-2",
+      "license": "Generated asset; provider terms review pending",
+      "adaptation": "Border-connected white background extracted; original raster retained.",
+      "prompt": "assets/prompts/researcher-v1.txt"
+    },
+    {
+      "id": "art.researcher.concerned",
+      "filename": "assets/characters/researcher-concerned-cutout.png",
+      "kind": "image",
+      "status": "review",
+      "description": "研究员：担忧表情；近距离互动变体",
+      "source": "OpenDev / gpt-image-2",
+      "license": "Generated asset; provider terms review pending",
+      "adaptation": "Border-connected white background extracted; original raster retained."
+    },
+    {
+      "id": "art.baker.generated",
+      "filename": "assets/characters/baker-cutout.png",
+      "kind": "image",
+      "status": "review",
+      "description": "面包师：结实轮廓、赭红衬衫、面粉围裙；已提供运行时素材",
+      "source": "OpenDev / gpt-image-2",
+      "license": "Generated asset; provider terms review pending",
+      "adaptation": "Border-connected white background extracted; original raster retained.",
+      "prompt": "assets/prompts/production-wave2.jsonl"
+    },
+    {
+      "id": "art.baker.welcoming",
+      "filename": "assets/characters/baker-welcoming-cutout.png",
+      "kind": "image",
+      "status": "review",
+      "description": "面包师：友善表情与伸手示意",
+      "source": "OpenDev / gpt-image-2",
+      "license": "Generated asset; provider terms review pending",
+      "adaptation": "Border-connected white background extracted; original raster retained.",
+      "prompt": "assets/prompts/baker-welcoming.txt"
+    },
+    {
+      "id": "art.alice.encouraging",
+      "filename": "assets/characters/alice-encouraging-cutout.png",
+      "kind": "image",
+      "status": "review",
+      "description": "Alice：鼓励表情与邀请尝试的手势",
+      "source": "OpenDev / gpt-image-2",
+      "license": "Generated asset; provider terms review pending",
+      "adaptation": "Border-connected white background extracted; original raster retained.",
+      "prompt": "assets/prompts/alice-encouraging.txt"
     }
   ]
 }

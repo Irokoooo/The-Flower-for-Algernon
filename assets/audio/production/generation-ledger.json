@@ -1,0 +1,19 @@
+{
+  "reservedUSD": 0.0058515,
+  "requests": {
+    "voice.observations.book": {
+      "status": "failed-unknown-no-retry",
+      "at": "2026-09-12T06:54:29.009535+00:00",
+      "textSha256": "566347b793eff19bbe4b812a3a181cf2d9d0fd668a9d5b449f40c59fa3d19480",
+      "voice": "echo",
+      "model": "tts-1-hd"
+    },
+    "voice.observations.paper": {
+      "status": "failed-http-403-no-retry",
+      "at": "2026-09-12T06:55:39.456403+00:00",
+      "textSha256": "aea45483e633d66df0bfe2b7433867f9e4d52052b5f401078183f0eb8b6955f0",
+      "voice": "echo",
+      "model": "tts-1-hd"
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "provider": "OpenDev",
+  "origin": "https://api.openai-next.com",
+  "baseUrlCandidate": "https://api.openai-next.com/v1",
+  "currency": "USD",
+  "authorizedLimit": 100,
+  "spentByThisWorkflow": null,
+  "pricingVerified": false,
+  "status": "ten-images-generated-voice-blocked",
+  "policy": "Verify provider model availability and pricing before paid calls. Reserve a known upper bound per request before dispatch. No automatic paid retries without accounting for the previous attempt. Stop before total reserved plus spent exceeds 100 USD.",
+  "requests": [
+    {
+      "id": "researcher-v1",
+      "status": "generated",
+      "reserveUSD": 1,
+      "listedBasePrice": 0.07,
+      "model": "gpt-image-2",
+      "output": "assets/characters/researcher-v1.png"
+    },
+    {
+      "id": "baker-v1.png",
+      "model": "gpt-image-2",
+      "listedBasePrice": 0.07,
+      "reserveUSD": 1,
+      "status": "generated"
+    },
+    {
+      "id": "alice-v1.png",
+      "model": "gpt-image-2",
+      "listedBasePrice": 0.07,
+      "reserveUSD": 1,
+      "status": "generated"
+    },
+    {
+      "id": "charlie-hands-v1.png",
+      "model": "gpt-image-2",
+      "listedBasePrice": 0.07,
+      "reserveUSD": 1,
+      "status": "generated"
+    },
+    {
+      "id": "lab-wall.png",
+      "model": "gpt-image-2",
+      "listedBasePrice": 0.07,
+      "reserveUSD": 1,
+      "status": "generated"
+    },
+    {
+      "id": "bakery-wall.png",
+      "model": "gpt-image-2",
+      "listedBasePrice": 0.07,
+      "reserveUSD": 1,
+      "status": "generated"
+    },
+    {
+      "id": "wood-floor.png",
+      "model": "gpt-image-2",
+      "listedBasePrice": 0.07,
+      "reserveUSD": 1,
+      "status": "generated"
+    },
+    {
+      "status": "generated",
+      "id": "researcher-concerned",
+      "model": "gpt-image-2",
+      "reserveUSD": 1
+    },
+    {
+      "id": "baker-welcoming",
+      "model": "gpt-image-2",
+      "reserveUSD": 1,
+      "status": "generated"
+    },
+    {
+      "id": "alice-encouraging",
+      "model": "gpt-image-2",
+      "reserveUSD": 1,
+      "status": "generated"
+    }
+  ],
+  "reservedUSD": 13
+}

@@ -1,0 +1,30 @@
+{
+  "assets": [
+    {
+      "id": "audio.music.still-room",
+      "kind": "ambience",
+      "filename": "assets/audio/music/still-room.wav",
+      "status": "available",
+      "durationSeconds": 20,
+      "loop": true,
+      "sha256": "32b6cd21912e322ca0a94c35ece56f6d62a0b25300254ef7714ed1dae4113d08",
+      "review": "Original composition; final human listening review pending",
+      "provenance": {
+        "source": {
+          "kind": "original",
+          "url": null,
+          "creator": "ALGERNON / Still Room procedural composition"
+        },
+        "license": {
+          "identifier": "LicenseRef-ALGERNON-Original-Prototype",
+          "evidence": "assets/audio/music/PROVENANCE.md",
+          "reviewed": true,
+          "attribution": "Still Room — original ALGERNON composition"
+        },
+        "adaptations": [
+          "Layered original harmony and sparse synthesized piano-like notes; circular release tails and reflections; no external samples"
+        ]
+      }
+    }
+  ]
+}

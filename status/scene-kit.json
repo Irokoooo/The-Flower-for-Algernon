@@ -1,1 +1,6 @@
-{"status":"in_progress","note":"NPC prototype rig implemented; building first-person depth scenes. Original programmatic art, not final commissioned raster.","progress":65,"updatedAt":"2026-09-12T00:00:00Z"}
+{
+  "status": "review",
+  "progress": 95,
+  "note": "Renderer polish ready: concerned cutout exists and builds; proximity hysteresis, immediate NPC reaction, smooth hand walk-bob, narrow aspect-fit hands. Typecheck/build passed. CARSON HANDOFF: room emits book/paper/mouse/test/machine/bread/npc; current App still expects legacy IDs and needs mapping. App compact hands already visible separately: keep one hands path. Browser room/controls previously verified by Lead; latest expression visual review pending. Classroom not implemented; avoid treating lab as classroom.",
+  "updatedAt": "2026-09-12T07:22:03.1996904Z"
+}

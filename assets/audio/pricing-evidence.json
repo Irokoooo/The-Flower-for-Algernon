@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-09-12T06:54:28.099158+00:00",
+  "sources": [
+    "https://api.openai-next.com/api/pricing",
+    "https://api.openai-next.com/api/status"
+  ],
+  "model": "tts-1-hd",
+  "modelRatio": 15,
+  "eligibleGroups": {
+    "default": 1,
+    "Agent": 2.35
+  },
+  "quotaPerUSD": 500000,
+  "quotaDisplayType": "USD",
+  "formula": "15 * 1000000 / 500000 * 2.35",
+  "reservedUpperUSDPerMillion": 70.5,
+  "accountGroup": "unknown; Lead authorized maximum eligible multiplier",
+  "batchCharacters": 653,
+  "batchReservedUpperUSD": 0.0460365,
+  "allocationUSD": 3,
+  "noRetries": true
+}

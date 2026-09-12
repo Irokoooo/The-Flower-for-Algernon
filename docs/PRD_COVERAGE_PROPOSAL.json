@@ -1,0 +1,567 @@
+{
+  "schemaVersion": 1,
+  "kind": "proposal",
+  "source": "docs/ALGERNON_PRD_v1.0.md",
+  "scope": "Source-based coverage proposal, not a replacement for project-status or a verified acceptance report.",
+  "overallCompletion": null,
+  "statusDefinitions": {
+    "review": "Concrete implementation available for review; does not mean integrated, played or PRD-complete.",
+    "in_progress": "Partial prototype, draft or integration exists; listed requirements still missing.",
+    "deferred": "Not implemented in inspected slice; remains in backlog, not an approved scope cut."
+  },
+  "evidencePolicy": [
+    "Source symbols prove implementation presence only.",
+    "Typecheck and logic smoke checks do not verify gameplay, timing, emotional impact or assets.",
+    "Do not derive overall completion from file count, scene names, dialogue count or an arbitrary percentage.",
+    "User-approved language and first-person/interactive maze constraints supplement the PRD."
+  ],
+  "chapterTwoIntegration": {
+    "status": "in_progress",
+    "sourceFiles": [
+      "src/content/chapter-two.ts",
+      "src/narrative/chapter-two.ts"
+    ],
+    "exports": [
+      "chapterTwoEntryId",
+      "chapterTwoSteps",
+      "chapterTwoDialogue",
+      "applyChapterAction"
+    ],
+    "evidence": "8 steps, corrected university A/B/C, 40 script-only bilingual voice entries, canonical graphs and ordered action gate. B conclusion currently text-only, not in the TTS list.",
+    "validation": "Corrected classroom typecheck and free-order/prediction-gate smoke checks passed; no human gameplay verification.",
+    "runtimeEvidence": "No new browser verification performed. Earlier App inspection covered first-study flow only; concurrent Lead changes must be inspected before asserting current integration.",
+    "requiredIntegration": [
+      "Map inspect targetIds to world hotspots and actual observations.",
+      "Implement item-to-target placement, not a dialogue acknowledgment.",
+      "Route player graph edge events through applyChapterAction; do not auto-connect.",
+      "Keep progress per step in Core; advance only when ready; last ready step hands back to Core.",
+      "Play phase-specific line IDs with matching en/zhHans; voice entries are scripts, not recordings."
+    ]
+  },
+  "requirements": [
+    {
+      "id": "opening",
+      "prdSections": [
+        10
+      ],
+      "status": "in_progress",
+      "evidence": [
+        "src/App.tsx: interact / observed; src/content/experience.ts: observations"
+      ],
+      "gameplayAction": "Inspect two lab objects then speak to researcher.",
+      "gaps": [
+        "First-person prototype; verify authored scene assets, dialogue delivery and discovery order."
+      ],
+      "verified": false
+    },
+    {
+      "id": "psychological-test",
+      "prdSections": [
+        11
+      ],
+      "status": "in_progress",
+      "evidence": [
+        "src/App.tsx: test; src/content/experience.ts: testGraph"
+      ],
+      "gameplayAction": "Connect interpretation of the abstract test stimulus.",
+      "gaps": [
+        "No verified PEAK/DECLINE retest callbacks."
+      ],
+      "verified": false
+    },
+    {
+      "id": "graph",
+      "prdSections": [
+        9
+      ],
+      "status": "review",
+      "evidence": [
+        "src/cognition/CognitionGraph.tsx; src/cognition/contracts.ts"
+      ],
+      "gameplayAction": "Player connects available edges.",
+      "gaps": [
+        "Domain component exists; scene-specific meanings and perceived affordances require play review."
+      ],
+      "verified": false
+    },
+    {
+      "id": "maze",
+      "prdSections": [
+        12
+      ],
+      "status": "in_progress",
+      "evidence": [
+        "src/cognition/MazeBox.tsx; src/cognition/movement.ts"
+      ],
+      "gameplayAction": "Inspect/orbit/reset persistent maze.",
+      "gaps": [
+        "Verify full 3D interaction, camera isolation, behavior progression and empty-maze narrative integration."
+      ],
+      "verified": false
+    },
+    {
+      "id": "reports",
+      "prdSections": [
+        13
+      ],
+      "status": "review",
+      "evidence": [
+        "src/narrative/report.ts: saveProgressReport; src/components/narrative/SubtitleBlock.tsx: ReportEditor"
+      ],
+      "gameplayAction": "Type freely; explicit save creates expressedText while preserving rawText.",
+      "gaps": [
+        "Component/logic ready; full betrayal pacing unverified."
+      ],
+      "verified": false
+    },
+    {
+      "id": "transition",
+      "prdSections": [
+        14
+      ],
+      "status": "in_progress",
+      "evidence": [
+        "src/App.tsx: bridge"
+      ],
+      "gameplayAction": "Close saved notebook to transition.",
+      "gaps": [
+        "Timed bridge exists; full signature visual/audio treatment unverified."
+      ],
+      "verified": false
+    },
+    {
+      "id": "cognition-run",
+      "prdSections": [
+        15
+      ],
+      "status": "deferred",
+      "evidence": [],
+      "gameplayAction": "Navigate and form semantic connections through Cognition Run.",
+      "gaps": [
+        "Not supplied by chapter-two graph gates."
+      ],
+      "verified": false
+    },
+    {
+      "id": "bakery-first-revisit-machine",
+      "prdSections": [
+        16,
+        17,
+        19
+      ],
+      "status": "in_progress",
+      "evidence": [
+        "src/App.tsx: bread, machine, revisit; src/content/experience.ts: machineGraph"
+      ],
+      "gameplayAction": "Bag three loaves, connect machine parts, revisit social meaning.",
+      "gaps": [
+        "Prototype integration; identical objective stimulus and full sensory continuity need play verification."
+      ],
+      "verified": false
+    },
+    {
+      "id": "local-branching",
+      "prdSections": [
+        18
+      ],
+      "status": "in_progress",
+      "evidence": [
+        "src/App.tsx: revisit choices and peak-report convergence"
+      ],
+      "gameplayAction": "Choose a response after connecting a social interpretation.",
+      "gaps": [
+        "Local first-slice branches exist; chapter-two choices not yet authored."
+      ],
+      "verified": false
+    },
+    {
+      "id": "peak-free-exploration",
+      "prdSections": [
+        22
+      ],
+      "status": "deferred",
+      "evidence": [],
+      "gameplayAction": "Explore with explicit objective removed.",
+      "gaps": [
+        "Not the same as mandatory inspection steps."
+      ],
+      "verified": false
+    },
+    {
+      "id": "peak-report",
+      "prdSections": [
+        23
+      ],
+      "status": "review",
+      "evidence": [
+        "src/narrative/report.ts; src/App.tsx: peak-report"
+      ],
+      "gameplayAction": "Write and save without transformation.",
+      "gaps": [
+        "Raw-preserving implementation; pacing unverified."
+      ],
+      "verified": false
+    },
+    {
+      "id": "research-initiation",
+      "prdSections": [
+        27
+      ],
+      "status": "deferred",
+      "evidence": [],
+      "gameplayAction": "After manual revelation, choose self-authored Why / Begin Research.",
+      "gaps": [
+        "Current chapter data transitions directly into research; quiet interval and intentional initiation missing."
+      ],
+      "verified": false
+    },
+    {
+      "id": "visit-algernon",
+      "prdSections": [
+        29
+      ],
+      "status": "deferred",
+      "evidence": [],
+      "gameplayAction": "Choose research or a quiet visit; Algernon replies behaviorally.",
+      "gaps": [
+        "Not implemented; do not count investigation as this encounter."
+      ],
+      "verified": false
+    },
+    {
+      "id": "conference-choices",
+      "prdSections": [
+        31
+      ],
+      "status": "deferred",
+      "evidence": [],
+      "gameplayAction": "Interrupt, wait, challenge or initially stay silent; converge on public disclosure.",
+      "gaps": [
+        "ChapterAction supports choose, but chapter-two currently defines no choice requirements/options."
+      ],
+      "verified": false
+    },
+    {
+      "id": "question-reversal",
+      "prdSections": [
+        32
+      ],
+      "status": "deferred",
+      "evidence": [],
+      "gameplayAction": "Present evidence with the mandatory question and reversed staging.",
+      "gaps": [
+        "Current conference script does not supply this callback."
+      ],
+      "verified": false
+    },
+    {
+      "id": "free-algernon-empty-maze",
+      "prdSections": [
+        33
+      ],
+      "status": "deferred",
+      "evidence": [],
+      "gameplayAction": "Discover and open cage; observe departure; preserve empty maze.",
+      "gaps": [
+        "Maze capability alone does not implement this story event."
+      ],
+      "verified": false
+    },
+    {
+      "id": "decline-betrayals",
+      "prdSections": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "status": "in_progress",
+      "evidence": [
+        "src/App.tsx: decline; src/narrative/report.ts: transformDeclinedReport"
+      ],
+      "gameplayAction": "Revisit missing semantic access; explicitly save report.",
+      "gaps": [
+        "Short graph/report callback only; ordered decline, social/memory/control sequence missing."
+      ],
+      "verified": false
+    },
+    {
+      "id": "last-report",
+      "prdSections": [
+        41
+      ],
+      "status": "in_progress",
+      "evidence": [
+        "src/App.tsx: last-report; src/components/narrative/SubtitleBlock.tsx"
+      ],
+      "gameplayAction": "Save a late report with raw text retained.",
+      "gaps": [
+        "Prototype callback is not full authored last-report ending."
+      ],
+      "verified": false
+    },
+    {
+      "id": "empty-room-exit-flowers",
+      "prdSections": [
+        42,
+        43,
+        44
+      ],
+      "status": "deferred",
+      "evidence": [],
+      "gameplayAction": "Inspect previously seeded objects, exit, place flowers.",
+      "gaps": [
+        "First-study finish screen is not the ending."
+      ],
+      "verified": false
+    },
+    {
+      "id": "final-memory",
+      "prdSections": [
+        45
+      ],
+      "status": "in_progress",
+      "evidence": [
+        "src/narrative/report.ts: preserveFinalMemory; src/components/narrative/SubtitleBlock.tsx: FinalMemoryEditor"
+      ],
+      "gameplayAction": "Type and save exact final player memory.",
+      "gaps": [
+        "Exact-preservation API/component exists; ending integration missing."
+      ],
+      "verified": false
+    },
+    {
+      "id": "voice-subtitles",
+      "prdSections": [
+        54,
+        55,
+        56
+      ],
+      "status": "in_progress",
+      "evidence": [
+        "src/content/chapter-two.ts: chapterTwoDialogue; src/audio/AudioManager.ts; src/components/narrative/SubtitleBlock.tsx"
+      ],
+      "gameplayAction": "Hear character-specific English voices with aligned bilingual perceived subtitles.",
+      "gaps": [
+        "Script-only chapter-two refs; recordings, voice consistency, accents and playback not verified."
+      ],
+      "verified": false
+    },
+    {
+      "id": "optional-p1",
+      "prdSections": [
+        38,
+        40,
+        62
+      ],
+      "status": "deferred",
+      "evidence": [],
+      "gameplayAction": "Family memory, research legacy, test/social callbacks and relationship reactions.",
+      "gaps": [
+        "Backlog; no approved cancellation."
+      ],
+      "verified": false
+    },
+    {
+      "id": "optional-p2",
+      "prdSections": [
+        20,
+        62
+      ],
+      "status": "deferred",
+      "evidence": [],
+      "gameplayAction": "Third bakery visit, richer conference staging, expanded run/history.",
+      "gaps": [
+        "Backlog; no approved cancellation."
+      ],
+      "verified": false
+    },
+    {
+      "id": "optional-p3",
+      "prdSections": [
+        47
+      ],
+      "status": "deferred",
+      "evidence": [],
+      "gameplayAction": "Optional A Memory epilogue.",
+      "gaps": [
+        "Backlog; no approved cancellation."
+      ],
+      "verified": false
+    }
+  ],
+  "chapterTwoActions": [
+    {
+      "id": "classroom-a",
+      "prdSection": 21,
+      "status": "in_progress",
+      "implementationReviewStatus": "review",
+      "evidence": [
+        "src/content/chapter-two.ts: specifications / chapterTwoSteps",
+        "src/narrative/chapter-two.ts: applyChapterAction"
+      ],
+      "actions": [
+        "inspect memory-study",
+        "place category-cue → recall-results",
+        "connect classroom-a.connection"
+      ],
+      "gate": "Every prerequisite must be completed; wrong or premature action rejected; no generic next-button completion.",
+      "gaps": [
+        "Accessible university retrieval-cue inference replaces elementary causality. Earlier LOW exposure to identical lecture material still needs integration.",
+        "Action-driven integration and human play verification pending."
+      ],
+      "verified": false
+    },
+    {
+      "id": "classroom-b",
+      "prdSection": 21,
+      "status": "in_progress",
+      "implementationReviewStatus": "review",
+      "evidence": [
+        "src/content/chapter-two.ts: specifications / chapterTwoSteps",
+        "src/narrative/chapter-two.ts: applyChapterAction"
+      ],
+      "actions": [
+        "inspect trial-cards",
+        "place cue-retest → prediction-desk",
+        "connect classroom-b.connection before professor conclusion"
+      ],
+      "gate": "Every prerequisite must be completed; wrong or premature action rejected; no generic next-button completion.",
+      "gaps": [
+        "Prediction gate and held-conclusion contract implemented. Renderer must withhold conclusion; answer/flaw/question/silence branches remain absent.",
+        "Action-driven integration and human play verification pending."
+      ],
+      "verified": false
+    },
+    {
+      "id": "classroom-c",
+      "prdSection": 21,
+      "status": "in_progress",
+      "implementationReviewStatus": "review",
+      "evidence": [
+        "src/content/chapter-two.ts: specifications / chapterTwoSteps",
+        "src/narrative/chapter-two.ts: applyChapterAction"
+      ],
+      "actions": [
+        "inspect connection-notebook",
+        "connect classroom-c.connection / classroom-c.bakery / classroom-c.maze in any order"
+      ],
+      "gate": "Every prerequisite must be completed; wrong or premature action rejected; no generic next-button completion.",
+      "gaps": [
+        "Joyful cross-domain test/bakery/maze graph implemented. Full memory-language-identity/research/family/report web remains beyond this small slice.",
+        "Action-driven integration and human play verification pending."
+      ],
+      "verified": false
+    },
+    {
+      "id": "algernon-first-failure",
+      "prdSection": 24,
+      "status": "in_progress",
+      "implementationReviewStatus": "review",
+      "evidence": [
+        "src/content/chapter-two.ts: specifications / chapterTwoSteps",
+        "src/narrative/chapter-two.ts: applyChapterAction"
+      ],
+      "actions": [
+        "inspect prior-route-record",
+        "observe observed-failed-run",
+        "connect algernon-first-failure.connection"
+      ],
+      "gate": "Every prerequisite must be completed; wrong or premature action rejected; no generic next-button completion.",
+      "gaps": [
+        "Observation currently accepted as inspect event, not actual maze simulation. Need rapid run → dead end → pause → backtrack without warning; later repetition.",
+        "No integrated browser interaction/playtest evidence."
+      ],
+      "verified": false
+    },
+    {
+      "id": "investigation",
+      "prdSection": 25,
+      "status": "in_progress",
+      "implementationReviewStatus": "review",
+      "evidence": [
+        "src/content/chapter-two.ts: specifications / chapterTwoSteps",
+        "src/narrative/chapter-two.ts: applyChapterAction"
+      ],
+      "actions": [
+        "inspect care-log",
+        "inspect dated-run-cards",
+        "place repeated-hesitation → evidence-file",
+        "connect investigation.connection"
+      ],
+      "gate": "Every prerequisite must be completed; wrong or premature action rejected; no generic next-button completion.",
+      "gaps": [
+        "Missing completion time, memory retention, response latency and full four-node behavioral chain; expanded maze integration needed.",
+        "No integrated browser interaction/playtest evidence."
+      ],
+      "verified": false
+    },
+    {
+      "id": "shared-procedure",
+      "prdSection": 26,
+      "status": "in_progress",
+      "implementationReviewStatus": "review",
+      "evidence": [
+        "src/content/chapter-two.ts: specifications / chapterTwoSteps",
+        "src/narrative/chapter-two.ts: applyChapterAction"
+      ],
+      "actions": [
+        "inspect algernon-summary",
+        "inspect charlie-summary",
+        "manually connect shared-procedure.connection"
+      ],
+      "gate": "Every prerequisite must be completed; wrong or premature action rejected; no generic next-button completion.",
+      "gaps": [
+        "Manual gate exists. Full procedure/gain/decline precursor chains and quiet reveal not implemented; avoid auto-playing explanatory perception text at reveal.",
+        "No integrated browser interaction/playtest evidence."
+      ],
+      "verified": false
+    },
+    {
+      "id": "research",
+      "prdSection": 28,
+      "status": "in_progress",
+      "implementationReviewStatus": "review",
+      "evidence": [
+        "src/content/chapter-two.ts: specifications / chapterTwoSteps",
+        "src/narrative/chapter-two.ts: applyChapterAction"
+      ],
+      "actions": [
+        "inspect results-stack",
+        "place contrary-run → draft-evidence",
+        "connect research.connection"
+      ],
+      "gate": "Every prerequisite must be completed; wrong or premature action rejected; no generic next-button completion.",
+      "gaps": [
+        "Evidence task only; lacks escalating research sequence, writing/navigation/run reuse, and Algernon behavior as clock.",
+        "No integrated browser interaction/playtest evidence."
+      ],
+      "verified": false
+    },
+    {
+      "id": "conference",
+      "prdSection": 30,
+      "status": "in_progress",
+      "implementationReviewStatus": "review",
+      "evidence": [
+        "src/content/chapter-two.ts: specifications / chapterTwoSteps",
+        "src/narrative/chapter-two.ts: applyChapterAction"
+      ],
+      "actions": [
+        "inspect projected-slide",
+        "inspect research-notes",
+        "place contrary-run → slide-annotation",
+        "connect conference.connection"
+      ],
+      "gate": "Every prerequisite must be completed; wrong or premature action rejected; no generic next-button completion.",
+      "gaps": [
+        "Evidence annotation prototype only; objectification graph, public disclosure staging, local reactions and callback missing.",
+        "No integrated browser interaction/playtest evidence."
+      ],
+      "verified": false
+    }
+  ],
+  "updatedAt": "2026-09-12T07:22:51.848Z"
+}

@@ -1,6 +1,10 @@
 # ALGERNON Development Constitution
 
 ## Product constraints
+- Latest visual acceptance requirement: characters and scene illustration assets must be generated raster illustrations, not SVG/CSS/programmatic drawings. Existing procedural artwork was rejected and must not be presented as finished art.
+- Environments are real walkable 3D spaces with first-person look and movement, using generated painted textures and layered raster characters. Charlie has a consistent character design for visible hands; no persistent third-person avatar is required.
+- Maze inspection must support enlargement, zoom and meaningful nonverbal interaction with Algernon, in addition to orbit and reset.
+- Production voice must be saved English audio files with consistent casting. Browser speech synthesis is not an accepted finished substitute.
 - Runtime language: English voice, English subtitles, Simplified Chinese subtitles.
 - Objective reality stays stable; cognition changes perception and affordances.
 - Player skill remains intact during decline; Charlie's access changes.

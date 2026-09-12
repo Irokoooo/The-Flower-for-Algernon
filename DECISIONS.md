@@ -1,5 +1,7 @@
 # Decision Log
 
+- ADR-018 (supersedes prototype presentation): User rejected SVG characters and environment art. Generate raster literary illustrations; compose them in genuinely explorable 3D rooms. Charlie hand design is now required. Expandable maze with mouse interaction is required. Final English audio must be pre-generated recordings, not browser synthesis. Art production blocked until an available generation service is configured; do not claim prototype acceptance or silently substitute art.
+
 - ADR-001: Objective reality and cognition rendering are separate.
 - ADR-002: Player equals Charlie initially; decline creates player cognition greater than Charlie's access.
 - ADR-003: Dialogue branches locally and reconverges globally.
