@@ -1,0 +1,1 @@
+.illustration-stage{position:relative;isolation:isolate;overflow:hidden}.illustration-stage__layers,.illustration-stage__content{position:absolute;inset:0}.illustration-stage__layer{position:absolute;inset:-2%;transform:translateZ(0) translateX(calc(var(--depth) * 1px));pointer-events:none}.illustration-stage__content{position:relative;z-index:2}

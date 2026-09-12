@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "productionRecordingsPresent": false,
+  "candidates": [
+    {
+      "id": "candidate.howler",
+      "kind": "tool",
+      "source": "https://github.com/goldfire/howler.js",
+      "license": "MIT",
+      "status": "planned",
+      "note": "Mature playback option; not bundled.",
+      "verification": "License fetched successfully from https://raw.githubusercontent.com/goldfire/howler.js/master/LICENSE.md on 2026-09-12; MIT text observed, mutable branch, release not pinned."
+    },
+    {
+      "id": "candidate.piper",
+      "kind": "tool",
+      "source": "https://github.com/rhasspy/piper",
+      "license": "MIT observed only for historical rhasspy/piper master LICENSE.md; not a claim about current Piper distributions or models",
+      "status": "planned",
+      "note": "Internal English audition option; review model license per voice.",
+      "verification": "License fetched successfully from https://raw.githubusercontent.com/rhasspy/piper/master/LICENSE.md on 2026-09-12. Version/commit not pinned; current maintenance, successor repository and model licenses unverified. Subsequent README fetch failed."
+    },
+    {
+      "id": "candidate.freesound",
+      "kind": "asset-source",
+      "source": "https://freesound.org/",
+      "license": "Per-file license",
+      "status": "planned",
+      "note": "No file selected; exact provenance required.",
+      "verification": "Not fetched; general candidate only. No asset selected or license reviewed."
+    }
+  ],
+  "assets": [
+    {
+      "id": "audio.room-tone.prototype",
+      "filename": "assets/audio/room-tone-prototype.wav",
+      "kind": "ambience",
+      "status": "available",
+      "productionStatus": "original-generated-prototype",
+      "durationSeconds": 4,
+      "loop": true,
+      "sampleRate": 22050,
+      "channels": 1,
+      "bitsPerSample": 16,
+      "bytes": 176444,
+      "sha256": "6335c5f7756fb5a78fc360f3a112b57797e2afd7b16f9a05116a4f9ea0f5adf3",
+      "provenance": {
+        "source": {
+          "kind": "original",
+          "url": null,
+          "creator": "ALGERNON project / procedural generator"
+        },
+        "license": {
+          "identifier": "LicenseRef-ALGERNON-Original-Prototype",
+          "evidence": "assets/audio/PROVENANCE.md",
+          "attribution": "Original procedural audio for ALGERNON",
+          "reviewed": true
+        },
+        "adaptations": [
+          "Generated from mathematical waveforms and seeded noise with generate-prototypes.mjs; no external samples."
+        ]
+      }
+    },
+    {
+      "id": "audio.paper.prototype",
+      "filename": "assets/audio/paper-soft-prototype.wav",
+      "kind": "sfx",
+      "status": "available",
+      "productionStatus": "original-generated-prototype",
+      "durationSeconds": 0.65,
+      "loop": false,
+      "sampleRate": 22050,
+      "channels": 1,
+      "bitsPerSample": 16,
+      "bytes": 28710,
+      "sha256": "2111154c29c5434ff7f993b665625b7827cf2d985625d5d1c1a17d2da2712a1c",
+      "provenance": {
+        "source": {
+          "kind": "original",
+          "url": null,
+          "creator": "ALGERNON project / procedural generator"
+        },
+        "license": {
+          "identifier": "LicenseRef-ALGERNON-Original-Prototype",
+          "evidence": "assets/audio/PROVENANCE.md",
+          "attribution": "Original procedural audio for ALGERNON",
+          "reviewed": true
+        },
+        "adaptations": [
+          "Generated from mathematical waveforms and seeded noise with generate-prototypes.mjs; no external samples."
+        ]
+      }
+    },
+    {
+      "id": "audio.chime.prototype",
+      "filename": "assets/audio/chime-soft-prototype.wav",
+      "kind": "sfx",
+      "status": "available",
+      "productionStatus": "original-generated-prototype",
+      "durationSeconds": 1.2,
+      "loop": false,
+      "sampleRate": 22050,
+      "channels": 1,
+      "bitsPerSample": 16,
+      "bytes": 52964,
+      "sha256": "da3691fabac17c834b3f5cbb39d1ae5ba7548485d8ce746147b2edc981ad2aa4",
+      "provenance": {
+        "source": {
+          "kind": "original",
+          "url": null,
+          "creator": "ALGERNON project / procedural generator"
+        },
+        "license": {
+          "identifier": "LicenseRef-ALGERNON-Original-Prototype",
+          "evidence": "assets/audio/PROVENANCE.md",
+          "attribution": "Original procedural audio for ALGERNON",
+          "reviewed": true
+        },
+        "adaptations": [
+          "Generated from mathematical waveforms and seeded noise with generate-prototypes.mjs; no external samples."
+        ]
+      }
+    }
+  ]
+}

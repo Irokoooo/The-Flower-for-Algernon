@@ -1,0 +1,22 @@
+.illustrated-npc{position:relative;display:inline-grid;place-items:center;width:min(100%,340px);border:0;background:none;color:#eee5cc;cursor:pointer;padding:0;font:inherit;touch-action:manipulation}
+.illustrated-npc__puppet{position:relative;display:grid;width:100%;place-items:center;animation:npc-breathe 5.4s ease-in-out infinite;transform-origin:50% 95%}
+.illustrated-npc__part{grid-area:1/1;transform:translateY(calc(var(--depth)*-1px))}
+.illustrated-npc__aura{position:absolute;inset:12% 0 4%;border-radius:50%;background:radial-gradient(ellipse,#dcb67130,transparent 68%);opacity:.2;transition:opacity .4s}
+.illustrated-npc:hover .illustrated-npc__aura,.illustrated-npc:focus-visible .illustrated-npc__aura{opacity:1}
+.illustrated-npc__name{font:small-caps 600 14px/1.5 Georgia,serif;letter-spacing:.13em;text-shadow:0 1px 6px #202e27;background:#26382cb3;padding:3px 16px;border-radius:2px}
+.illustrated-npc:focus-visible{outline:2px solid #dfbb7e;outline-offset:6px;border-radius:8px}.illustrated-npc:disabled{cursor:default}
+.npc-art{display:block;width:100%;overflow:visible}.npc-art__head{transform:rotate(calc(var(--gaze-x)*1.5deg));transform-origin:160px 205px;transition:transform .35s}
+.npc-art__gaze{transform:translate(calc(var(--gaze-x)*3px),calc(var(--gaze-y)*2px));transition:transform .12s}
+.npc-art__eyes{transform-box:fill-box;transform-origin:center;animation:npc-blink 6.7s infinite}
+.npc-art__brows,.npc-art__mouth{transition:transform .35s;transform-box:fill-box;transform-origin:center}
+.illustrated-npc[data-mood=warm] .npc-art__mouth{transform:scaleY(2)}
+.illustrated-npc[data-mood=uneasy] .npc-art__brows,.illustrated-npc[data-mood=guilty] .npc-art__brows{transform:rotate(-6deg) translateY(-2px)}
+.illustrated-npc[data-mood=angry] .npc-art__brows{transform:translateY(4px)}
+.illustrated-npc[data-mood=guilty] .npc-art__head{transform:rotate(-4deg) translateY(3px)}
+.illustrated-npc[data-speaking=true] .npc-art__mouth{animation:npc-speak .32s ease-in-out infinite alternate}
+.illustrated-npc:hover .npc-art__body,.illustrated-npc:focus-visible .npc-art__body{translate:0 -3px}.npc-art__body{transition:translate .35s}
+.illustrated-npc:active .npc-art__head{transform:translateY(4px) rotate(2deg)}
+@keyframes npc-breathe{50%{transform:translateY(-2px) scaleY(1.006)}}
+@keyframes npc-blink{0%,43%,46%,100%{transform:scaleY(1)}44%,45%{transform:scaleY(.08)}}
+@keyframes npc-speak{to{transform:scaleY(2.8) translateY(1px)}}
+@media(prefers-reduced-motion:reduce){.illustrated-npc *{animation:none!important;transition:none!important}.npc-art__head,.npc-art__gaze{transform:none!important}}

@@ -1,0 +1,2 @@
+export interface Scene { id: string; enter?(): void; exit?(): void; }
+export class SceneManager { private scenes = new Map<string, Scene>(); private active?: string; register(scene: Scene) { this.scenes.set(scene.id, scene); } goTo(id: string) { this.scenes.get(this.active ?? '')?.exit?.(); this.scenes.get(id)?.enter?.(); this.active = id; } getActive() { return this.active; } list() { return [...this.scenes.values()]; } }

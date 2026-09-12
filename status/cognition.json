@@ -1,0 +1,6 @@
+{
+  "note": "Canonical Core imports; click-to-connect Graph and functional Three.js maze implemented. Awaiting three/@types/three dependencies and Lead build/integration; procedural art only.",
+  "status": "review",
+  "progress": 75,
+  "updatedAt": "2026-09-12T05:49:19.7531391Z"
+}

@@ -1,22 +1,720 @@
 {
-  "updatedAt": "2026-09-12",
-  "overall": 5,
+  "updatedAt": "2026-09-12T06:12:00Z",
+  "overall": 18,
   "agents": [
-    {"id":"core","name":"Core / Architecture","status":"in_progress","progress":10,"note":"Build the initial app shell and shared contracts"},
-    {"id":"cognition","name":"Cognition","status":"in_progress","progress":5,"note":"Designing reusable Graph and persistent maze contracts"},
-    {"id":"narrative","name":"Narrative / Content","status":"in_progress","progress":5,"note":"Preparing bilingual dialogue and perception content model"},
-    {"id":"scene-kit","name":"Scene Kit","status":"in_progress","progress":5,"note":"Planning illustrated interactive NPC presentation"},
-    {"id":"audio-assets","name":"Audio / Assets","status":"in_progress","progress":5,"note":"Mapping voice profiles, sources, and licensed asset workflow"}
+    {
+      "id": "core",
+      "name": "Core / Architecture",
+      "status": "complete",
+      "progress": 100,
+      "note": "Vite shell, shared contracts, deterministic flow, and build pass",
+      "nickname": "Carson"
+    },
+    {
+      "id": "cognition",
+      "name": "Cognition",
+      "status": "review",
+      "progress": 75,
+      "note": "Functional Three.js maze and click-to-connect Graph; app integration review pending",
+      "nickname": "Hubble"
+    },
+    {
+      "id": "narrative",
+      "name": "Narrative / Content",
+      "status": "review",
+      "progress": 90,
+      "note": "First slice bilingual content, report save logic, and decline transformation ready",
+      "nickname": "Darwin"
+    },
+    {
+      "id": "scene-kit",
+      "name": "Scene Kit",
+      "status": "review",
+      "progress": 65,
+      "note": "Interactive illustrated NPC prototype and lab/bakery stages ready; final raster art pending",
+      "nickname": "Harvey"
+    },
+    {
+      "id": "audio-assets",
+      "name": "Audio / Assets",
+      "status": "review",
+      "progress": 95,
+      "note": "AudioManager, English voice profiles, three original WAV prototypes, and provenance ready",
+      "nickname": "Kepler"
+    }
   ],
   "coverage": [
-    {"title":"Opening Lab","status":"planned","priority":"P0"},{"title":"Psychological Test","status":"planned","priority":"P0"},{"title":"Algernon Maze","status":"planned","priority":"P0"},{"title":"Progress Report + Transition","status":"planned","priority":"P0"},{"title":"Bakery Visits 1 + 2","status":"planned","priority":"P0"},{"title":"Classroom","status":"planned","priority":"P0"},{"title":"Investigation + Research","status":"planned","priority":"P0"},{"title":"Conference","status":"planned","priority":"P0"},{"title":"Decline + Ending","status":"planned","priority":"P0"}
+    {
+      "id": "prd-0",
+      "section": 0,
+      "title": "INSTRUCTIONS TO THE LEAD DEVELOPMENT AGENT",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-1",
+      "section": 1,
+      "title": "PRODUCT VISION",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-2",
+      "section": 2,
+      "title": "CORE EMOTIONAL ARC",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-3",
+      "section": 3,
+      "title": "PLAYER–CHARLIE RELATIONSHIP",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-4",
+      "section": 4,
+      "title": "DESIGN INVARIANTS — DO NOT VIOLATE",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-5",
+      "section": 5,
+      "title": "CORE GAMEPLAY VOCABULARY",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-6",
+      "section": 6,
+      "title": "COGNITION STATE",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-7",
+      "section": 7,
+      "title": "VISUAL LANGUAGE",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-8",
+      "section": 8,
+      "title": "WORLD FORMAT",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-9",
+      "section": 9,
+      "title": "COGNITION GRAPH — CORE SYSTEM",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-10",
+      "section": 10,
+      "title": "OPENING — LABORATORY",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-11",
+      "section": 11,
+      "title": "PSYCHOLOGICAL TEST",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-12",
+      "section": 12,
+      "title": "ALGERNON MAZE",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-13",
+      "section": 13,
+      "title": "PROGRESS REPORT / DIARY",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-14",
+      "section": 14,
+      "title": "PROGRESS REPORT TRANSITION",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-15",
+      "section": 15,
+      "title": "COGNITION RUN",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-16",
+      "section": 16,
+      "title": "BAKERY — VISIT ONE",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-17",
+      "section": 17,
+      "title": "BAKERY — VISIT TWO",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-18",
+      "section": 18,
+      "title": "BAKERY DIALOGUE CHOICES",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-19",
+      "section": 19,
+      "title": "BAKERY CORE REALIZATION",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-20",
+      "section": 20,
+      "title": "BAKERY OPTIONAL THIRD VISIT",
+      "kind": "experience",
+      "priority": "P2",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-21",
+      "section": 21,
+      "title": "UNIVERSITY CLASSROOM — COGNITIVE POWER FANTASY",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-22",
+      "section": 22,
+      "title": "PEAK FREE EXPLORATION",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-23",
+      "section": 23,
+      "title": "PEAK PROGRESS REPORT",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-24",
+      "section": 24,
+      "title": "FIRST ALGERNON FAILURE",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-25",
+      "section": 25,
+      "title": "ALGERNON INVESTIGATION",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-26",
+      "section": 26,
+      "title": "THE CONNECTION",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-27",
+      "section": 27,
+      "title": "THE RACE AGAINST HIMSELF",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-28",
+      "section": 28,
+      "title": "RESEARCH RACE",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-29",
+      "section": 29,
+      "title": "OPTIONAL VISIT TO ALGERNON",
+      "kind": "experience",
+      "priority": "P1",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-30",
+      "section": 30,
+      "title": "ACADEMIC CONFERENCE",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-31",
+      "section": 31,
+      "title": "CONFERENCE CHOICE",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-32",
+      "section": 32,
+      "title": "“WHAT DO YOU SEE?” CALLBACK",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-33",
+      "section": 33,
+      "title": "FREE ALGERNON",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-34",
+      "section": 34,
+      "title": "FIRST SIGNS OF CHARLIE'S DECLINE",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-35",
+      "section": 35,
+      "title": "THREE BETRAYALS",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-36",
+      "section": 36,
+      "title": "DECLINE ORDER",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-37",
+      "section": 37,
+      "title": "SOCIAL DECLINE",
+      "kind": "experience",
+      "priority": "P1",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-38",
+      "section": 38,
+      "title": "MEMORY DECLINE",
+      "kind": "experience",
+      "priority": "P1",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-39",
+      "section": 39,
+      "title": "CONTROL DECLINE CALLBACK",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-40",
+      "section": 40,
+      "title": "RESEARCH LEGACY",
+      "kind": "experience",
+      "priority": "P1",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-41",
+      "section": 41,
+      "title": "LAST PROGRESS REPORT",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-42",
+      "section": 42,
+      "title": "EMPTY ROOM",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-43",
+      "section": 43,
+      "title": "EXIT",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-44",
+      "section": 44,
+      "title": "FLOWERS FOR ALGERNON — EPILOGUE",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-45",
+      "section": 45,
+      "title": "FINAL META ENDING",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-46",
+      "section": 46,
+      "title": "THREE CENTRAL QUESTIONS",
+      "kind": "experience",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-47",
+      "section": 47,
+      "title": "OPTIONAL P3 — “A MEMORY”",
+      "kind": "experience",
+      "priority": "P3",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-48",
+      "section": 48,
+      "title": "TECHNICAL ARCHITECTURE",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-49",
+      "section": 49,
+      "title": "ARCHITECTURE MODEL",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-50",
+      "section": 50,
+      "title": "REPOSITORY STRUCTURE",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-51",
+      "section": 51,
+      "title": "PROJECT-SPECIFIC AGENT SKILLS",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-52",
+      "section": 52,
+      "title": "ASSET PIPELINE",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-53",
+      "section": 53,
+      "title": "CHARACTER ASSETS",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-54",
+      "section": 54,
+      "title": "AUDIO ARCHITECTURE",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-55",
+      "section": 55,
+      "title": "TTS / SOUND GENERATION",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-56",
+      "section": 56,
+      "title": "CONTENT ARCHITECTURE",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-57",
+      "section": 57,
+      "title": "PARALLEL AGENT DEVELOPMENT",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-58",
+      "section": 58,
+      "title": "AGENT DEVELOPMENT WAVES",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-59",
+      "section": 59,
+      "title": "MULTI-AGENT CONCURRENCY PROTOCOL",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-60",
+      "section": 60,
+      "title": "TESTING",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-61",
+      "section": 61,
+      "title": "HACKATHON PRIORITY",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-62",
+      "section": 62,
+      "title": "PRIORITY LEVELS",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-63",
+      "section": 63,
+      "title": "COPYRIGHT / ADAPTATION RULE",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-64",
+      "section": 64,
+      "title": "WHAT THE AGENT MUST NOT DO",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-65",
+      "section": 65,
+      "title": "ACCEPTANCE TEST — THE EXPERIENCE",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-66",
+      "section": 66,
+      "title": "ENVIRONMENTAL STORYTELLING PRINCIPLE",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-67",
+      "section": 67,
+      "title": "PLAYER AGENCY PRINCIPLE",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-68",
+      "section": 68,
+      "title": "AI USAGE PRINCIPLE",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-69",
+      "section": 69,
+      "title": "LONG-TERM DEVELOPMENT PRINCIPLE",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-70",
+      "section": 70,
+      "title": "DECISION LOG SEEDS",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    },
+    {
+      "id": "prd-71",
+      "section": 71,
+      "title": "FINAL PRODUCT THESIS",
+      "kind": "constraint",
+      "priority": "P0",
+      "status": "planned",
+      "evidence": ""
+    }
   ],
   "assets": [],
   "designDecisions": [
-    {"title":"First-person Charlie","status":"decided"},
-    {"title":"Interactive illustrated NPCs","status":"decided"},
-    {"title":"Persistent draggable 3D Algernon maze","status":"decided"},
-    {"title":"Distinct English voices and accents","status":"decided"},
-    {"title":"Reuse-first licensed asset workflow","status":"decided"}
-  ]
+    {
+      "title": "First-person Charlie",
+      "status": "decided"
+    },
+    {
+      "title": "Interactive illustrated NPCs",
+      "status": "decided"
+    },
+    {
+      "title": "Persistent draggable 3D Algernon maze",
+      "status": "decided"
+    },
+    {
+      "title": "Distinct English voices and accents",
+      "status": "decided"
+    },
+    {
+      "title": "Reuse-first licensed asset workflow",
+      "status": "decided"
+    }
+  ],
+  "milestone": "Wave 1 — first playable study integrated; human playtest pending"
 }
