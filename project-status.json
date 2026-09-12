@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-12T07:35:20.104982+00:00",
+  "updatedAt": "2026-09-12T08:17:39.229990+00:00",
   "overall": 0,
   "agents": [
     {
@@ -36,7 +36,7 @@
     },
     {
       "id": "audio-assets",
-      "name": "Audio / Assets",
+      "name": "Diary interaction / Audio",
       "status": "in_progress",
       "progress": 0,
       "note": "用户未验收旧原型；按新的视觉与交互要求重做",
@@ -159,7 +159,7 @@
       "kind": "experience",
       "priority": "P0",
       "status": "in_progress",
-      "evidence": "src/cognition/MazeBox.tsx; src/cognition/movement.ts；待补：Verify full 3D interaction, camera isolation, behavior progression and empty-maze narrative integration."
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-13",
@@ -168,7 +168,7 @@
       "kind": "experience",
       "priority": "P0",
       "status": "in_progress",
-      "evidence": "src/narrative/report.ts: saveProgressReport; src/components/narrative/SubtitleBlock.tsx: ReportEditor；待补：Component/logic ready; full betrayal pacing unverified."
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-14",
@@ -177,7 +177,7 @@
       "kind": "experience",
       "priority": "P0",
       "status": "in_progress",
-      "evidence": "src/App.tsx: bridge；待补：Timed bridge exists; full signature visual/audio treatment unverified."
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-15",
@@ -239,8 +239,8 @@
       "title": "UNIVERSITY CLASSROOM — COGNITIVE POWER FANTASY",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-22",
@@ -258,7 +258,7 @@
       "kind": "experience",
       "priority": "P0",
       "status": "in_progress",
-      "evidence": "src/narrative/report.ts; src/App.tsx: peak-report；待补：Raw-preserving implementation; pacing unverified."
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-24",
@@ -266,8 +266,8 @@
       "title": "FIRST ALGERNON FAILURE",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-25",
@@ -275,8 +275,8 @@
       "title": "ALGERNON INVESTIGATION",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-26",
@@ -284,8 +284,8 @@
       "title": "THE CONNECTION",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-27",
@@ -302,8 +302,8 @@
       "title": "RESEARCH RACE",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-29",
@@ -320,8 +320,8 @@
       "title": "ACADEMIC CONFERENCE",
       "kind": "experience",
       "priority": "P0",
-      "status": "planned",
-      "evidence": ""
+      "status": "in_progress",
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-31",
@@ -348,7 +348,7 @@
       "kind": "experience",
       "priority": "P0",
       "status": "in_progress",
-      "evidence": "；待补：Maze capability alone does not implement this story event."
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-34",
@@ -420,7 +420,7 @@
       "kind": "experience",
       "priority": "P0",
       "status": "in_progress",
-      "evidence": "src/App.tsx: last-report; src/components/narrative/SubtitleBlock.tsx；待补：Prototype callback is not full authored last-report ending."
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-42",
@@ -429,7 +429,7 @@
       "kind": "experience",
       "priority": "P0",
       "status": "in_progress",
-      "evidence": "；待补：First-study finish screen is not the ending."
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-43",
@@ -438,7 +438,7 @@
       "kind": "experience",
       "priority": "P0",
       "status": "in_progress",
-      "evidence": "；待补：First-study finish screen is not the ending."
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-44",
@@ -447,7 +447,7 @@
       "kind": "experience",
       "priority": "P0",
       "status": "in_progress",
-      "evidence": "；待补：First-study finish screen is not the ending."
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-45",
@@ -456,7 +456,7 @@
       "kind": "experience",
       "priority": "P0",
       "status": "in_progress",
-      "evidence": "src/narrative/report.ts: preserveFinalMemory; src/components/narrative/SubtitleBlock.tsx: FinalMemoryEditor；待补：Exact-preservation API/component exists; ending integration missing."
+      "evidence": "本轮已接入对应机制或主线节点，详见 docs/INTERACTION_HANDOFF_2026-09-12.md；未经过完整人工验收。"
     },
     {
       "id": "prd-46",
@@ -716,7 +716,7 @@
       "status": "decided"
     }
   ],
-  "milestone": "插画角色与第一人称3D切片整合；课堂推理接入；英语录音服务阻塞",
+  "milestone": "中文拼贴日记与自动转场已跑通；悬浮迷宫、中央思绪、主线节点已整合",
   "production": {
     "budgetLimitUSD": 100,
     "reservationUSD": 13,
@@ -724,5 +724,35 @@
     "voice": "尚无正式MP3：speech POST曾返回403，单次SDK诊断超时；无自动批量重试。",
     "music": "20秒原创循环配乐已接入；待人工听感与混音验收。",
     "art": "研究员、Alice、面包师、查理双手及墙面地板已生成；表情与动作变体持续接入。"
+  },
+  "currentIteration": {
+    "title": "本轮交互反馈落实",
+    "items": [
+      {
+        "title": "悬浮完整迷宫盒",
+        "note": "透明实体盒与分阶段隔板已接入；放大视觉已验证，保留喂食/旋转。",
+        "status": "review"
+      },
+      {
+        "title": "透明思绪与提示",
+        "note": "查理思绪中央浮现、NPC字幕羽化渐变；浏览器已确认。",
+        "status": "review"
+      },
+      {
+        "title": "主线与转场",
+        "note": "课堂A/B/C、调查、研究、会议与结局节点已接入；后段空间仍为复用场景，待完整试玩。",
+        "status": "review"
+      },
+      {
+        "title": "双手画面边界",
+        "note": "左右手UV分别定位，衣袖延伸出画面下缘；浏览器已确认。",
+        "status": "review"
+      },
+      {
+        "title": "中文词片拼贴日记",
+        "note": "短词片组句/重排/撤回/保存，首篇→面包店转场与刷新恢复已验证。",
+        "status": "review"
+      }
+    ]
   }
 }

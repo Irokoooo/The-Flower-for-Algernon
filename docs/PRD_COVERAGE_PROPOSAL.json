@@ -29,13 +29,11 @@
     ],
     "evidence": "8 steps, corrected university A/B/C, 40 script-only bilingual voice entries, canonical graphs and ordered action gate. B conclusion currently text-only, not in the TTS list.",
     "validation": "Corrected classroom typecheck and free-order/prediction-gate smoke checks passed; no human gameplay verification.",
-    "runtimeEvidence": "No new browser verification performed. Earlier App inspection covered first-study flow only; concurrent Lead changes must be inspected before asserting current integration.",
+    "runtimeEvidence": "App now iterates all eight chapter steps through applyChapterAction, readable labels, picked-card EvidencePlacement and shared graph. First diary/bakery and resume browser smoke passed; later stages await full human playthrough.",
     "requiredIntegration": [
-      "Map inspect targetIds to world hotspots and actual observations.",
-      "Implement item-to-target placement, not a dialogue acknowledgment.",
-      "Route player graph edge events through applyChapterAction; do not auto-connect.",
-      "Keep progress per step in Core; advance only when ready; last ready step hands back to Core.",
-      "Play phase-specific line IDs with matching en/zhHans; voice entries are scripts, not recordings."
+      "Author distinct university/research/conference spatial staging.",
+      "Validate complete later-story playthrough and emotional pacing.",
+      "Record phase-matched English dialogue; current entries are scripts only."
     ]
   },
   "requirements": [
@@ -563,5 +561,22 @@
       "verified": false
     }
   ],
-  "updatedAt": "2026-09-12T07:22:51.848Z"
+  "updatedAt": "2026-09-12T07:57:28.882Z",
+  "diaryCollage": {
+    "status": "review",
+    "source": "src/content/diary-collage.ts",
+    "evidence": "3 entries, 43 unique Chinese word/phrase fragments; minFragments=3 each; no sentence-ending punctuation. Structural validation passed; UI composition not verified.",
+    "integration": "Kepler component pending; no player-facing integration verified.",
+    "prdPlacement": {
+      "first": "After initial test/maze; before transition/bakery",
+      "peak": "After university/free exploration; before first Algernon failure",
+      "last": "Late decline; before broken transition/empty room"
+    },
+    "gaps": [
+      "Collage alone does not fulfill PRD free typing at peak/last. Preserve free-writing path.",
+      "Last fragments are authored content, not automatic replacement of player text.",
+      "Final player memory is separate and must remain unchanged."
+    ],
+    "verified": false
+  }
 }

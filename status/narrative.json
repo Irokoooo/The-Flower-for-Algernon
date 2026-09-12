@@ -1,6 +1,6 @@
 {
   "status": "review",
-  "note": "Corrected university A/B/C ready for Carson: retrieval inference, prediction before professor conclusion, joyful free-order test/bakery/maze links. Later steps preserved. Coverage proposal corrected; integration/playtest pending. Handoff: docs/CARSON_CHAPTER_TWO_HANDOFF.md.",
+  "note": "Kepler revision ready: diary collage now short phrase/word assembly, counts first14/peak15/last14; minFragments=3 throughout. Reorder freely, no per-card punctuation or fixed sentence answer. See docs/KEPLER_DIARY_COLLAGE_HANDOFF.md. Structural checks passed; component integration pending.",
   "progress": 90,
-  "updatedAt": "2026-09-12T07:22:51.853Z"
+  "updatedAt": "2026-09-12T07:57:28.855Z"
 }

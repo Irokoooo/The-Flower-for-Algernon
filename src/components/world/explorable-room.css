@@ -6,3 +6,12 @@
 .explorable-room__entry p{max-width:470px;line-height:1.7;background:#27362ed9;padding:8px 14px;font-size:14px}
 .explorable-room__aim{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;text-align:center;text-shadow:0 1px 3px black}.explorable-room__aim p{position:absolute;top:20px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#24372de6;padding:8px 14px}
 .explorable-room__error{position:absolute;bottom:12px;left:16px;right:16px;background:#553e30ed;padding:12px;font-size:14px}
+.explorable-room__help{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);max-width:80%;padding:6px 10px;background:#253229d9;color:#f1e7d1;font:12px/1.5 Georgia,serif;text-align:center;pointer-events:none}
+.explorable-room__canvas canvas:focus,.explorable-room__canvas canvas:focus-visible{outline:none}
+@media(max-width:600px){.explorable-room__help{font-size:11px;width:66%;bottom:8px}.explorable-room__aim p{white-space:normal;min-width:100px}.explorable-room__label{max-width:42%;font-size:10px}}
+/* Airy edge fades preserve the room beneath controls. */
+.explorable-room__entry{background:radial-gradient(ellipse at center,#25362d30 0%,#2030280a 55%,transparent 80%)}
+.explorable-room__entry p,.explorable-room__aim p,.explorable-room__help{background:radial-gradient(ellipse at center,#24372d8c 0%,#24372d45 48%,transparent 76%);text-shadow:0 1px 4px #14241d;padding:16px 28px}
+.explorable-room__entry button{background:linear-gradient(110deg,#dac29308,#dac293b3 25%,#dac293b3 75%,#dac29308);border:0;padding:16px 36px;text-shadow:0 1px 5px #efe1b955}
+.explorable-room__aim p{top:14px}.explorable-room__help{bottom:0;max-width:92%}
+

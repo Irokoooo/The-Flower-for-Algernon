@@ -25,6 +25,114 @@
 }
 .classroom-panel .primary { white-space: normal; flex-wrap: wrap; min-width: 0; width: 100%; text-align: left; }
 .classroom-panel .primary span { line-height: 1.5; }
+/* Translucent thoughts and floating paper: the room remains part of every beat. */
+.modal-backdrop {
+  background: radial-gradient(ellipse at center, #17281e82 10%, #17281e24 65%, transparent 100%);
+  padding: 72px 24px 28px;
+  animation: atmosphere-in 600ms ease both;
+}
+.task-modal {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: calc(100svh - 112px);
+  padding: 24px 52px 38px;
+  background: radial-gradient(ellipse at center, #14291edb 0%, #14291eae 46%, #14291e48 73%, transparent 100%);
+  border: 0;
+  box-shadow: none;
+  scrollbar-width: thin;
+  scrollbar-color: #d7c49a55 transparent;
+  text-shadow: 0 2px 12px #07180eaa;
+  animation: paper-emerge 650ms cubic-bezier(.2,.7,.2,1) both;
+}
+.close-task { color: #f1e2c3; padding: 10px 0 18px; min-height: 44px; opacity: .8; }
+.interaction-panel { padding: 8px 0 22px; }
+.interaction-panel h2 { font-size: clamp(26px, 3.1vw, 42px); }
+.interaction-panel .primary, .choices button, .bread-action {
+  color: #f9edcf;
+  border: 0;
+  border-bottom: 1px solid #eed4a75c;
+  background: linear-gradient(100deg, transparent, #d7c69623 18%, #d7c69614 78%, transparent);
+  text-shadow: 0 1px 7px #102016;
+  transition: background 220ms, translate 220ms, border-color 220ms;
+}
+.interaction-panel .primary:hover:not(:disabled), .choices button:hover, .bread-action:hover:not(:disabled) {
+  background: linear-gradient(100deg, transparent, #eee0b844 22%, #d7c69622 78%, transparent);
+  border-color: #f3dfaf;
+  translate: 0 -3px;
+}
+.interaction-panel .primary:disabled { opacity: .45; }
+.interaction-panel .cognition-graph__node {
+  background: linear-gradient(135deg, #dfdabce8, #b7c3a0d1);
+  color: #253e30;
+  border: 1px solid #e9dfb777;
+  border-radius: 2px 7px 3px 5px;
+  box-shadow: 0 6px 16px #071c1829;
+  text-shadow: none;
+  transition: translate 180ms, box-shadow 180ms;
+}
+.interaction-panel .cognition-graph__node:hover { translate: 0 -3px; box-shadow: 0 10px 22px #071c183d; }
+.interaction-panel .cognition-graph__node span[lang=zh-Hans] { color: #385742; }
+.subtitles.dialogue-card {
+  border: 0;
+  box-shadow: none;
+  background: radial-gradient(ellipse at center, #10231ec9 0%, #10231e8c 48%, #10231e20 76%, transparent 100%);
+  text-shadow: 0 2px 8px #07180e;
+  padding: 30px 52px 24px;
+  animation: thought-emerge 650ms cubic-bezier(.2,.7,.2,1) both;
+}
+.subtitles.thought-card {
+  top: 42%; bottom: auto;
+  transform: translate(-50%, -50%);
+  width: min(740px, calc(100vw - 20px));
+  background: radial-gradient(ellipse at center, #142d24b8, #142d2457 48%, transparent 76%);
+  font-style: italic;
+}
+.thought-card .speaker { letter-spacing: .24em; opacity: .65; font-style: normal; }
+.thought-card p[lang=en] { font-size: clamp(22px, 2.5vw, 32px); }
+.thought-card p[lang=zh-Hans] { font-family: 'Kaiti SC', KaiTi, 'STKaiti', serif; font-size: 19px; }
+.dialogue-dismiss {
+  color: #f3dfba; background: transparent;
+  border-bottom: 1px solid #e8ce9166;
+  min-height: 44px;
+  letter-spacing: .08em;
+}
+.dialogue-dismiss:hover { background: linear-gradient(90deg, transparent, #eed7aa22, transparent); }
+.objective {
+  background: linear-gradient(100deg, #142d2088, #142d2044 65%, transparent);
+  padding: 12px 24px 12px 14px;
+  text-shadow: 0 2px 8px #06170d;
+  animation: paper-emerge 800ms ease both;
+}
+.ink-transition {
+  pointer-events: all;
+  background: radial-gradient(ellipse, #d2c5a16b, #1e372de0 75%);
+  color: #f6eacf; text-align: center;
+  animation: page-turn-atmosphere 1200ms ease both;
+}
+.ink-transition p, .ink-transition h2, .ink-transition div { padding: 18px; animation: paper-emerge 800ms ease both; }
+.drifting-page { max-width: min(720px, 95vw); }
+.drifting-page > button { color: #f2e3c3; background: transparent; border: 0; padding: 12px 20px; min-height: 44px; }
+.game > .interaction-panel textarea { display: block; width: 100%; min-height: 120px; margin-top: 18px; padding: 16px; color: #25392c; background: #eee4c9dd; border: 0; font: 18px/1.8 Georgia, 'Songti SC', SimSun, serif; resize: vertical; }
+.ink-transition > span { width: 7px; height: 7px; margin: 0 auto; border-radius: 50%; background: #e9ddb7; box-shadow: 0 0 24px #e9ddb788; }
+.ink-transition > i { display: block; width: min(34vw, 230px); height: 1px; background: linear-gradient(90deg, transparent, #e9ddb7, transparent); margin: 24px auto; animation: connection-grow 700ms ease both; }
+.game > .interaction-panel {
+  background: radial-gradient(ellipse at center, #14291ee3, #14291e8a 64%, transparent 100%);
+  width: min(680px, 94vw);
+  padding: 55px;
+}
+@keyframes paper-emerge { from { opacity: 0; translate: 0 22px; } to { opacity: 1; translate: 0 0; } }
+@keyframes thought-emerge { from { opacity: 0; translate: 0 16px; filter: blur(3px); } to { opacity: 1; translate: 0 0; filter: blur(0); } }
+@keyframes atmosphere-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes connection-grow { from { scale: 0 1; opacity: 0; } to { scale: 1 1; opacity: 1; } }
+@keyframes page-turn-atmosphere { 0% { opacity: 0; } 35%, 75% { opacity: 1; } 100% { opacity: 0; } }
+@media(max-width:760px) {
+  .modal-backdrop { padding: 72px 8px 16px; }
+  .task-modal { padding: 12px 18px 28px; max-height: calc(100svh - 94px); }
+  .subtitles.dialogue-card { padding: 24px 22px 18px; }
+  .subtitles.thought-card { top: 44%; }
+  .objective { top: 126px; max-width: calc(100vw - 36px); }
+  .game > .interaction-panel { padding: 28px; }
+}
 @media(max-width:480px) {
   .game-header { gap: 12px; }
   .game-header > a { min-width: 0; }

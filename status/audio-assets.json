@@ -1,6 +1,6 @@
 {
-  "status": "blocked",
-  "progress": 65,
-  "note": "Music integrated into App Start with duplicate-loop guard; human listening pending. Single authorized SDK TTS diagnostic timed out after 60s (APITimeoutError), no retries or remaining batch. Zero MP3. Combined upper reservation $0.0158515; billing unknown. Prior403 unresolved.",
-  "updatedAt": "2026-09-12T07:30:50.288741+00:00"
+  "progress": 95,
+  "updatedAt": "2026-09-12T16:17:26.7024456+08:00",
+  "status": "review",
+  "note": "EvidencePlacement.tsx/CSS ready: pick then target/drop, return tray does not complete, pointer drag and click/keyboard alternatives, once-only callback. No App edits, browser, tests or repeated build. Lead owns integration/checks."
 }

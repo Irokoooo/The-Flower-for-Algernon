@@ -2,92 +2,22 @@
 .cognition-graph{padding:18px;border-radius:4px}.cognition-graph h2{font-size:18px;font-weight:normal;margin:0 0 16px}.cognition-graph h2 span{font-size:13px;color:var(--muted)}
 .cognition-graph__canvas{position:relative;height:260px;margin:32px 55px}.cognition-graph svg{position:absolute;width:100%;height:100%;overflow:visible}.cognition-graph line{stroke:#879074;stroke-width:.5}
 .cognition-graph__node{position:absolute;transform:translate(-50%,-50%);max-width:130px;padding:8px 12px;border:1px solid #8d947c;border-radius:3px;background:#f8f2e6;color:var(--ink);font-family:inherit;cursor:pointer}.cognition-graph__node span{display:block}.cognition-graph__node span[lang=zh-Hans]{font-size:11px;margin-top:4px;color:var(--muted)}.cognition-graph__node[data-remembered=true]{border-style:dashed}.cognition-graph__node:disabled{cursor:default;opacity:1}.cognition-graph__empty{padding-top:90px;text-align:center;font-size:14px}.cognition-graph__empty span{display:block}
-.cognition-maze-shell[hidden]{display:none}.cognition-maze{position:fixed;right:18px;bottom:18px;width:min(300px,calc(100vw - 36px));z-index:30;padding:16px;box-sizing:border-box;border-radius:12px;background:#e9dfca;border:1px solid #b4a17d;box-shadow:0 18px 50px #111a;overflow:hidden}.cognition-maze header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}.cognition-maze small{font:9px Georgia,serif;letter-spacing:.17em;color:#716247}.cognition-maze h2{margin:5px 0 0;font:22px Georgia,serif}.cognition-maze h2 span{font-size:11px;color:#716247}.cognition-maze button{border:1px solid #aa9875;border-radius:5px;background:#f6edda;color:#382f22;padding:7px 9px;font:11px Georgia,serif;cursor:pointer}.cognition-maze button:hover{background:#fff9ec;border-color:#655a3d}.cognition-maze button:disabled{opacity:.45;cursor:default}.cognition-maze__viewport{position:relative;height:230px;width:100%;overflow:hidden;border-radius:7px;background:#272a23;touch-action:none;overscroll-behavior:contain;cursor:grab;user-select:none}.cognition-maze__viewport:active{cursor:grabbing}.cognition-maze__viewport canvas{display:block;width:100%;height:100%;max-width:100%}.cognition-maze__viewport>p{position:absolute;inset:30px;color:#eee5d2}.cognition-maze__tools{display:flex;gap:5px;margin:12px 0 9px;flex-wrap:wrap}.cognition-maze p{font:11px/1.7 Georgia,serif;color:#65563d;margin:0}.cognition-maze__hint{margin-top:12px!important;padding-top:12px;border-top:1px solid #c8b997}.cognition-maze__backdrop{position:fixed;inset:0;background:#111711c9;backdrop-filter:blur(7px);z-index:1000}.is-expanded .cognition-maze{z-index:1001;inset:50% auto auto 50%;transform:translate(-50%,-50%);width:min(960px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;padding:24px;box-shadow:0 40px 100px #0008}.is-expanded .cognition-maze__viewport{height:clamp(220px,58dvh,600px)}.is-expanded .cognition-maze h2{font-size:30px}.is-expanded .cognition-maze button{font-size:12px;padding:8px 12px}.cognition-graph button:focus-visible,.cognition-maze button:focus-visible,.cognition-maze__viewport:focus-visible{outline:3px solid #758746;outline-offset:3px}.cognition-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}@media(max-width:480px){.is-expanded .cognition-maze{padding:14px}.is-expanded .cognition-maze__viewport{height:48dvh}.cognition-maze{right:12px;bottom:12px}} 
 
-/* Compact observation tile. Repeated shell specificity beats legacy App sizing
-   without editing another owner's stylesheet or depending on import order. */
-.cognition-maze-shell.cognition-maze-shell:not(.is-expanded) .cognition-maze {
-  position: fixed;
-  width: 240px;
-  height: 250px;
-  max-width: calc(100vw - 24px);
-  padding: 10px;
-  right: max(12px, env(safe-area-inset-right));
-  bottom: max(12px, env(safe-area-inset-bottom));
-}
-.cognition-maze-shell:not(.is-expanded) .cognition-maze header {
-  height: 44px;
-  margin: 0 0 8px;
-  gap: 6px;
-}
-.cognition-maze-shell:not(.is-expanded) .cognition-maze header small,
-.cognition-maze-shell:not(.is-expanded) .cognition-maze h2 span,
-.cognition-maze-shell:not(.is-expanded) .cognition-maze__tools,
-.cognition-maze-shell:not(.is-expanded) .cognition-maze > p {
-  display: none;
-}
-.cognition-maze-shell:not(.is-expanded) .cognition-maze h2 {
-  margin: 0;
-  font-size: 19px;
-}
-.cognition-maze-shell:not(.is-expanded) .cognition-maze header button {
-  min-height: 44px;
-  flex-shrink: 0;
-  padding: 6px 10px;
-  background: #3e5038;
-  border-color: #3e5038;
-  color: #fff7e5;
-}
-.cognition-maze-shell.cognition-maze-shell:not(.is-expanded) .cognition-maze__viewport {
-  height: 176px;
-}
-@media (max-width: 760px) {
-  .cognition-maze-shell.cognition-maze-shell:not(.is-expanded) .cognition-maze {
-    width: 140px;
-    height: 158px;
-    padding: 6px;
-    border-radius: 9px;
-  }
-  .cognition-maze-shell:not(.is-expanded) .cognition-maze header {
-    height: 44px;
-    margin-bottom: 0;
-  }
-  .cognition-maze-shell:not(.is-expanded) .cognition-maze header > div {
-    display: none;
-  }
-  .cognition-maze-shell:not(.is-expanded) .cognition-maze header button {
-    width: 100%;
-    font-size: 12px;
-    border-radius: 5px 5px 0 0;
-  }
-  .cognition-maze-shell.cognition-maze-shell:not(.is-expanded) .cognition-maze__viewport {
-    height: 100px;
-    border-radius: 0 0 5px 5px;
-  }
-  .cognition-maze-shell.is-expanded .cognition-maze {
-    position: fixed;
-    inset: 0;
-    transform: none;
-    width: 100%;
-    height: 100dvh;
-    max-height: 100dvh;
-    border-radius: 0;
-    padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-  }
-  .cognition-maze-shell.is-expanded .cognition-maze__viewport {
-    flex: 1 0 180px;
-    height: auto;
-    min-height: 180px;
-  }
-  .cognition-maze-shell.is-expanded .cognition-maze header,
-  .cognition-maze-shell.is-expanded .cognition-maze__tools,
-  .cognition-maze-shell.is-expanded .cognition-maze > p {
-    flex-shrink: 0;
-  }
-  .cognition-maze-shell.is-expanded .cognition-maze button {
-    min-height: 44px;
-  }
-}
+/* The canvas is the object: no panel, frame, painted backdrop or document flow. */
+.cognition-maze-shell[hidden]{display:none}
+.cognition-maze-shell .cognition-maze{position:fixed;right:max(8px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));width:250px;height:260px;z-index:30;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;color:#fff5de;pointer-events:none}
+.cognition-maze__viewport{position:absolute;inset:0;width:100%;height:100%;background:transparent;touch-action:none;cursor:grab;pointer-events:auto;outline-offset:-4px}
+.cognition-maze__viewport:active{cursor:grabbing}.cognition-maze__viewport canvas{display:block;width:100%;height:100%}
+.cognition-maze__inspect{position:absolute;bottom:0;left:50%;transform:translateX(-50%);z-index:2;pointer-events:auto}
+.cognition-maze button{min-height:44px;border:1px solid #e4d4ad55;border-radius:24px;padding:7px 12px;background:#18231ce0;color:#fff5de;font:12px Georgia,serif;white-space:nowrap;cursor:pointer}
+.cognition-maze button:hover{background:#3b4937}.cognition-maze button:disabled{opacity:.45;cursor:default}
+.cognition-maze__tools{display:none;pointer-events:auto}
+.cognition-maze__backdrop{position:fixed;inset:0;z-index:1000;background:#10180e55}
+.cognition-maze-shell.is-expanded .cognition-maze{inset:50% auto auto 50%;transform:translate(-50%,-50%);width:min(100vw,1000px);height:min(100dvh,850px);z-index:1001;background:transparent;border:0;box-shadow:none}
+.is-expanded .cognition-maze__inspect{bottom:auto;top:max(8px,env(safe-area-inset-top));left:auto;right:12px;transform:none}
+.is-expanded .cognition-maze__viewport{inset:54px 0 70px;height:calc(100% - 124px)}
+.is-expanded .cognition-maze__tools{position:absolute;bottom:max(10px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:flex;gap:6px;justify-content:center;max-width:100%;width:max-content;flex-wrap:wrap;z-index:2}
+.cognition-maze__viewport>p{position:absolute;inset:25px;color:#fff5de;font-size:12px}
+.cognition-graph button:focus-visible,.cognition-maze button:focus-visible,.cognition-maze__viewport:focus-visible{outline:2px solid #f1d89b}
+.cognition-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:760px){.cognition-maze-shell:not(.is-expanded) .cognition-maze{width:190px;height:206px}.cognition-maze-shell.is-expanded .cognition-maze{width:100vw;height:100dvh}.cognition-maze button{font-size:11px;padding:6px 10px}}

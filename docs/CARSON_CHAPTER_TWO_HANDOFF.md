@@ -1,5 +1,25 @@
 # Carson: corrected university progression
 
+## Mainline placement (original PRD order)
+
+Lab exploration → psychological test → initial Algernon maze → FIRST diary → signature transition → cognition growth/bakery first visit → cognition gain/machine → bakery revisit/local choices → university A/B/C → PEAK free exploration → PEAK diary → first Algernon failure → investigation → manual ALGERNON–CHARLIE connection → quiet realization → self-chosen Why / Begin Research → research race (optional visit to Algernon) → conference/local choices → mandatory “What do you see?” reversal → quiet lab/open cage → empty maze → ordered decline → LAST diary/broken transition → empty room → exit → flowers → final unmodified player memory.
+
+Use PRD §§10–45 for ordering and §§61–62 for scope; the early demo's short decline callback is NOT the mainline continuation after bakery. Do not enter full decline before university, investigation, research and conference.
+
+### Exact chapterTwoSteps insertion points
+
+`classroom-a → classroom-b → classroom-c` supplies the university sequence. Intercept `classroom-c.nextStepId` (`algernon-first-failure`): insert unhurried free graph exploration and `diaryEntries.peak` first. Player chooses when to leave exploration; do not auto-advance on the third classroom edge.
+
+`algernon-first-failure → investigation → shared-procedure` follows. The failure target currently represents a recorded observation; Core must supply actual dead-end/pause/backtrack maze behavior. Manual connection remains a genuine player edge action, never automatic.
+
+Intercept `shared-procedure.nextStepId` (`research`): allow the quiet revelation, then a player-initiated research objective. Avoid auto-playing the explanatory PEAK perception line over that quiet moment.
+
+`research → conference` is a small evidence-manipulation prototype. It does not yet implement the accelerating research race/maze clock, optional mouse visit, conference branches/objectification, or mandatory question reversal. Last step has no nextStepId; return control to Core for the quiet-lab/cage sequence. No ending is implemented by that absence.
+
+### Diary integration dependency
+
+Kepler owns the collage UI; `src/content/diary-collage.ts` exports `diaryEntries.first|peak|last`. First goes after the initial test/maze; peak between classroom free exploration and mouse failure; last immediately before broken transition/empty room. See KEPLER_DIARY_COLLAGE_HANDOFF.md. Keep free writing for peak/last PRD compliance; final memory stays completely separate and unchanged.
+
 Ready for source review, not verified gameplay. Narrative task progress 90 is a task estimate, not overall PRD completion. Later investigation/research/conference content is unchanged. Coverage gaps remain in PRD_COVERAGE_PROPOSAL.json.
 
 ## Imports

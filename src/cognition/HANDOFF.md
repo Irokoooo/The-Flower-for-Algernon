@@ -1,16 +1,11 @@
-# Cognition handoff — current
+# Lead / Carson: floating maze integration
 
-Status: review, 88%. Typecheck and production build pass; existing large-bundle warning remains. Dependencies are installed. No browser session/430px screenshot was verified in this final pass; do not mark visual or interaction acceptance complete.
+Current contract: MazeBox({ cognition, storyStage = 0, algernonPresent = true, suspended = false, className?, onInspectChange? }). storyStage is a finite integer clamped 0..4 (invalid values =>0), authored independently of cognition.phase. Stages 0..3 progressively expose route-safe dividers; stage 4 adds physical joinery and feet. Decline never automatically removes geometry or the empty box.
 
-## Carson integration notes
-App currently passes onInspectChange={setMazeOpen}. Callback true on expansion, false on close/Escape/backdrop/suspend/unmount. Keep this as a separate pause reason and combine with task/dialogue/transition pauses. Host owns world input/timers; keep MazeBox mounted and unsuspended while inspecting so the mouse remains interactive. Maze adds no global keyboard handlers. Only the canonical Core CognitionState is consumed.
+onInspectChange(true) pauses host world while inspection remains active; false on close/Escape/backdrop/suspend/unmount. Host must combine pause reasons. No global keyboard handler. Lead owns removal of competing App maze size overrides; do not size this component as a card.
 
-## Responsive sizing
-At <=760px, fixed corner tile 140x158px, canvas 100px high, Inspect target 44px. Secondary controls, label and help hidden. Desktop 240x250px. Expanded narrow modal fills 100dvh and restores controls. Selectors beat legacy App width/height overrides independent of import order. These are verified CSS rules, not a measured browser screenshot.
+Presentation: transparent WebGL canvas and physical timber planks/base/rim, no painted textures, no background plane, no card/header/frame. Tiny floating Inspect/Close and inspection controls. Desktop 250x260; narrow 150x166; expanded transparent scrim and large object. Default/reset tilt .30 rad with slight azimuth to expose thickness; arrows/drag orbit; .7..1.15 zoom with bounding-sphere full-box fit. Mouse raycast feeding/nibble/return remains local, no human voice/plot changes.
 
-## Interaction and validation
-True Three.js mouse with eyes, tube whiskers and curved tail. Raycast click or Offer grain/Enter starts a local turn/approach/nibble/return sequence, then resumes deterministic movement. No speech or plot mutation. Suspended stops rendering/time and closes inspection; absent mouse preserves empty box. Drag/orbit, zoom .7–1.65, tilt 0–1.15, reset, Escape and local focus trap implemented.
+Validation: typecheck and production build passed (existing bundle warning). Focused five-stage sampled corridor clearance .4275 including caps; camera bounding-sphere fit passed at narrow/wide aspects and zoom endpoints. No browser screenshot/feeding naturalness approval this pass. Status review 88%, human review pending. Graph untouched.
 
-Sampled all route segments against walls including caps: minimum clearance .4275. Typecheck/build and CSS source assertions pass. Final human/browser checklist: 430px tile does not cover hands; tap Inspect fills screen; raycast click visibly feeds and resumes; zoom/orbit/reset; Escape and focus return; world stays paused; suspend closes and absent Algernon leaves empty box. Camera bounds checked in prior pass. Visual polish and feeding naturalness remain pending, not approved production quality.
-
-Graph props unchanged: model, cognition, connectedEdgeIds, onConnect. MazeBox existing props unchanged plus optional onInspectChange(boolean).
+Latest readability revision: initial stage0 now has THREE dividers, stages1–3 add one safe divider each (six total); stage4 joinery/feet. Floor uses subdued neighboring dark timber colors; white body widened for small-scale contrast. Narrow canvas footprint190x206. Typecheck/build and all-stage route clearance .4275 passed. CUA reports no available browsers, so screenshot and expanded full-box visual confirmation remain pending.

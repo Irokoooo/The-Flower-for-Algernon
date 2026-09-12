@@ -1,0 +1,8 @@
+.evidence-placement{color:#f5e8ce;text-shadow:none;max-width:620px;margin:16px auto;font-family:'Noto Serif SC','Songti SC',serif}
+.evidence-placement__hint,.evidence-placement__notice{font-size:13px;line-height:1.7;color:#f5e8ce;text-shadow:none}.evidence-placement__notice{min-height:1.7em}
+.evidence-placement button{font:inherit;text-shadow:none;cursor:pointer;min-height:48px;transition:background .18s,box-shadow .18s}
+.evidence-placement__card{display:flex;flex-direction:column;gap:8px;max-width:100%;padding:16px 24px;margin:20px 8px;color:#382f24;background:repeating-linear-gradient(3deg,transparent 0 3px,#82673809 3px 4px),#f4e5cbe8;border:1px solid #d5bf9666;border-radius:2px 5px 1px 3px;box-shadow:2px 5px 12px #0002;transform:rotate(-1deg);touch-action:none;user-select:none;overflow-wrap:anywhere}
+.evidence-placement__card small{font-size:11px;letter-spacing:.12em}.evidence-placement__card[aria-pressed=true]{box-shadow:2px 9px 20px #0004;outline:1px solid #e8d5a8;outline-offset:4px}
+.evidence-placement__destinations{display:flex;flex-wrap:wrap;gap:16px}.evidence-placement__destinations button{flex:1;min-width:160px;padding:18px;color:#f5e8ce;background:linear-gradient(110deg,#dbc4930c,transparent);border:1px dashed #ddcba273;border-radius:3px}.evidence-placement__destinations small{display:block;font-size:11px;margin-top:8px}.evidence-placement__destinations button:not(:disabled):hover{background:#dbc49320}
+.evidence-placement button:disabled{cursor:default;opacity:.5}.evidence-placement button:focus-visible{outline:2px solid #f4db9e;outline-offset:5px}
+@media(prefers-reduced-motion:reduce){.evidence-placement button{transition:none}}

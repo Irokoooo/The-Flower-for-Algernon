@@ -26,6 +26,7 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
   useEffect(() => { reactionRef.current = npcReacting; }, [npcReacting]);
   const [entered, setEntered] = useState(false);
   const [target, setTarget] = useState('');
+  const [hoverTarget, setHoverTarget] = useState('');
   const [error, setError] = useState('');
   const controlsRef = useRef<FirstPersonControls | null>(null);
   useEffect(() => { callback.current = onInteract; }, [onInteract]);
@@ -34,7 +35,7 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
   useEffect(() => {
     const mount = host.current;
     if (!mount) return;
-    setError(''); setTarget(''); setEntered(false);
+    setError(''); setTarget(''); setHoverTarget(''); setEntered(false);
     let renderer: THREE.WebGLRenderer;
     try { renderer = new THREE.WebGLRenderer({ antialias: true }); }
     catch { setError('WebGL is unavailable. Enable hardware acceleration to explore the room.'); return; }
@@ -151,30 +152,63 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
         }
       };
     }
-    const handPlane = imagePlane(hands,1.12,.68,[0,-.31,-.75]);
-    if (handPlane) {
-      world.remove(handPlane); camera.add(handPlane); surfaces.splice(surfaces.indexOf(handPlane),1);
-      handPlane.renderOrder=10; handPlane.material.depthTest=false; handPlane.material.depthWrite=false;
-      handPlane.onBeforeRender = () => {
-        const image=handPlane.material.map?.image as {width:number;height:number} | undefined;
-        if (!image?.width || !image.height) return;
-        const viewHeight=2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*.75;
-        const height=Math.min(viewHeight*.36,viewHeight*camera.aspect*.9/(image.width/image.height));
-        const width=height*image.width/image.height;
-        handPlane.scale.set(width/1.12,height/.68,1);
-        handPlane.position.y=-viewHeight/2+height/2+viewHeight*.02+Number(handPlane.userData.bob ?? 0);
-        handPlane.updateMatrixWorld();
-      };
-    }
-    imagePlane(foreground,1.4,1.4,[2,.7,.2]);
-    const ray = new THREE.Raycaster(); ray.far = 3.2;
-    let active = '';
+    // Reuse the two halves of the actual cutout. Sleeve-cut boundaries live outside the viewport.
+    const handPlanes: THREE.Mesh<THREE.PlaneGeometry, THREE.MeshStandardMaterial>[] = [];
+    if (hands) {
+      const handMaterial=material('#ffffff',hands,true);
+      handMaterial.depthTest=false; handMaterial.depthWrite=false; handMaterial.fog=false;
+      for (const side of [-1,1]) {
+        const geometry=new THREE.PlaneGeometry(1,1);
+        const uv=geometry.attributes.uv;
+        for(let i=0;i<uv.count;i++) uv.setX(i,uv.getX(i)*.5+(side===1?.5:0));
+        const hand=new THREE.Mesh(geometry,handMaterial);
+        hand.position.z=-.75; hand.renderOrder=10; hand.frustumCulled=false;
+        camera.add(hand); handPlanes.push(hand);
+        hand.onBeforeRender=()=>{
+          const image=handMaterial.map?.image as {width:number;height:number}|undefined;
+          if(!image?.width || !image.height)return;
+          const vh=2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*.75, vw=vh*camera.aspect;
+          const halfAspect=image.width/image.height/2;
+          const height=Math.min(vh*.48,vw*.43/halfAspect), width=height*halfAspect;
+          hand.scale.set(width,height,1);
+          // Bleed by 8% beyond side/bottom so neither bob nor roll exposes a straight crop.
+          hand.position.x=side*(vw/2-width*.42)+Number(hand.userData.sway??0);
+          hand.position.y=-vh/2+height*.42+Number(hand.userData.bob??0);
+          hand.rotation.z=Number(hand.userData.roll??0);
+          hand.updateMatrixWorld();
+        };
+      }
+    }    imagePlane(foreground,1.4,1.4,[2,.7,.2]);
+    // Room-scale inspection: allow visible objects from the entrance; nearest surfaces still occlude.
+    const ray = new THREE.Raycaster(); ray.far = 9;
+    const pointerAim=new THREE.Vector2();
+    const selectAt=(x:number,y:number)=>{
+      world.updateMatrixWorld(true); camera.updateMatrixWorld(true);
+      // Small screen-space tolerance. Every candidate still requires an unobstructed ray.
+      const rect=renderer.domElement.getBoundingClientRect();
+      const dx=24/Math.max(1,rect.width),dy=24/Math.max(1,rect.height);
+      let central='';
+      for(const [ox,oy] of [[0,0],[-dx,0],[dx,0],[0,-dy],[0,dy],[-dx,-dy],[dx,-dy],[-dx,dy],[dx,dy]]) {
+        ray.setFromCamera(pointerAim.set(x+ox,y+oy),camera);
+        const hit=ray.intersectObjects(surfaces,false).find(hit=>{
+          const mat=(hit.object as THREE.Mesh).material as THREE.MeshStandardMaterial;
+          return !mat.transparent || mat.opacity>0;
+        });
+        const id=(hit?.object.userData.hotspot ?? '') as string;
+        if(!ox&&!oy) central=id;
+        // Prefer small inspectable objects over the desk they rest on.
+        if(id && !['test','bread'].includes(id)) return id;
+        if(!central && id)central=id;
+      }
+      return central;
+    };    let active = '';
     let reactionUntil = 0;
     let nearby = false;
     let walkBlend = 0;
     function interact() { if (!controls.isPaused && active) { if(active === 'npc') { reactionUntil=elapsed+1.4; if(npcPlane && reactionMaterial?.map) npcPlane.material=reactionMaterial; } callback.current?.(active); } }
     function down(event: KeyboardEvent) {
       if (event.code === 'KeyE' && !event.repeat && !controls.isPaused) {
+        active=selectAt(0,0);
         event.preventDefault(); interact();
       }
     }
@@ -184,18 +218,29 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
       if (e.button === 0 && e.isPrimary) press = { x: e.clientX, y: e.clientY, moved: false };
     };
     const pointerMove = (e: PointerEvent) => {
+      if (!press && !controls.isPaused && !controls.locked) {
+        const b=renderer.domElement.getBoundingClientRect();
+        const id=selectAt((e.clientX-b.left)/b.width*2-1,1-(e.clientY-b.top)/b.height*2);
+        renderer.domElement.style.cursor=id?'pointer':'grab';
+        setHoverTarget(id);
+      }
       if (press && Math.hypot(e.clientX-press.x,e.clientY-press.y)>5) press.moved=true;
     };
     const pointerUp = (e: PointerEvent) => {
-      if (press && !press.moved && e.button === 0) interact();
+      if (press && !press.moved && e.button === 0) {
+        const bounds=renderer.domElement.getBoundingClientRect();
+        active=controls.locked?selectAt(0,0):selectAt((e.clientX-bounds.left)/bounds.width*2-1,1-(e.clientY-bounds.top)/bounds.height*2);
+        setTarget(active); interact();
+      }
       press=null;
     };
-    const cancel = () => { press=null; };
+    const cancel = () => { press=null; setHoverTarget(''); };
     renderer.domElement.addEventListener('keydown',down);
     renderer.domElement.addEventListener('pointerdown',pointerDown);
     renderer.domElement.addEventListener('pointermove',pointerMove);
     renderer.domElement.addEventListener('pointerup',pointerUp);
     renderer.domElement.addEventListener('pointercancel',cancel);
+    renderer.domElement.addEventListener('pointerleave',cancel);
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');    const resize = new ResizeObserver(() => { const w = mount.clientWidth, h = mount.clientHeight; if(w && h) { renderer.setSize(w,h); camera.aspect=w/h; camera.updateProjectionMatrix(); } }); resize.observe(mount);
     const previous = new THREE.Vector3();
     let elapsed = 0;
@@ -221,18 +266,15 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
           npcPlane.material=reacting && reactionMaterial?.map ? reactionMaterial : idleMaterial;
           npcPlane.rotation.z=reducedMotion.matches ? 0 : Math.sin(elapsed*.65)*.0025;
         }
-        if (handPlane) {
-          const walking=camera.position.distanceToSquared(previous)>.000001;
-          walkBlend=THREE.MathUtils.damp(walkBlend,walking?1:0,10,dt);
-          handPlane.userData.bob=!reducedMotion.matches ? Math.sin(elapsed*14)*.002*walkBlend : 0;
-          handPlane.rotation.z=!reducedMotion.matches ? Math.sin(elapsed*7)*.004*walkBlend : 0;
-          handPlane.position.x=!reducedMotion.matches ? Math.sin(elapsed*7)*.003*walkBlend : 0;
-        }
-        world.updateMatrixWorld(true);
+        const walking=camera.position.distanceToSquared(previous)>.000001;
+        walkBlend=THREE.MathUtils.damp(walkBlend,walking?1:0,10,dt);
+        for (const hand of handPlanes) {
+          hand.userData.bob=!reducedMotion.matches?Math.sin(elapsed*14)*.002*walkBlend:0;
+          hand.userData.roll=!reducedMotion.matches?Math.sin(elapsed*7)*.003*walkBlend:0;
+          hand.userData.sway=!reducedMotion.matches?Math.sin(elapsed*7)*.002*walkBlend:0;
+        }        world.updateMatrixWorld(true);
         camera.updateMatrixWorld(true);
-        ray.setFromCamera(new THREE.Vector2(0,0),camera);
-        const hit=ray.intersectObjects(surfaces,false)[0];
-        const next=hit?.object.userData.hotspot ?? '';
+        const next=selectAt(0,0);
         if(next!==active) { active=next; setTarget(next); }
       }
       // Authored dialogue reactions may change while movement is paused.
@@ -249,6 +291,7 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
       renderer.domElement.removeEventListener('pointerdown',pointerDown);
       renderer.domElement.removeEventListener('pointermove',pointerMove);
       renderer.domElement.removeEventListener('pointerup',pointerUp);
+      renderer.domElement.removeEventListener('pointerleave',cancel);
       renderer.domElement.removeEventListener('pointercancel',cancel);      world.traverse(object => { if(object instanceof THREE.Mesh) object.geometry.dispose(); });
       materials.forEach(m=>m.dispose()); textures.forEach(t=>t.dispose()); renderer.dispose(); renderer.domElement.remove();
     };
@@ -260,16 +303,21 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
   return <div className="explorable-room">
     <div ref={host} className="explorable-room__canvas" />
     <div className="explorable-room__label">{room} · 3D blockout / provisional art slots</div>
-    {(!entered || paused) && <div className="explorable-room__entry"><button disabled={paused} onClick={()=>enter.current()}>{paused ? 'Exploration paused' : 'Enter room'}</button><p>Drag to look · WASD to walk · E / click to interact</p></div>}
+    {!entered && !paused && <div className="explorable-room__entry"><button onClick={()=>enter.current()}>Enter room</button><p>Click visible objects to inspect · Drag to look · Hold WASD to walk</p></div>}
     {entered && !paused && <div className="explorable-room__aim" aria-live="polite"><span>+</span>{target && <p>E · {target.replace(/-/g,' ')}</p>}</div>}
     {entered && !paused && <button style={{position:'absolute',right:16,top:16,zIndex:2}} onClick={async () => {
       const control=controlsRef.current;
       if (control?.locked) { control.exitPointerLock(); return; }
       if (!await control?.requestPointerLock()) setError('Mouse lock unavailable; drag to look remains available.');
     }}>Toggle mouse lock (optional)</button>}
+    {entered && !paused && <div className="explorable-room__help">{hoverTarget ? 'Click to inspect · '+hoverTarget : 'Click visible objects · Drag to look · Hold WASD to walk · E to inspect'}</div>}
     {error && <p className="explorable-room__error" role="alert">{error}</p>}
   </div>;
 }
+
+
+
+
 
 
 

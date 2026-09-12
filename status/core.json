@@ -1,6 +1,6 @@
 {
-  "note": "Final App/Core handoff ready for Lead commit: baker-welcoming reaction wired during Gimpy dialogue; researcher reaction active; Alice alternate available in registry for future scene. All base/alternate canvases 1024x1536. Narrow maze overrides removed, missing audio hides replay, classroom action gates integrated. Typecheck/build and served-module smoke pass. Full visual/playthrough review and production recordings remain pending.",
-  "progress": 95,
-  "updatedAt": "2026-09-12T07:36:47.5275740Z",
-  "status": "review"
+  "note": "Critical raw hotspot adapter fixed, all 7 renderer IDs covered and book/paper distinct. ACTUAL browser verified book→paper→NPC→test graph→first DiaryCollage (我想要学会更多的字)→save→automatic bakery arrival with Gimpy dialogue. Shared ensureAudio added to resume; final memory zh-Hans/raw including blank. Typecheck passes. Later mainline and reload/audio listening still need Lead acceptance; not full PRD done.",
+  "status": "review",
+  "updatedAt": "2026-09-12T08:10:41.3677011Z",
+  "progress": 95
 }

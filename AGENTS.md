@@ -1,6 +1,8 @@
 # ALGERNON Development Constitution
 
 ## Product constraints
+- Latest interaction revision: maze is a freestanding 3D box on a transparent canvas, with no visible window/card frame. Plot milestones may add maze structure while decline preserves interaction controls. Internal thoughts float near screen center; reminders and task layers use translucent feathered gradients and gentle motion, never solid dashboard-like panels.
+- Diary progression currently uses authored Chinese word-fragment collage: limited, deliberately misspelled early vocabulary, richer peak language, and respectful reduced access during decline. Players can choose, reorder, remove and save fragments; keep prior saved writing unchanged. Spoken dialogue remains English with EN / Simplified Chinese subtitles.
 - Latest visual acceptance requirement: characters and scene illustration assets must be generated raster illustrations, not SVG/CSS/programmatic drawings. Existing procedural artwork was rejected and must not be presented as finished art.
 - Environments are real walkable 3D spaces with first-person look and movement, using generated painted textures and layered raster characters. Charlie has a consistent character design for visible hands; no persistent third-person avatar is required.
 - Maze inspection must support enlargement, zoom and meaningful nonverbal interaction with Algernon, in addition to orbit and reset.

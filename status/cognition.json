@@ -1,6 +1,6 @@
 {
   "status": "review",
   "progress": 88,
-  "note": "Compact CSS implemented: <=760px fixed 140x158 tile / 100px canvas, 44px Inspect target, secondary UI hidden; desktop 240x250; expanded narrow full viewport. Source checks, typecheck/build and sampled route clearance pass. App wires onInspectChange=setMazeOpen. Feeding raycast + approach/nibble/return implemented, not browser-verified this pass. 430px screenshot, focus/zoom and human interaction review pending. Carson notes in cognition/HANDOFF.md; no separate Carson task found.",
-  "updatedAt": "2026-09-12T07:22:32.758Z"
+  "note": "Stage0 now three navigable dividers; stages1–3 add walls, stage4 joinery. Narrow floating box190x206; wider white mouse body against subdued dark timber floor, no pale stripe alternation. All-stage route clearance .4275 checked. Browser visibility/full-screen inspection human review pending.",
+  "updatedAt": "2026-09-12T08:03:42.439Z"
 }
