@@ -9,3 +9,7 @@ Thumbs.db
 .vercel/
 playwright-report/
 test-results/
+
+.pnpm-store/
+tsconfig.tsbuildinfo
+dist/
