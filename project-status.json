@@ -1,15 +1,22 @@
 {
   "updatedAt": "2026-09-12",
-  "overall": 0,
+  "overall": 5,
   "agents": [
-    {"id":"core","name":"Core / Architecture","status":"in_progress","progress":0,"note":"Contracts and repository foundation"},
-    {"id":"cognition","name":"Cognition","status":"planned","progress":0,"note":"Shared Cognition Graph"},
-    {"id":"narrative","name":"Narrative / Content","status":"planned","progress":0,"note":"Bilingual dialogue model"},
-    {"id":"scene-kit","name":"Scene Kit","status":"planned","progress":0,"note":"2.5D scene primitives"},
-    {"id":"audio-assets","name":"Audio / Assets","status":"planned","progress":0,"note":"English voice and asset registry"}
+    {"id":"core","name":"Core / Architecture","status":"in_progress","progress":10,"note":"Build the initial app shell and shared contracts"},
+    {"id":"cognition","name":"Cognition","status":"in_progress","progress":5,"note":"Designing reusable Graph and persistent maze contracts"},
+    {"id":"narrative","name":"Narrative / Content","status":"in_progress","progress":5,"note":"Preparing bilingual dialogue and perception content model"},
+    {"id":"scene-kit","name":"Scene Kit","status":"in_progress","progress":5,"note":"Planning illustrated interactive NPC presentation"},
+    {"id":"audio-assets","name":"Audio / Assets","status":"in_progress","progress":5,"note":"Mapping voice profiles, sources, and licensed asset workflow"}
   ],
   "coverage": [
     {"title":"Opening Lab","status":"planned","priority":"P0"},{"title":"Psychological Test","status":"planned","priority":"P0"},{"title":"Algernon Maze","status":"planned","priority":"P0"},{"title":"Progress Report + Transition","status":"planned","priority":"P0"},{"title":"Bakery Visits 1 + 2","status":"planned","priority":"P0"},{"title":"Classroom","status":"planned","priority":"P0"},{"title":"Investigation + Research","status":"planned","priority":"P0"},{"title":"Conference","status":"planned","priority":"P0"},{"title":"Decline + Ending","status":"planned","priority":"P0"}
   ],
-  "assets": []
+  "assets": [],
+  "designDecisions": [
+    {"title":"First-person Charlie","status":"decided"},
+    {"title":"Interactive illustrated NPCs","status":"decided"},
+    {"title":"Persistent draggable 3D Algernon maze","status":"decided"},
+    {"title":"Distinct English voices and accents","status":"decided"},
+    {"title":"Reuse-first licensed asset workflow","status":"decided"}
+  ]
 }
