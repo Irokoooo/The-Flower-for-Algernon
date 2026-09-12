@@ -31,3 +31,8 @@ The user will play and provide interaction feedback. Agents retain typecheck/bui
 - Replace the rigid two-card test with more simple, tentative observations and passing thoughts. Use varied drifting, fading, returning fragments, soft ink-like gradients and varied typography. The source inkblot image remains unchanged.
 - Moving thoughts pause under hover/focus or when selected; important connections remain obtainable. Offer a motion pause and respect reduced-motion settings. Ambient forgotten thoughts do not alter saved progress or impose a time limit.
 - Lead/Core routing; Scene raycasts; Cognition shared graph presentation; Narrative original bilingual fragments. No new asset generation required.
+
+## FB-05 — Moving connection targets (activated)
+- User rejects animated labels over fixed connection targets. Whole selectable thoughts now move using the same live positions as the connection endpoints. Selection does not stop surrounding thoughts.
+- Drag from a thought to another moving thought to connect, with a live thread preview. Existing links follow their endpoints. Pointer release resolves the destination at its current position. Click-click and keyboard selection remain available, along with pause/reduced motion.
+- Lead implementation in shared CognitionGraph; other graph presentations retain their existing positions and rules. No functional playtesting run.
