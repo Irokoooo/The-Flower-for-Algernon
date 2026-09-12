@@ -34,7 +34,10 @@ Separate source-supported character facts from proposed casting. Do not invent a
 The maze communicates behavior, never an IQ percentage or numeric cognition bar. Provide reset-to-top-view; dragging the widget must not move the scene camera. Preserve the empty maze after Algernon leaves. Narrative-required views and the epilogue may intentionally suspend the widget.
 
 ## Handoff and validation
-Keep commits small and describe changed files, status, blockers, and next dependency. Other tools may work in this folder sequentially; read this file and `TECH_SPEC.md` first. Required checks are typecheck/build plus focused smoke checks where available. Human playtesting is the primary source for pacing, emotional impact, language quality, and usability.
+Keep commits small and describe changed files, status, blockers, and next dependency. Other tools may work in this folder sequentially; read this file and `TECH_SPEC.md` first. For code changes, required checks are typecheck/build. Per the latest user instruction, do not run automated or agent-driven functional interaction/playthrough tests unless the user requests them again. The user performs gameplay testing and supplies feedback. Documentation-only updates do not need builds. Human playtesting is the primary source for pacing, emotional impact, language quality, and usability.
+
+## Recorded interaction follow-ups
+See `docs/PLAYTEST_FEEDBACK.md`. User has deferred the current stimulus/art/action polish in favor of core interaction development; do not launch generation or implement these deferred items merely because they are recorded. Test needs an actual original illustrated stimulus with stable objective appearance across cognition phases; early diary needs less fluent vocabulary, more authored homophone errors and uneven handwriting; bread needs an actual object pickup/place interaction with hands rather than a counter button.
 
 ## Content
 Dialogue uses one beat with `en` and `zhHans` subtitle fields and optional cognition variants. English is the spoken runtime language. Copyright-safe original/adapted writing only.

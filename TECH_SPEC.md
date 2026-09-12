@@ -15,4 +15,4 @@ Before custom production, check established libraries, asset stores, public-doma
 Live2D-like motion is the presentation target, not a mandatory vendor choice. Evaluate ready-made rig availability and licensing before selecting Live2D Cubism, Spine, or lightweight layered animation. Start with breathing, blink, gaze, head/torso sway, expression transitions, and hover/click reactions; detailed phoneme lip-sync is deferred. Prefer a shared R3F renderer with a viewport for the maze over one extra WebGL renderer per widget.
 
 ## Definition of done
-An item is `complete` only after implementation, integration, and a focused human-reviewable play path. Automated checks stay small: typecheck, build, and critical-path smoke checks.
+An item is `complete` only after implementation, integration, and human review of a playable path. For code changes, automated checks stay small: typecheck and build. The latest user instruction delegates functional interaction testing to the user; agents must not run playthrough/smoke interactions unless requested again. Documentation-only changes require no build.
