@@ -21,3 +21,57 @@
 .cognition-graph button:focus-visible,.cognition-maze button:focus-visible,.cognition-maze__viewport:focus-visible{outline:2px solid #f1d89b}
 .cognition-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 @media(max-width:760px){.cognition-maze-shell:not(.is-expanded) .cognition-maze{width:190px;height:206px}.cognition-maze-shell.is-expanded .cognition-maze{width:100vw;height:100dvh}.cognition-maze button{font-size:11px;padding:6px 10px}}
+
+/* Opt-in thought presentation. Keep legacy graph and all maze rules untouched. */
+.cognition-graph--wandering,
+.interaction-panel .cognition-graph--wandering{position:relative;background:transparent;border:0;box-shadow:none;padding:0;color:#f3dfb7}
+.cognition-graph--wandering .cognition-graph__canvas,
+.interaction-panel .cognition-graph--wandering .cognition-graph__canvas{height:clamp(330px,48vh,460px);margin:36px 65px 30px;isolation:isolate;overflow:visible}
+.cognition-graph--wandering .cognition-graph__node,
+.interaction-panel .cognition-graph--wandering .cognition-graph__node{display:grid;place-items:center;width:148px;max-width:none;min-width:0;min-height:108px;padding:22px 18px;border:0;border-radius:0;background:transparent;box-shadow:none;color:#f7e3ba;font:17px/1.5 Georgia,'Songti SC',serif;z-index:2;outline-offset:0;cursor:pointer}
+.cognition-graph--wandering .cognition-graph__thought,
+.interaction-panel .cognition-graph--wandering .cognition-graph__thought{position:relative;display:block;width:112px;padding:9px 4px;pointer-events:auto;text-align:center;text-shadow:0 1px 6px #1b160ee0;animation:cognition-thought-drift var(--thought-duration) ease-in-out var(--thought-delay) infinite;transform-origin:center}
+.cognition-graph--wandering .cognition-graph__thought:before{content:'';position:absolute;inset:-21px -19px;z-index:-1;background:radial-gradient(ellipse at 44% 49%,#a17b4166 0%,#5a49374d 38%,transparent 73%);filter:blur(7px);border-radius:47% 68% 39% 72%}
+.cognition-graph--wandering .cognition-graph__thought[data-shape="1"]:before{inset:-8px -32px;border-radius:75% 24% 68% 40%;background:radial-gradient(ellipse,#b08c504a,transparent 70%)}
+.cognition-graph--wandering .cognition-graph__thought[data-shape="2"]:before{inset:-30px -6px;border-radius:27% 70% 39% 62%;background:radial-gradient(ellipse,#9674405e,transparent 72%)}
+.cognition-graph--wandering .cognition-graph__node span[lang=zh-Hans],
+.interaction-panel .cognition-graph--wandering .cognition-graph__node span[lang=zh-Hans]{font-size:13px;color:#e4d0a7;margin-top:5px}
+.cognition-graph--wandering .cognition-graph__node[aria-pressed=true]{color:#fff1c8}
+.cognition-graph--wandering .cognition-graph__node[aria-pressed=true] .cognition-graph__thought:before{background:radial-gradient(ellipse,#cea45980,transparent 72%)}
+.cognition-graph--wandering .cognition-graph__node:focus-visible{outline:2px dashed #efd09788;border-radius:50%}
+.cognition-graph--wandering .cognition-graph__ambient{position:absolute;inset:-20px;pointer-events:none;z-index:-1}
+.cognition-graph--wandering .cognition-graph__wisp{position:absolute;max-width:160px;pointer-events:none;text-align:center;color:#dac9a4;font:italic 15px/1.6 Georgia,serif;text-shadow:0 0 12px #ba904a55;animation:cognition-ambient-drift calc(var(--thought-duration) + 6s) ease-in-out var(--thought-delay) infinite}
+.cognition-graph--wandering .cognition-graph__wisp span{display:block}.cognition-graph--wandering .cognition-graph__wisp span[lang=zh-Hans]{font-size:12px}
+.cognition-graph--wandering .cognition-graph__motion-toggle,
+.interaction-panel .cognition-graph--wandering .cognition-graph__motion-toggle{position:relative;z-index:4;min-height:44px;padding:6px 12px;border:1px solid #c1a56a55;border-radius:22px;background:#242c2477;color:#edd9ae;font:12px Georgia,serif;cursor:pointer}
+/* The hit areas stay fixed. Visible ink drifts; approaching any target settles
+   every clue and its connections immediately, without moving the click target. */
+.cognition-graph--wandering svg{opacity:0;pointer-events:none}
+.cognition-graph--wandering:is([data-motion-paused=true],[data-thought-selected=true],:has(.cognition-graph__node:focus)) .cognition-graph__thought{animation:none;transform:none;opacity:1}
+.cognition-graph--wandering:is([data-motion-paused=true],[data-thought-selected=true],:has(.cognition-graph__node:focus)) svg{opacity:1}
+.cognition-graph--wandering[data-motion-paused=true] .cognition-graph__wisp{animation-play-state:paused}
+@keyframes cognition-thought-drift{0%,100%{transform:translate(-13px,8px) rotate(calc(-1 * var(--thought-tilt))) scale(var(--thought-scale));opacity:.85}30%{transform:translate(17px,-17px) rotate(var(--thought-tilt)) scale(1.05);opacity:1}65%{transform:translate(-18px,-7px) rotate(-2deg) scale(.97);opacity:.78}82%{transform:translate(9px,15px) rotate(3deg);opacity:.93}}
+@keyframes cognition-ambient-drift{0%,100%{transform:translate(-32px,18px) rotate(-8deg) scale(.88);opacity:0}18%{opacity:.6}44%{transform:translate(38px,-28px) rotate(6deg) scale(var(--thought-scale));opacity:.72}66%{opacity:0}82%{transform:translate(-12px,-40px) rotate(-3deg);opacity:0}}
+@media(max-width:520px){.interaction-panel .cognition-graph--wandering .cognition-graph__canvas,.cognition-graph--wandering .cognition-graph__canvas{height:360px;margin:34px 45px}.interaction-panel .cognition-graph--wandering .cognition-graph__node,.cognition-graph--wandering .cognition-graph__node{width:110px;min-height:100px;padding:12px 8px;font-size:15px}.interaction-panel .cognition-graph--wandering .cognition-graph__thought,.cognition-graph--wandering .cognition-graph__thought{width:90px}.cognition-graph--wandering .cognition-graph__wisp{max-width:112px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){.cognition-graph--wandering .cognition-graph__thought,.cognition-graph--wandering .cognition-graph__wisp{animation:none;transform:none;opacity:1}.cognition-graph--wandering .cognition-graph__wisp{opacity:.38}.cognition-graph--wandering svg{opacity:1}.cognition-graph--wandering .cognition-graph__motion-toggle{display:none}}
+
+/* Fit a grid cell without letting labels establish the parent's minimum width. */
+.cognition-graph--wandering,
+.interaction-panel .cognition-graph--wandering{width:100%;max-width:100%;min-width:0;box-sizing:border-box;container-type:inline-size}
+.cognition-graph--wandering .cognition-graph__canvas,
+.interaction-panel .cognition-graph--wandering .cognition-graph__canvas{max-width:100%;min-width:0;box-sizing:border-box}
+.cognition-graph--wandering .cognition-graph__thought,
+.interaction-panel .cognition-graph--wandering .cognition-graph__thought{overflow-wrap:anywhere}
+.cognition-graph--wandering>p{overflow-wrap:anywhere}
+@container (max-width:400px){
+  .cognition-graph--wandering .cognition-graph__canvas,
+  .interaction-panel .cognition-graph--wandering .cognition-graph__canvas{margin:30px 50px;height:360px}
+  .cognition-graph--wandering .cognition-graph__node,
+  .interaction-panel .cognition-graph--wandering .cognition-graph__node{width:100px;min-height:100px;padding:10px 4px;font-size:14px}
+  .cognition-graph--wandering .cognition-graph__thought,
+  .interaction-panel .cognition-graph--wandering .cognition-graph__thought{width:82px}
+  .cognition-graph--wandering .cognition-graph__wisp{max-width:100px;font-size:12px}
+}
+
+/* Freeze where the pointer meets the visible ink; its painted extent is clickable. */
+.cognition-graph--wandering .cognition-graph__node:hover .cognition-graph__thought{animation-play-state:paused}

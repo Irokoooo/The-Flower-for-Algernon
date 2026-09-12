@@ -25,3 +25,9 @@ Status: FB-01 image and licensed desk GLBs are integrated, awaiting user review.
 
 ## Validation workflow
 The user will play and provide interaction feedback. Agents retain typecheck/build for relevant code edits, but do not run functional interaction tests or browser playthroughs unless requested again. These notes only record requirements; they do not change the running game.
+
+## FB-04 — Object identity and passing test thoughts (activated)
+- A test-desk prompt currently leads into the diary; the hovered book/table identity can also be confusing. Keep physical book, diary and test targets distinct, with matching prompts and actions. Re-examining the test during diary writing must not advance or reset the diary stage.
+- Replace the rigid two-card test with more simple, tentative observations and passing thoughts. Use varied drifting, fading, returning fragments, soft ink-like gradients and varied typography. The source inkblot image remains unchanged.
+- Moving thoughts pause under hover/focus or when selected; important connections remain obtainable. Offer a motion pause and respect reduced-motion settings. Ambient forgotten thoughts do not alter saved progress or impose a time limit.
+- Lead/Core routing; Scene raycasts; Cognition shared graph presentation; Narrative original bilingual fragments. No new asset generation required.

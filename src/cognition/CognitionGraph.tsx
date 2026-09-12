@@ -1,6 +1,7 @@
 import { useId, useState } from 'react';
+import type { CSSProperties } from 'react';
 import type { CognitionState } from '../core/types';
-import type { CognitionGraphModel } from './contracts';
+import type { CognitionGraphModel, PerceivedLabel } from './contracts';
 import './cognition.css';
 export interface CognitionGraphProps {
   model: CognitionGraphModel;
@@ -8,11 +9,20 @@ export interface CognitionGraphProps {
   connectedEdgeIds: readonly string[];
   onConnect: (edgeId: string) => void;
   className?: string;
+  presentation?: 'default' | 'wandering';
+  /** Caller supplies only thoughts Charlie can currently perceive. */
+  ambientThoughts?: readonly PerceivedLabel[];
 }
-export function CognitionGraph({ model, cognition, connectedEdgeIds, onConnect, className = '' }: CognitionGraphProps) {
+const motionStyle=(index:number):CSSProperties=>({
+  '--thought-delay':`${-index*2.3}s`, '--thought-duration':`${13+index%4*3}s`,
+  '--thought-tilt':`${index%2?5:-5}deg`, '--thought-scale':`${.94+index%3*.06}`,
+} as CSSProperties);
+export function CognitionGraph({ model, cognition, connectedEdgeIds, onConnect, className = '', presentation = 'default', ambientThoughts = [] }: CognitionGraphProps) {
   const titleId = useId();
   const [selected, setSelected] = useState<string | null>(null);
   const [message, setMessage] = useState('Choose two details. / 选择两个细节。');
+  const [paused,setPaused]=useState(false);
+  const wandering=presentation==='wandering';
   const accessible = model.edges.filter(e => e.phases.includes(cognition.phase) && (!e.requiredAffordance || cognition.affordances.includes(e.requiredAffordance)));
   const byId = new Map(model.nodes.map(n => [n.id, n]));
   const select = (id: string) => {
@@ -23,20 +33,21 @@ export function CognitionGraph({ model, cognition, connectedEdgeIds, onConnect, 
     if (edge) { if (!connectedEdgeIds.includes(edge.id)) onConnect(edge.id); setMessage(`${edge.meaning.en} / ${edge.meaning.zhHans}`); }
     else setMessage('I cannot put these together yet. / 我还不能把它们联系起来。');
   };
-  // Reset feedback on a phase/model change using a keyed child in the host, or
-  // suppress prior meanings here: feedback is only displayed for its phase.
   const [feedbackPhase, setFeedbackPhase] = useState(cognition.phase);
-  return <section className={`cognition-graph ${className}`} aria-labelledby={titleId}>
+  return <section className={`cognition-graph ${wandering?'cognition-graph--wandering':''} ${className}`} aria-labelledby={titleId} data-motion-paused={paused} data-thought-selected={!!selected}>
     <h2 id={titleId}>Connections <span lang="zh-Hans">关联</span></h2>
+    {wandering&&<button type="button" className="cognition-graph__motion-toggle" aria-pressed={paused} onClick={()=>setPaused(v=>!v)}>{paused?'Resume thoughts / 继续漂移':'Pause thoughts / 暂停漂移'}</button>}
     <div className="cognition-graph__canvas">
+      {wandering&&<div className="cognition-graph__ambient" aria-hidden="true">{ambientThoughts.map((thought,i)=><div key={i} className="cognition-graph__wisp" style={{...motionStyle(i),left:`${10+i*37%78}%`,top:`${10+i*29%75}%`}}><span lang="en">{thought.en}</span><span lang="zh-Hans">{thought.zhHans}</span></div>)}</div>}
       <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">{accessible.filter(e => connectedEdgeIds.includes(e.id)).map(e => {
         const a = byId.get(e.from), b = byId.get(e.to);
         return a && b ? <line key={e.id} x1={a.x} y1={a.y} x2={b.x} y2={b.y} /> : null;
       })}</svg>
-      {model.nodes.map(n => { const label = n.perceivedLabels?.[cognition.phase] ?? n.label;
+      {model.nodes.map((n,index) => { const label = n.perceivedLabels?.[cognition.phase] ?? n.label;
         return <button key={n.id} type="button" className="cognition-graph__node" aria-pressed={selected === n.id}
-          style={{ left: `${n.x}%`, top: `${n.y}%` }} onClick={() => { setFeedbackPhase(cognition.phase); select(n.id); }}>
-          <span lang="en">{label.en}</span><span lang="zh-Hans">{label.zhHans}</span></button>;
+          style={{...(wandering?motionStyle(index):{}),left: `${n.x}%`, top: `${n.y}%` }} onClick={() => { setFeedbackPhase(cognition.phase); select(n.id); }}>
+          {wandering?<span className="cognition-graph__thought" data-shape={index%3}><span lang="en">{label.en}</span><span lang="zh-Hans">{label.zhHans}</span></span>:<><span lang="en">{label.en}</span><span lang="zh-Hans">{label.zhHans}</span></>}
+        </button>;
       })}
     </div><p role="status">{feedbackPhase === cognition.phase ? message : 'Choose two details. / 选择两个细节。'}</p>
   </section>;

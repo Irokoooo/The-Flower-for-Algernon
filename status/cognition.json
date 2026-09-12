@@ -1,6 +1,6 @@
 {
+  "progress": 88,
   "status": "review",
-  "note": "Diary edits frozen, ready for Lead build. Fixed final sheet onClick legacy .72/.82 divisors; click and drag both normalize against full sheet dimensions. Natural-width measured clamp, modal RAF scroll cleanup, <=2 recalled detail phrases. Final typecheck passed; no build/browser/functional tests/commit. Human review pending.",
-  "updatedAt": "2026-09-12T08:57:12.6376396Z",
-  "progress": 88
+  "updatedAt": "2026-09-12T09:08:55.4036477Z",
+  "note": "测试漂移思绪已集成：可见文字可命中，悬停原位暂停；聚焦/选择稳定并显示连线，环境念头淡去重现。6观察/5关联/10念头；类型检查与构建通过，待人工试玩。"
 }

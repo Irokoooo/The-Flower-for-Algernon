@@ -15,7 +15,7 @@ import { loadCheckpoint, saveCheckpoint, type Checkpoint } from './core/checkpoi
 import { conferenceChoices, conferenceConvergence, type ConferenceChoiceId } from './content/conference-choice';
 import { chapterTwoSteps } from './content/chapter-two';
 import { applyChapterAction, type ChapterProgress, type ChapterAction } from './narrative/chapter-two';
-import { observations, testGraph, machineGraph, lines } from './content/experience';
+import { observations, testAmbientThoughts, testGraph, machineGraph, lines } from './content/experience';
 import type { CognitionState } from './core/types';
 import type { ReportDraft } from './narrative/report';
 import { voiceForText } from './audio/production-voices';
@@ -35,6 +35,7 @@ function availableVoice(english:string) {
 }
 
 export default function App(){
+ const [taskView,setTaskView]=useState<'current'|'test-review'>('current');
  const [checkpoint,setCheckpoint]=useState(()=>loadCheckpoint());
  const [diaries,setDiaries]=useState<Record<string,ReportDraft>>({});
  const [chapterId,setChapterId]=useState('classroom-a');
@@ -74,7 +75,7 @@ export default function App(){
      const handle=await manager.playVoice(voice.assetId);if(request!==voiceRequest.current){handle.stop();return;}diarySound.current=handle;await handle.ended;if(request===voiceRequest.current)diarySound.current=null;
    })().catch(()=>{});
  };
- const go=(next:Step,line?:Pair)=>{stopVoice();setStoryStage(old=>Math.max(old,next==='bakery'?1:['gain','machine','revisit'].includes(next)?2:next==='chapter'?3:['realization','release','decline','last-report','empty-room'].includes(next)?4:0));setSpeaking(false);setEdges([]);setStep(next);setTaskOpen(false);setDialogueOpen(false);if(line)say(line);};
+ const go=(next:Step,line?:Pair)=>{stopVoice();setStoryStage(old=>Math.max(old,next==='bakery'?1:['gain','machine','revisit'].includes(next)?2:next==='chapter'?3:['realization','release','decline','last-report','empty-room'].includes(next)?4:0));setSpeaking(false);setEdges([]);setStep(next);setTaskOpen(false);setTaskView('current');setDialogueOpen(false);if(line)say(line);};
  const bridge=(next:Step,line?:Pair,title='A new page / 新的一页',nextChapter?:string)=>{stopVoice();setTaskOpen(false);setDialogueOpen(false);setPage({next,line,title,chapterId:nextChapter});setTransition(true);};
  const turnPage=()=>{if(!page)return;if(page.chapterId){setChapterId(page.chapterId);setLesson({completed:[]});}go(page.next,page.line);setPage(null);setTransition(false);};
  useEffect(()=>{if(!transition||!page)return;const handle=setTimeout(turnPage,1400);return()=>clearTimeout(handle);},[transition,page]);
@@ -91,12 +92,26 @@ export default function App(){
  const interact=(rawId:string)=>{
    const id=normalizeHotspot(rawId,bakery?'bakery':'laboratory');
    if(transition||taskOpen||dialogueOpen||mazeOpen)return;
+   const diaryPhase=['diary','ascending-report','peak-report','last-report'].includes(step);
+   const isBook=rawId==='book'||id==='lab-cabinet';
+   if(diaryPhase||step==='test'){
+     if(isBook){say(observations.book);return;}
+     if(id==='research-notes'){
+       if(diaryPhase){setTaskView('current');setTaskOpen(true);}
+       else say({en:'I will write after the test.',zhHans:'测试结束后我再写。'});
+       return;
+     }
+     if(id==='test-desk') {setTaskView(diaryPhase?'test-review':'current');setTaskOpen(true);return;}
+     if(id==='algernon-maze'){say(observations.mouse);return;}
+     if(id==='researcher'||id==='baker')say(diaryPhase?{en:'I want to write this down.',zhHans:'我想把这些记下来。'}:lines.test,diaryPhase?'Charlie':'Dr. Strauss');
+     return;
+   }
    if(id==='algernon-maze'&&!['chapter','realization','release','empty-room'].includes(step)){setObserved(a=>a.includes('mouse')?a:[...a,'mouse']);say(observations.mouse);return;}
    if(step==='lab') {
      if(!['lab-cabinet','research-notes','test-desk','researcher'].includes(id))return;
-     const key=id==='lab-cabinet'?'book':'paper';
+     const key=id==='lab-cabinet'?'book':id==='test-desk'?'test':'paper';
      if(id==='researcher'||id==='test-desk'&&observed.length>=2){if(observed.length>=2)go('test',lines.test);else say(lines.welcome);return;}
-     setObserved(a=>a.includes(key)?a:[...a,key]);say(observations[key]);return;
+     setObserved(a=>a.includes(key)?a:[...a,key]);say(key==='test'?{en:'Two dark shapes on a test card. I wonder what they want me to see.',zhHans:'测试卡上有两个深色形状。我不知道他们想让我看见什么。'}:observations[key]);return;
    }
    if(step==='chapter'){if(!['researcher','baker','chair'].includes(id))setTaskOpen(true);return;}
    if(step==='release'){if(id==='algernon-maze')setTaskOpen(true);return;}
@@ -106,15 +121,16 @@ export default function App(){
    if(['test-desk','research-notes','bread-counter','oven','bread-shelf'].includes(id))setTaskOpen(true);
  };
  useEffect(()=>{if(!taskOpen&&!dialogueOpen)return;const before=document.activeElement as HTMLElement|null;const dialog=document.querySelector<HTMLElement>(dialogueOpen?'.dialogue-card':'.task-modal');dialog?.querySelector<HTMLElement>('button,textarea')?.focus();const key=(e:KeyboardEvent)=>{if(e.key==='Escape'){e.preventDefault();if(dialogueOpen)setDialogueOpen(false);else setTaskOpen(false);stopVoice();}if(e.key==='Tab'){const items=Array.from(dialog?.querySelectorAll<HTMLElement>('button:not(:disabled),textarea,a[href]')??[]);const first=items[0],last=items[items.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}};window.addEventListener('keydown',key);return()=>{window.removeEventListener('keydown',key);before?.focus();};},[taskOpen,dialogueOpen]);
- const objective=step==='chapter'?(chapter.id==='conference'?'Read the slide and your notes. / 查看投影片与笔记。':chapter.objective.en+' / '+chapter.objective.zhHans):step==='empty-room'?'Look at what remains. Leave when you choose. / 看看留下的东西，想离开时再离开。':step==='release'?'Look beside the small cage. / 看看小笼子旁。':step==='realization'?'Return to the records. / 回到记录旁。':step==='classroom'?'Open your lecture notes at the workbench. / 在工作台边打开课堂笔记。':step==='lab'?'Examine two objects, then speak to the researcher. / 观察两件物品后，与研究员交谈。':step==='test'?'Examine the test desk. / 查看测试桌。':['diary','ascending-report','peak-report','last-report'].includes(step)?'Open your notebook at a desk. / 走到桌边打开笔记本。':step==='bakery'?'Go to the bread counter. / 走到面包柜台。':'Inspect the workbench or oven. / 查看工作台或烤炉。';
+ const objective=step==='chapter'?(chapter.id==='conference'?'Read the slide and your notes. / 查看投影片与笔记。':chapter.objective.en+' / '+chapter.objective.zhHans):step==='empty-room'?'Look at what remains. Leave when you choose. / 看看留下的东西，想离开时再离开。':step==='release'?'Look beside the small cage. / 看看小笼子旁。':step==='realization'?'Return to the records. / 回到记录旁。':step==='classroom'?'Open your lecture notes at the workbench. / 在工作台边打开课堂笔记。':step==='lab'?'Examine two objects, then speak to the researcher. / 观察两件物品后，与研究员交谈。':step==='test'?'Examine the test desk. / 查看测试桌。':['diary','ascending-report','peak-report','last-report'].includes(step)?'Open the diary on the table. / 打开桌上的日记本。':step==='bakery'?'Go to the bread counter. / 走到面包柜台。':'Inspect the workbench or oven. / 查看工作台或烤炉。';
  return <main className={`game game--${phase.toLowerCase()}`}>
-  <div className="world"><ExplorableRoom npcName={bakery?'Gimpy / 金皮':'Dr. Strauss / 施特劳斯医生'} scene={bakery?'bakery':'laboratory'} assets={{...getRoomVisuals(bakery?'bakery':'laboratory'),...(['chapter','realization','release','empty-room','flowers','memory','finish'].includes(step)?{npc:undefined,npcReaction:undefined}:{})}} onInteract={interact} npcReacting={dialogueOpen&&speaker===(bakery?'Gimpy':'Dr. Strauss')} paused={['title','finish','flowers','memory'].includes(step)||transition||taskOpen||dialogueOpen||mazeOpen}/></div>
+  <div className="world"><ExplorableRoom hotspotLabels={{paper:['diary','ascending-report','peak-report','last-report'].includes(step)?'Write diary / 写日记':'Diary / 日记本',test:'Examine test / 查看测试',book:'Inspect book / 看书'}} npcName={bakery?'Gimpy / 金皮':'Dr. Strauss / 施特劳斯医生'} scene={bakery?'bakery':'laboratory'} assets={{...getRoomVisuals(bakery?'bakery':'laboratory'),...(['chapter','realization','release','empty-room','flowers','memory','finish'].includes(step)?{npc:undefined,npcReaction:undefined}:{})}} onInteract={interact} npcReacting={dialogueOpen&&speaker===(bakery?'Gimpy':'Dr. Strauss')} paused={['title','finish','flowers','memory'].includes(step)||transition||taskOpen||dialogueOpen||mazeOpen}/></div>
   <header className="game-header"><a href="#" onClick={e=>{e.preventDefault();clearTimeout(timer.current);setTransition(false);closeUI();setStep('title');audio.current?.stopVoice();}}>ALGERNON<span>A STUDY IN REMEMBERING</span></a><nav><button onClick={()=>{setMuted(v=>!v);audio.current?.setMuted(!muted);}}>{muted?'Unmute':'Sound on'}</button><a href="/project-status.html" target="_blank" rel="noreferrer">Studio ↗</a></nav></header>
   {step==='title'?<section className="title-page"><p className="kicker">AN INTERACTIVE NARRATIVE</p><h1>Flowers<br/>for <em>Algernon.</em></h1><div className="fine-line"/><p className="title-quote">The world hasn't changed.<br/>The way you see it will.</p><button className="primary" onClick={begin}>Open your eyes <span>睁开眼睛 →</span></button>{checkpoint.checkpoint&&<button className="primary" onClick={resume}>Resume saved diary <span>从日记检查点继续</span></button>}{checkpoint.error&&<p role="status">{checkpoint.error}</p>}<p className="build-note">First playable study · 正式插画持续制作中，英语配音待就绪<br/>English · EN / 简中</p></section>:<>
   <div className="chapter-mark"><span>{step==='chapter'?chapter.title.en:step==='empty-room'?'THE ROOM REMAINS':bakery?'D O N N E R ’ S   B A K E R Y':'B E E K M A N   L A B O R A T O R Y'}</span><i>{bakery?'Bread, flour, familiar faces.':'Paper. A clock. Someone waiting.'}</i></div>
   {step!=='finish'&&!taskOpen&&!dialogueOpen&&<p className="objective">{objective}</p>}
-  {taskOpen&&<div className="modal-backdrop"><div className="task-modal" inert={dialogueOpen} role="dialog" aria-modal={!dialogueOpen} aria-label="Current task / 当前任务"><button className="close-task" onClick={closeUI}>Return to the room / 返回房间 ×</button>
-  {step==='test'&&<section className="interaction-panel"><p className="kicker">A LITTLE INK ON PAPER</p><h2>What do you see?</h2><TestStimulus/><CognitionGraph model={testGraph} cognition={cognition} connectedEdgeIds={edges} onConnect={connect}/><button className="primary" disabled={!edges.length} onClick={()=>go('diary',{en:'Maybe I did all right. I should write it down.',zhHans:'也许我做得还不错。我应该写下来。'})}>A butterfly, maybe. <span>也许是蝴蝶 →</span></button></section>}
+  {taskOpen&&<div className="modal-backdrop"><div className={`task-modal ${step==='test'||taskView==='test-review'?'test-task-modal':''}`} inert={dialogueOpen} role="dialog" aria-modal={!dialogueOpen} aria-label="Current task / 当前任务"><button className="close-task" onClick={closeUI}>Return to the room / 返回房间 ×</button>
+  {taskView==='test-review'?<section className="interaction-panel test-review"><h2>The same test / 同一张测试图</h2><TestStimulus/></section>:<>
+  {step==='test'&&<section className="interaction-panel"><p className="kicker">A LITTLE INK ON PAPER</p><h2>What do you see?</h2><TestStimulus/><CognitionGraph presentation="wandering" ambientThoughts={testAmbientThoughts} model={testGraph} cognition={cognition} connectedEdgeIds={edges} onConnect={connect}/><button className="primary" disabled={!edges.length} onClick={()=>go('diary',{en:'Maybe I did all right. I should write it down.',zhHans:'也许我做得还不错。我应该写下来。'})}>That is what I can see <span>我先说这些 →</span></button></section>}
   {['diary','ascending-report','peak-report','last-report'].includes(step)&&<section className="interaction-panel report-panel"><DiaryCollage key={step} phase={phase} entryId={step==='diary'?'first':step==='ascending-report'?'ascending':step==='peak-report'?'peak':'last'} previousText={diaries.peak?.rawText??intent} onPlaceFragment={placeFragment} onSave={saveDiary}/></section>}
   {step==='chapter'&&<section className="interaction-panel chapter-panel"><p className="kicker">{chapter.sceneId==='classroom'?'LECTURE · 课堂':chapter.sceneId==='conference'?'CONFERENCE · 会议':'RECORDS · 记录'}</p><h2>{chapter.title.en}</h2><p>{chapter.title.zhHans}</p><SubtitleBlock text={chapter.id==='conference'?{en:'Read the public claim and your dated records before deciding how to respond.',zhHans:'先阅读公开结论与带日期的记录，再决定如何回应。'}:chapter.objective}/>
    {chapter.requirements.filter(r=>r.action.kind!=='connect'&&(chapter.id!=='conference'||r.action.kind==='inspect')).map(r=>{const ready=(r.after??[]).every(id=>lesson.completed.includes(id));const done=lesson.completed.includes(r.id);const action=r.action;if(action.kind==='place')return <EvidencePlacement key={r.id} itemLabel={chapterObjectLabel(action.itemId)} targetLabel={chapterObjectLabel(action.targetId)} disabled={!ready||done} onPlace={()=>lessonAction(action)}/>;const label=action.kind==='inspect'?'Inspect / 查看 · '+chapterObjectLabel(action.targetId):action.kind==='choose'?'Choose / 选择 · '+chapterObjectLabel(action.optionId):'';return <button className="primary" key={r.id} disabled={!ready||done} onClick={()=>lessonAction(action)}>{done?'✓ ':''}{label}</button>;})}
@@ -134,6 +150,7 @@ export default function App(){
   {step==='gain'&&<section className="interaction-panel compact"><p className="kicker">THE SAME MACHINE</p><h2>Wait. I see it.</h2><p>The lever. The turning wheel.<br/>They aren't separate things.</p><p lang="zh-Hans">拉杆。转动的轮子。它们不是独立的。</p><button className="primary" onClick={()=>go('ascending-report')}>Write what I noticed <span>记下我的发现 →</span></button></section>}
   {['machine','decline'].includes(step)&&<section className="interaction-panel"><p className="kicker">THE DOUGH ROLLER</p><h2>{step==='decline'?'There was a connection.':'One thing moves another.'}</h2><CognitionGraph key={step} model={machineGraph} cognition={cognition} connectedEdgeIds={edges} onConnect={connect}/>{step==='machine'?<button className="primary" disabled={edges.length<3} onClick={()=>go('revisit',lines.success)}>Turn the machine <span>开动机器 →</span></button>:<><p className="remembered">lever — gear — roller — dough</p><p>I used to understand this. / 我以前懂得这个。</p><button className="primary" onClick={()=>go('last-report',lines.decline)}>Find my notebook <span>找我的笔记本 →</span></button></>}</section>}
   {step==='revisit'&&<section className="interaction-panel"><p className="kicker">THE SAME LAUGHTER</p><h2>It was always there.</h2><CognitionGraph model={BAKERY_GRAPH} cognition={cognition} connectedEdgeIds={edges} onConnect={connect}/>{edges.length>0&&<div className="choices">{['I only did what I was asked.','Why are you angry?','Say nothing.'].map((line,i)=><button key={line} onClick={()=>{setChoice(line);say({en:i===0?'He looks away. Nobody asks how I did it.':i===1?'“Nobody is angry,” he says, without looking at me.':'I stay quiet. So does he.',zhHans:i===0?'他移开目光。没有人问我是怎样做到的。':i===1?'“没人生气，”他说，却不看我。':'我沉默。他也是。'});}}>{line}<small>{['我只是做了被要求的事。','你为什么生气？','保持沉默。'][i]}</small></button>)}</div>}{choice&&<button className="primary" onClick={()=>bridge('chapter',undefined,'A university lecture / 大学课堂','classroom-a')}>Follow the question <span>带着问题去上课 →</span></button>}</section>}
+  </>}
   </div></div>}
   {step==='finish'&&<section className="interaction-panel compact"><p className="kicker">END OF THE FIRST STUDY</p><h2>You remember.</h2><p>That is where we begin.<br/><small>这是我们的起点。</small></p><p className="build-note">本次切片到此结束；课堂笔记已可交互；完整教室、研究、会议与结局仍在开发计划中。</p><button className="primary" onClick={()=>{setObserved([]);setBread(0);setChoice('');setIntent('');go('lab',lines.welcome);}}>Return to the room <span>回到房间 →</span></button></section>}
   {step!=='finish'&&dialogueOpen&&<footer className={`subtitles dialogue-card ${speaker==='Charlie'?'thought-card':'spoken-card'}`} role="dialog" aria-modal="true" aria-label="Dialogue / 对话"><div className="speaker">{speaker}{speaking?' · speaking':''}</div><SubtitleBlock text={text}/>{availableVoice(text.en)?.speaker===speaker&&<button className="replay" aria-label="Replay English voice" onClick={()=>say(text,speaker)}>↺</button>}<button className="dialogue-dismiss" onClick={()=>{setDialogueOpen(false);stopVoice();}}>Continue / 继续</button></footer>}

@@ -1,6 +1,6 @@
 {
+  "status": "review",
+  "note": "experience.ts ready for Hubble/Lead: testGraph 6 nodes, 5 optional pair edges; ink/wings/butterfly IDs retained. Exports testAmbientThoughts: readonly PerceivedLabel[] (10 bilingual LOW thoughts). Use wandering presentation; no all-edges gate. Only content and own status changed; no tests/browser/commit.",
   "progress": 90,
-  "note": "Updated diary first9/ascending10/peak15/last10; ALL fragments include english. Conference 3 choices + evidence/reversal/release contract ready. Exact contracts/audio retry limits: docs/NARRATIVE_LATEST_HANDOFF.md. Existing diary audio map empty; Kepler diagnostic pending. No App edits/tests/browser/commit.",
-  "updatedAt": "2026-09-12T08:51:45.0068036Z",
-  "status": "review"
+  "updatedAt": "2026-09-12T09:03:56.0268539Z"
 }

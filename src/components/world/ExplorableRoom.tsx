@@ -15,11 +15,13 @@ export interface ExplorableRoomProps {
   npcReacting?: boolean;
   /** Display label only; interaction callbacks still emit npc. */
   npcName?: string;
+  /** Display-only action labels; never remaps physical hotspot IDs. */
+  hotspotLabels?: Partial<Record<string, string>>;
 }
 const EMPTY_ASSETS: RoomAssets = {};
 
 /** Metre-scale blockout geometry; illustrated art exists ONLY when supplied as raster textures. */
-export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract, paused = false, npcReacting = false, npcName }: ExplorableRoomProps) {
+export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract, paused = false, npcReacting = false, npcName, hotspotLabels: labelOverrides }: ExplorableRoomProps) {
   const hotspotLabels: Record<string, string> = {
     npc: npcName ?? (room === 'bakery' ? 'Gimpy / 金皮' : 'Dr. Strauss / 施特劳斯医生'),
     book: 'Book / 书籍',
@@ -29,7 +31,7 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
     machine: room === 'bakery' ? 'Oven / 烤炉' : 'Research equipment / 实验设备',
     bread: 'Bread counter / 面包柜台',
   };
-  const hotspotLabel = (id: string) => hotspotLabels[id] ?? 'Inspect object / 查看物品';
+  const hotspotLabel = (id: string) => labelOverrides?.[id] ?? hotspotLabels[id] ?? 'Inspect object / 查看物品';
   const host = useRef<HTMLDivElement>(null);
   const enter = useRef<() => void>(() => {});
   const pauseRef = useRef(paused);
@@ -217,9 +219,8 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
           return !!mat && mat.visible && (!mat.transparent || mat.opacity>0);
         });
         const id=(hit?.object.userData.hotspot ?? '') as string;
-        if(!ox&&!oy) central=id;
-        // Prefer small inspectable objects over the desk they rest on.
-        if(id && !['test','bread'].includes(id)) return id;
+        // An exact visible hit wins. Nearby rays must never substitute another physical object.
+        if(!ox&&!oy && hit) return id;
         if(!central && id)central=id;
       }
       return central;
@@ -230,7 +231,7 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
     function interact() { if (!controls.isPaused && active) { if(active === 'npc') { reactionUntil=elapsed+1.4; if(npcPlane && reactionMaterial?.map) npcPlane.material=reactionMaterial; } callback.current?.(active); } }
     function down(event: KeyboardEvent) {
       if (event.code === 'KeyE' && !event.repeat && !controls.isPaused) {
-        active=selectAt(0,0);
+        active=selectAt(0,0); setTarget(active);
         event.preventDefault(); interact();
       }
     }

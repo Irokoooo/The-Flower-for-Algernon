@@ -1,6 +1,6 @@
 {
   "status": "review",
   "progress": 95,
-  "note": "Room NPC/hotspot labels final; no blockers. Optional npcName defaults to Dr. Strauss / 施特劳斯医生 or Gimpy / 金皮. E and hover labels bilingual for book/paper/test/mouse/machine/bread/npc; raw callback IDs unchanged. Lead integrates. Diary belongs Hubble and audio Kepler; no further edits to those areas. No tests required for this handoff.",
-  "updatedAt": "2026-09-12T08:53:57.1177236Z"
+  "note": "Static hotspot review complete: exact nearest visible ray hit now wins over neighboring tolerance samples; mesh book/paper stamping and world matrix refresh confirmed already correct, desk-model unchanged. Added optional hotspotLabels display overrides; raw test/book/paper IDs preserved. E targets center, click targets pointer position. No browser/functional tests or build run for this inspect-only request. Lead owns action routes and integration; screenshot root cause not reproduced.",
+  "updatedAt": "2026-09-12T09:03:56.5874792Z"
 }
