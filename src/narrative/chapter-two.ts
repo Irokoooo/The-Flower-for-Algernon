@@ -20,7 +20,7 @@ export interface ChapterVoiceLine extends DialogueBeat {
 }
 export interface ChapterStep {
   id: string;
-  sceneId: 'classroom' | 'algernon-maze' | 'investigation' | 'research' | 'conference';
+  sceneId: 'classroom' | 'algernon-maze' | 'investigation' | 'research' | 'conference' | 'bakery' | 'private-room';
   phase: CognitionPhase;
   title: ChapterText;
   objective: ChapterText;

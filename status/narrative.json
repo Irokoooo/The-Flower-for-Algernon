@@ -1,6 +1,6 @@
 {
+  "updatedAt": "2026-09-19T06:55:54.3830326Z",
+  "progress": 100,
   "status": "review",
-  "note": "experience.ts ready for Hubble/Lead: testGraph 6 nodes, 5 optional pair edges; ink/wings/butterfly IDs retained. Exports testAmbientThoughts: readonly PerceivedLabel[] (10 bilingual LOW thoughts). Use wandering presentation; no all-edges gate. Only content and own status changed; no tests/browser/commit.",
-  "progress": 90,
-  "updatedAt": "2026-09-12T09:03:56.0268539Z"
+  "note": "Narrative: src/content/early-journey.ts exports earlyJourneySteps: ChapterStep[] (bakery-low/LOW, learning-low/LOW, recovery/laboratory LOW, bakery-return/ASCENDING, learning-return/ASCENDING), earlyJourneyLabels for every target/item, earlyJourneyCopy exact keys surgeryExplanation, surgeryReady, recoveryWelcome, preopRoom, learningWelcome, returnWelcome, plus script-only perception dialogue. src/content/diary-collage.ts preserves first and adds preop/recovery DiaryEntryKey entries with 9 LOW fragments each and intent roles. Core must extend ChapterStep.sceneId with laboratory before integration; surgery, diary routing and cognition transitions remain Core-owned. No App, registry, tests, build, or commit."
 }

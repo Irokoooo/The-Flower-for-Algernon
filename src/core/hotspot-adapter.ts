@@ -1,11 +1,11 @@
-export type HotspotRoom = 'laboratory' | 'bakery';
+export type HotspotRoom = 'laboratory' | 'bakery' | 'classroom' | 'research' | 'private-room';
 /** Renderer IDs are spatial objects; App IDs express the authored interaction. */
 export function normalizeHotspot(id: string, room: HotspotRoom): string {
   const aliases: Record<string, string> = {
-    book: room === 'bakery' ? 'bread-shelf' : 'lab-cabinet',
+    book: room === 'bakery' ? 'bread-shelf' : room === 'classroom' ? 'records' : 'lab-cabinet',
     paper: 'research-notes',
     test: 'test-desk',
-    npc: room === 'bakery' ? 'baker' : 'researcher',
+    npc: room === 'bakery' ? 'baker' : room === 'classroom' ? 'alice' : 'researcher',
     machine: 'oven',
     bread: 'bread-counter',
     mouse: 'algernon-maze',

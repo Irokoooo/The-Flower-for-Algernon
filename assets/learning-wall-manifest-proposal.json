@@ -1,0 +1,38 @@
+{
+  "assetId": "learning-wall-v1",
+  "status": "blocked",
+  "filename": "assets/environments/learning-wall-v1.png",
+  "hash": null,
+  "dimensions": null,
+  "format": "png",
+  "generation": {
+    "mode": "fallback-cli",
+    "tool": "C:/Users/Admin/.codex/skills/.system/imagegen/scripts/image_gen.py",
+    "model": "gpt-image-2",
+    "endpoint": "https://api.openai-next.com/v1/images/generations",
+    "size": "1536x1024",
+    "quality": "medium",
+    "n": 1,
+    "retries": 0,
+    "attemptCount": 1,
+    "paidCallCount": 1
+  },
+  "reference": {
+    "filename": "assets/environments/lab-wall.png",
+    "role": "style reference",
+    "observed": "warm midcentury muted olive/umber literary gouache lab-wall texture"
+  },
+  "promptFile": "assets/prompts/learning-wall-v1.txt",
+  "provenance": {
+    "source": "OpenAI Image API via approved OpenDev endpoint",
+    "license": "generated asset; project-controlled provenance pending successful generation",
+    "attribution": "OpenAI gpt-image-2 generation",
+    "notes": "Single bounded request; no fallback SVG or alternative asset created. API rejected the supplied local credential with HTTP 401 Invalid token before an image was returned.",
+    "requestId": "2026091906562997169707196e93ae3qIMfFvPi"
+  },
+  "validation": {
+    "inspectedWithViewImage": false,
+    "reason": "No PNG was returned or saved because the only authorized generation call failed.",
+    "targetExists": false
+  }
+}

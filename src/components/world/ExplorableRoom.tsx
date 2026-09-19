@@ -4,9 +4,11 @@ import { FirstPersonControls } from '../../core/first-person-controls';
 import './explorable-room.css';
 import { loadDeskModel } from './desk-model';
 
-export type RoomAssets = Partial<Record<'floor' | 'walls' | 'backdrop' | 'npc' | 'npcReaction' | 'hands' | 'foreground' | 'bookModel' | 'diaryModel', string>>;
+export type RoomScene = 'laboratory' | 'bakery' | 'classroom' | 'research' | 'private-room';
+/** Learning-room art uses walls; model URLs must come from the caller's Asset Registry. */
+export type RoomAssets = Partial<Record<'floor' | 'walls' | 'backdrop' | 'npc' | 'npcReaction' | 'hands' | 'foreground' | 'bookModel' | 'diaryModel' | 'breadModel', string>>;
 export interface ExplorableRoomProps {
-  scene: 'laboratory' | 'bakery';
+  scene: RoomScene;
   /** URLs resolved by the caller's Asset Registry. NPC/foreground require transparent raster images. */
   assets?: RoomAssets;
   onInteract?: (hotspotId: string) => void;
@@ -30,6 +32,9 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
     mouse: "Algernon’s habitat / 阿尔吉侬的居所",
     machine: room === 'bakery' ? 'Oven / 烤炉' : 'Research equipment / 实验设备',
     bread: 'Bread counter / 面包柜台',
+    records: room === 'classroom' ? 'Lesson notes / 学习笔记' : 'Records / 研究记录',
+    keepsake: 'Keepsake box / 纪念物盒',
+    door: 'Door / 房门',
   };
   const hotspotLabel = (id: string) => labelOverrides?.[id] ?? hotspotLabels[id] ?? 'Inspect object / 查看物品';
   const host = useRef<HTMLDivElement>(null);
@@ -46,8 +51,8 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
   const controlsRef = useRef<FirstPersonControls | null>(null);
   useEffect(() => { callback.current = onInteract; }, [onInteract]);
   useEffect(() => { pauseRef.current = paused; controlsRef.current?.setPaused(paused || !entered); }, [paused, entered]);
-  const {floor, walls, backdrop, npc, npcReaction, hands, foreground, bookModel, diaryModel} = assets;
-  const updateModels = useRef<(book?: string, diary?: string) => void>(() => {});
+  const {floor, walls, backdrop, npc, npcReaction, hands, foreground, bookModel, diaryModel, breadModel} = assets;
+  const updateModels = useRef<(book?: string, diary?: string, bread?: string) => void>(() => {});
   useEffect(() => {
     const mount = host.current;
     if (!mount) return;
@@ -62,6 +67,7 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
     renderer.domElement.setAttribute('aria-label', `${room} 3D room`);
     const world = new THREE.Scene(); world.background = new THREE.Color('#303a34');
     const camera = new THREE.PerspectiveCamera(60, 1, .05, 40);
+    // Keep x=0 clear from this spawn to z=0 in every layout, then approach the diary from the front.
     camera.position.set(0, 1.65, 3.6);
     const controls = new FirstPersonControls({
       camera, element: renderer.domElement,
@@ -118,23 +124,83 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
     box([8,3.4,.16],[0,1.7,5],wallMat);
     const timber = material(room === 'bakery' ? '#9f8258' : '#7e9183');
     const dark = material('#495b50');
-    // Tables and shelving have actual dimensions and walk-blocking volumes.
+    // Main writing desk is deliberately invariant: both GLB anchors depend on its surface.
     box([2.5,.15,1.05],[-1.5,.9,-1.2],timber,true,room === 'bakery' ? 'bread' : 'test');
     for(const x of [-2.5,-.5]) for(const z of [-1.58,-.82]) box([.1,.85,.1],[x,.425,z],dark);
-    box([1.8,1.85,.5],[2.85,.925,-3.9],timber,true,'book');
-    box([.65,.48,.65],[.5,.24,-2],dark,true);
-    box([1.2,.85,.65],[-3,.425,-3.9],timber,true,'machine');
+    const paperMaterial=material('#d9cfb2');
+    function table(x:number,z:number,width:number,depth:number,id?:string) {
+      box([width,.12,depth],[x,.78,z],timber,true,id);
+      for(const dx of [-width/2+.1,width/2-.1]) for(const dz of [-depth/2+.1,depth/2-.1])
+        box([.09,.72,.09],[x+dx,.36,z+dz],dark);
+    }
+    function shelf(x:number,z:number,id:string) {
+      box([1.8,1.85,.5],[x,.925,z],timber,true,id);
+      for(const y of [.45,1,1.55]) box([1.85,.07,.58],[x,y,z+.04],dark,false,id);
+    }
+    function chair(x:number,z:number) {
+      box([.46,.44,.48],[x,.22,z],dark,true);
+      box([.46,.48,.08],[x,.68,z+.2],timber,false);
+    }
+    if(room==='classroom') {
+      // Two columns, three rows. The centre aisle and left passage reach the main writing desk.
+      for(const x of [-2.1,1.3]) for(const z of [.55,1.9,3.25]) {
+        table(x,z,1.05,.55,'records'); chair(x,z+.52);
+      }
+      box([.78,1.04,.6],[1.35,.52,-3.25],timber,true,'records');
+      box([.85,.08,.68],[1.35,1.08,-3.25],dark,false,'records');
+      box([.4,.02,.28],[1.35,1.13,-3.25],paperMaterial,false,'records');
+      shelf(2.85,-4.25,'book');
+    } else if(room==='research') {
+      table(2.05,-.3,1.8,1.15,'records');
+      table(-2.25,1.55,1.65,.95,'records');
+      for(const [x,z] of [[1.7,-.35],[2.35,-.1],[-2.5,1.55],[-2,1.65]])
+        box([.35,.03,.26],[x,.855,z],paperMaterial,false,'records');
+      shelf(2.85,-3.9,'records');
+      box([1.2,.85,.65],[-3,.425,-3.9],timber,true,'machine');
+      box([.48,.27,.35],[-2.9,.995,-3.9],material('#738675'),false,'mouse');
+      chair(.55,-2.1);
+    } else if(room==='private-room') {
+      // Research paper stack, clear of both existing book/diary GLB footprints.
+      box([.35,.03,.26],[-.65,.99,-1.35],paperMaterial,false,'records');
+      // Bed frame/mattress are honest geometry blockouts, not generated finished furniture.
+      box([1.55,.34,2.45],[2.65,.17,-2.5],timber,true);
+      box([1.48,.18,2.35],[2.65,.43,-2.5],material('#b6b6a0'),false);
+      box([1.55,.9,.12],[2.65,.45,-3.7],dark,false);
+      box([.65,.12,.42],[2.65,.58,-3.27],paperMaterial,false);
+      box([.6,.58,.6],[1.25,.29,-3.35],timber,true);
+      box([.34,.16,.24],[1.25,.66,-3.35],material('#92724f'),false,'keepsake');
+      chair(-1.5,-2.05);
+    } else if(room==='bakery') {
+      shelf(2.85,-3.9,'bread');
+      box([1.2,.85,.65],[-3,.425,-3.9],timber,true,'machine');
+      // Side workbench and long shop counter distinguish bakery circulation from the lab.
+      table(2.6,.65,1.1,2.15,'bread');
+      box([1.6,.95,.65],[-2.65,.475,2.45],timber,true,'bread');
+      chair(.5,-2);
+    } else {
+      shelf(2.85,-3.9,'book');
+      box([1.2,.85,.65],[-3,.425,-3.9],timber,true,'machine');
+      box([.48,.27,.35],[-2.9,.995,-3.9],material('#738675'),false,'mouse');
+      chair(.5,-2);
+    }
+    if (room === 'private-room' || room === 'classroom' || room === 'laboratory' || room === 'bakery') {
+      // Closed door emits raw door; App owns explicit leaving and narrative gates.
+      // Rear-right wall placement preserves spawn and the classroom's rear passage.
+      box([1,2.2,.09],[2.35,1.1,4.85],timber,true,'door');
+      box([.06,.07,.09],[2.02,1.05,4.77],dark,false,'door');
+    }
     const diaryBlockout = box([.4,.025,.3],[-1.9,.9875,-.9],material('#d9cfb2'),false,'paper');
     const bookBlockout = box([.24,.06,.32],[-1.25,1.005,-1.2],material('#6b5745'),false,'book');
+    // Provisional loaf footprint on the existing bakery bench; no pickup behavior is implied.
+    const breadBlockout = room === 'bakery'
+      ? box([.45,.14,.28],[2.6,.91,.65],material('#b78650'),false,'bread') : undefined;
     let disposeModels: Array<() => void> = [];
-    updateModels.current = (book, diary) => {
+    updateModels.current = (book, diary, bread) => {
       disposeModels.forEach(dispose => dispose()); disposeModels=[];
       if (book) disposeModels.push(loadDeskModel({url:book,world,surfaces,fallback:bookBlockout,hotspot:'book',footprint:[.24,.32],center:[-1.25,-1.2],tableY:.975}));
       if (diary) disposeModels.push(loadDeskModel({url:diary,world,surfaces,fallback:diaryBlockout,hotspot:'paper',footprint:[.4,.3],center:[-1.9,-.9],tableY:.975}));
+      if (bread && breadBlockout) disposeModels.push(loadDeskModel({url:bread,world,surfaces,fallback:breadBlockout,hotspot:'bread',footprint:[.45,.28],center:[2.6,.65],tableY:.84}));
     };
-    // Mouse habitat is a labelled interaction volume, not an invented mouse illustration.
-    box([.48,.27,.35],[-2.9,.995,-3.9],material('#738675'),false,'mouse');
-    for (const y of [.45,1,1.55]) box([1.85,.07,.58],[2.85,y,-3.86],dark,false);
     box([.46,.08,.46],[-1.5,2.96,-1.1],timber,false);
     // No synthetic character substitute: an absent NPC raster leaves this slot empty.
     function imagePlane(url: string | undefined, width: number, height: number, position: [number,number,number], id?: string) {
@@ -156,8 +222,10 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
       mesh.onBeforeRender = fit;
       return mesh;
     }
+    // The generated learning-room illustration shares this existing rear-wall raster plane.
     imagePlane(backdrop ?? walls,7.7,3.2,[0,1.7,-4.89]);
-    const npcPlane = imagePlane(npc,1.2,1.8,[-1.5,.9,-2.05],'npc');
+    const npcPosition: [number,number,number] = room==='classroom' ? [.25,.9,-3.3] : room==='research' ? [.7,.9,-2.5] : [-1.5,.9,-2.05];
+    const npcPlane = imagePlane(npc,1.2,1.8,npcPosition,'npc');
     let reactionMaterial: THREE.MeshStandardMaterial | undefined;
     updateReaction.current = url => {
       reactionMaterial = url ? material('#ffffff',url,true) : undefined;
@@ -321,8 +389,8 @@ export function ExplorableRoom({ scene: room, assets = EMPTY_ASSETS, onInteract,
     };
   }, [room,floor,walls,backdrop,npc,hands,foreground]);
   useEffect(() => {
-    updateModels.current(bookModel,diaryModel);
-  }, [bookModel,diaryModel,room,floor,walls,backdrop,npc,hands,foreground]);
+    updateModels.current(bookModel,diaryModel,breadModel);
+  }, [bookModel,diaryModel,breadModel,room,floor,walls,backdrop,npc,hands,foreground]);
   // The expression URL can arrive after generation without rebuilding the room or resetting the camera.
   useEffect(() => {
     updateReaction.current(npcReaction);

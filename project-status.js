@@ -27,6 +27,14 @@ async function load() {
     if(!production){production=document.createElement('section');production.id='production';production.className='card';el('agents').before(production);}
     production.innerHTML=data.production ? `<b>素材制作与阻塞</b><p>${escape(data.production.art)}</p><p>${escape(data.production.music)}</p><p class="blocked">${escape(data.production.voice)}</p><small>授权上限 $${escape(data.production.budgetLimitUSD)} · 预留额度 $${escape(data.production.reservationUSD)}（不是已扣费）· 实际账单待服务商确认</small>` : '';
     if(data.currentIteration) production.innerHTML += `<h3>${escape(data.currentIteration.title)}</h3>${data.currentIteration.items.map(item=>`<div class="row"><span>${escape(item.title)}<p>${escape(item.note)}</p></span>${status(item.status)}</div>`).join('')}`;
+    let todo=el('optimization-todo');
+    if(!todo){todo=document.createElement('section');todo.id='optimization-todo';todo.className='card';el('coverage').before(todo);}
+    try {
+      const response=await fetch(`docs/OPTIMIZATION_TODO.md?t=${Date.now()}`,{cache:'no-store'});
+      if(!response.ok)throw Error('TODO unavailable');
+      const entries=(await response.text()).split(/\r?\n/).map(line=>line.match(/^- \[([ x])\] \*\*(OPT-\d+ [^*]+)\*\*：(.*)$/)).filter(Boolean);
+      todo.innerHTML=`<h2>玩家优化 TODO · ${entries.length} 项</h2><p>勾选只代表玩家已验收；先落实场景，再逐项优化。<a href="docs/OPTIMIZATION_TODO.md" target="_blank" rel="noreferrer">打开完整清单 ↗</a></p><details><summary>展开历次优化要求</summary>${entries.map(item=>`<div class="row"><span>${item[1]==='x'?'☑':'☐'} <b>${escape(item[2])}</b><p>${escape(item[3])}</p></span></div>`).join('')}</details>`;
+    }catch{todo.textContent='优化清单暂时无法读取，下次刷新重试。';}
     el('agents').innerHTML=agents.map(a=>`<article class="card"><div class="label">${escape(a.name)} · ${escape(a.nickname)}</div><h3>${status(a.status)} <small>${percent(a.progress)}%</small></h3><div class="bar"><div class="fill" style="width:${percent(a.progress)}%"></div></div><p>${escape(a.note)}</p><small>${a.updatedAt ? escape(new Date(a.updatedAt).toLocaleString()) : '等待首次任务汇报'}</small>${a.blockers?.length?`<p class="blocked">${escape(Array.isArray(a.blockers)?a.blockers.join(' / '):a.blockers)}</p>`:''}</article>`).join('');
     el('coverage').innerHTML=['experience','constraint'].map(kind=>`<details ${kind==='experience'?'open':''}><summary>${kind==='experience'?'场景、剧情与交互':'全 PRD 规范索引'} (${data.coverage.filter(x=>x.kind===kind).length})</summary>${data.coverage.filter(x=>x.kind===kind).map(x=>`<div class="row"><div><small>§${escape(x.section)} · ${escape(x.priority)}</small><br>${escape(x.title)}${x.evidence?`<p>${escape(x.evidence)}</p>`:''}</div>${status(x.status)}</div>`).join('')}</details>`).join('');
     el('decisions').innerHTML=(data.designDecisions||[]).map(x=>`<div class="card"><b>${escape(x.title)}</b><p>${status(x.status)}</p></div>`).join('');

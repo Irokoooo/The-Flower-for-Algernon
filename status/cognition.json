@@ -1,6 +1,6 @@
 {
-  "progress": 95,
+  "note": "JourneyPanel added: parent-owned ChapterAction/progress contract, inspect-gated facts, LOW staged affordances, existing EvidencePlacement and CognitionGraph adapters, phase perception only when ready, and bilingual continuation. No typecheck/tests/build; Lead final checks pending.",
   "status": "review",
-  "updatedAt": "2026-09-12T09:25:46.2254758Z",
-  "note": "Lead完成实时目标位置、拖线预览/连接、动态端点与当前命中判定；选中不全局冻结。类型检查/构建通过，未跑功能测试。"
+  "updatedAt": "2026-09-19T00:00:00.000Z",
+  "progress": 92
 }

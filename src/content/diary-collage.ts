@@ -1,4 +1,4 @@
-export type DiaryEntryKey = 'first' | 'ascending' | 'peak' | 'last';
+export type DiaryEntryKey = 'first' | 'preop' | 'recovery' | 'ascending' | 'peak' | 'last';
 export type DiaryFragmentRole = 'subject' | 'intent' | 'detail' | 'ending';
 export interface DiaryFragment { id: string; text: string; english: string; role: DiaryFragmentRole }
 export interface DiaryCollageEntry {
@@ -26,6 +26,38 @@ export const diaryEntries: Record<DiaryEntryKey, DiaryCollageEntry> = {
       { id: 'first-smart', text: '变聪名', english: 'get smarter', role: 'detail' },
       { id: 'first-remember', text: '把今天记主', english: 'remember today', role: 'detail' },
       { id: 'first-today', text: '今天', english: 'today', role: 'ending' }
+    ]
+  },
+  preop: {
+    title: '回房间了',
+    context: '面包装好了。Alice 陪我读了一个词。现在回到房间，想把今天记主。',
+    minFragments: 3,
+    fragments: [
+      { id: 'preop-i', text: '我', english: 'I', role: 'subject' },
+      { id: 'preop-want', text: '还想', english: 'still want to', role: 'intent' },
+      { id: 'preop-bread', text: '装好面包', english: 'bag the bread', role: 'detail' },
+      { id: 'preop-word', text: '认得那个字', english: 'know that word', role: 'detail' },
+      { id: 'preop-again', text: '在读一遍', english: 'read it again', role: 'detail' },
+      { id: 'preop-remember', text: '记主今天', english: 'remember today', role: 'detail' },
+      { id: 'preop-ask', text: '问问手树', english: 'ask about the operation', role: 'detail' },
+      { id: 'preop-scared', text: '有点怕', english: 'a little scared', role: 'ending' },
+      { id: 'preop-slow', text: '慢慢来', english: 'take my time', role: 'ending' }
+    ]
+  },
+  recovery: {
+    title: '纸还在',
+    context: '手树做完了。床边有我写的纸。有的字还是难。我想先歇一会。',
+    minFragments: 3,
+    fragments: [
+      { id: 'recovery-i', text: '我', english: 'I', role: 'subject' },
+      { id: 'recovery-want', text: '还想', english: 'still want to', role: 'intent' },
+      { id: 'recovery-rest', text: '歇一会', english: 'rest a while', role: 'detail' },
+      { id: 'recovery-paper', text: '留着这张纸', english: 'keep this paper', role: 'detail' },
+      { id: 'recovery-look', text: '在看一眼', english: 'look again', role: 'detail' },
+      { id: 'recovery-ask', text: '请人陪我读', english: 'ask someone to read with me', role: 'detail' },
+      { id: 'recovery-remember', text: '记主那个字', english: 'remember that word', role: 'detail' },
+      { id: 'recovery-near', text: '放近一点', english: 'keep it a little closer', role: 'ending' },
+      { id: 'recovery-later', text: '等一会也行', english: 'it is all right to wait', role: 'ending' }
     ]
   },
   ascending: {

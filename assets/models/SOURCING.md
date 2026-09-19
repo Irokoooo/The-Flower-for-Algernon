@@ -30,3 +30,22 @@ Suitability under project lighting remains for Lead/Harvey's visual review.
 Other researched candidate: Decorative Book Set 01 by James Ray Cock, same CC0 site,
 offers blend/FBX but no glTF in fetched API; not downloaded. Encyclopedia set offers
 glTF but was not downloaded because the notebook already includes both required poses.
+
+## Bread sourcing handoff — 2026-09-19
++
+Quick candidate check: Kenney Food Kit, https://kenney.nl/assets/food-kit. The page
+explicitly links https://creativecommons.org/publicdomain/zero/1.0/ and describes the
+package as CC0. The download endpoint was reachable, but the transfer in this workspace
+returned an incomplete ZIP and the archive could not be inspected reliably. The partial
+download was removed; no bread file is claimed or included.
+
+Lead candidate for a later verified fetch: Kenney Food Kit, with the exact package
+contents and selected bread/loaf GLB name recorded after a successful download. Do not
+add a registry record until that file, its hash, and its package path are verified.
+
+Local manifest proposal once verified: `id: model.bread`, `kind: model`,
+`filename: assets/models/bread.glb`, source set to the Kenney package page above,
+license `CC0-1.0`, and the downloaded package URL/hash recorded as provenance. The
+scene integration is already prepared to accept this resolved URL as
+`RoomAssets.breadModel`; the loader places it on the bakery bench and emits raw
+`bread`.

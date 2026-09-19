@@ -1,6 +1,6 @@
 {
-  "status": "review",
-  "updatedAt": "2026-09-12T09:05:09.6226295Z",
-  "progress": 95,
-  "note": "App routing delivered: diary phases paper only; book inspection; test desk isolated read-only TestStimulus review. Test phase desk only, diary-not-ready thought on paper. Chapter routes unchanged. Test-only wandering/ambient thoughts and neutral one-edge answer; test-task-modal class for Lead width. Await Hubble Graph prop implementation for final typecheck. No browser/function tests/build/commit."
+  "status": "planned",
+  "note": "09-19核对：此前App后段集成未落盘，旧agent不可用。当前Lead与玩家讨论主线节奏，未继续旧开发。",
+  "progress": 0,
+  "updatedAt": "2026-09-19T06:46:34.6144927Z"
 }

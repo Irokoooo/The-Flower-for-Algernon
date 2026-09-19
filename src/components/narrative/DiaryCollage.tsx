@@ -8,7 +8,7 @@ import type { DiaryFragment } from '../../content/diary-collage';
 import './diary-collage.css';
 export interface DiaryCollageProps {
   phase: CognitionState['phase'];
-  entryId: 'first' | 'ascending' | 'peak' | 'last';
+  entryId: 'first' | 'preop' | 'recovery' | 'ascending' | 'peak' | 'last';
   previousText?: string;
   onSave: (report: ReportDraft) => void;
   onPlaceFragment?: (fragment: {id:string;text:string;english:string}, phase:CognitionState['phase']) => void;
@@ -102,7 +102,7 @@ function CollagePage({phase,entryId,previousText='',onSave,onPlaceFragment}:Diar
   </button>;
   const selection=fragments.find(f=>f.id===picked);
   return <section className={`diary-collage diary-collage--${phase.toLowerCase()}`} lang="zh-Hans" aria-label={entry.title}>
-    <header><span className="diary-collage__folio">进步报告 · {{first:'01',ascending:'04',peak:'07',last:'11'}[entryId]}</span><h2>{entry.title}</h2><p>{entry.context}</p></header>
+    <header><span className="diary-collage__folio">进步报告 · {{first:'01',preop:'02',recovery:'08',ascending:'04',peak:'07',last:'11'}[entryId]}</span><h2>{entry.title}</h2><p>{entry.context}</p></header>
     {previousText&&<details className="diary-collage__memory" open={entryId==='last'}><summary>从前写下的话</summary><blockquote>{previousText}</blockquote></details>}
     <p id={hint} className="diary-collage__hint">把桌上的纸片拖进日记，也能拖回桌面。按纸页从上到下、从左到右读。</p>
     <div ref={bank} className="diary-collage__bank" aria-label="桌上的纸片，可拖回这里" aria-describedby={hint} style={{height:`${Math.ceil(fragments.length/3)*90+24}px`}}>

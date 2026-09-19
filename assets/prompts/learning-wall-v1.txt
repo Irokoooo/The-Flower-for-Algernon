@@ -1,0 +1,13 @@
+Use case: stylized-concept
+Asset type: game environment wall texture for a walkable 3D learning room
+Primary request: one front-on, orthographic wall illustration for an adult literacy classroom in a modest midcentury learning room. The entire frame is the wall surface, designed to be applied to real 3D room geometry.
+Scene/backdrop: warm 1960s adult literacy classroom wall with modest built-in shelving, a broad dark chalkboard, and tall simple windows admitting soft late-afternoon light. Keep the arrangement practical and quiet, with generous uninterrupted wall area. No prominent desks or foreground furniture because the 3D room supplies the furniture.
+Subject: painted plaster wall, low worn umber wood wainscoting, modest shelves holding a few closed books and simple classroom objects, broad chalkboard with completely blank surface, tall windows with translucent curtains and muted daylight.
+Style/medium: naturalistic literary gouache environment illustration with tactile hand-painted brushwork, softly layered pigments, slightly weathered surfaces, restrained detail, matching the existing assets/environments/lab-wall.png reference direction.
+Composition/framing: straight-on orthographic elevation, no perspective distortion, no floor, no ceiling, no side walls, no visible room corner, full frame filled by the wall, balanced horizontal composition, usable wall texture for a game environment.
+Lighting/mood: warm quiet late-afternoon light, humane and contemplative, gentle soft shadows, muted midcentury atmosphere.
+Color palette: warm ivory, dusty muted olive green, umber, walnut brown, subdued ochre, quiet charcoal, low saturation.
+Materials/textures: painted plaster with visible gouache grain, worn dark wood trim and wainscoting, aged chalkboard surface, softly glowing window glass, believable modest classroom wear.
+Text (verbatim): none. All chalkboard surfaces, books, papers, signs, and labels must contain no readable text or letter-like marks.
+Constraints: exactly one scene; no people; no characters; no hands; no animals; no readable text; no logos; no watermark; no prominent desks; preserve a flat front-facing wall texture; raster painted illustration only.
+Avoid: collage, poster art, diagram, classroom dashboard, modern furniture, modern screens, dramatic cinematic perspective, photorealistic photography, vector or SVG appearance, clean 3D render, legible writing, pseudo-writing, extra objects in the foreground.

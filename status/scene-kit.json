@@ -1,6 +1,6 @@
 {
   "status": "review",
   "progress": 95,
-  "note": "Static hotspot review complete: exact nearest visible ray hit now wins over neighboring tolerance samples; mesh book/paper stamping and world matrix refresh confirmed already correct, desk-model unchanged. Added optional hotspotLabels display overrides; raw test/book/paper IDs preserved. E targets center, click targets pointer position. No browser/functional tests or build run for this inspect-only request. Lead owns action routes and integration; screenshot root cause not reproduced.",
-  "updatedAt": "2026-09-12T09:03:56.5874792Z"
+  "note": "Scene-kit handoff: classroom uses the existing RoomAssets.walls slot for the learning-room illustration; classroom records label is lesson-neutral. Raw door hotspots now exist in classroom/laboratory/bakery/private-room; spawn and diary route remain clear by static geometry review. Private-room records stack already present. Optional RoomAssets.breadModel is wired through the local desk GLB loader to the bakery bench with raw bread hotspot; no bread file is included because the quick Kenney Food Kit transfer was incomplete. Source/license/proposed manifest fields are recorded in assets/models/SOURCING.md. No browser/functional tests, build, or commit.",
+  "updatedAt": "2026-09-19T07:00:00.000Z"
 }

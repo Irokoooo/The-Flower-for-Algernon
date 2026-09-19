@@ -1,10 +1,10 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-/** Local, Y-up GLB only. Caller supplies a flat book/diary; source proportions stay intact. */
+/** Local, Y-up GLB only. Fits a tabletop prop without changing its source proportions. */
 export function loadDeskModel(options: {
   url: string; world: THREE.Scene; surfaces: THREE.Mesh[]; fallback: THREE.Mesh;
-  hotspot: 'book' | 'paper'; footprint: [number, number]; center: [number, number]; tableY: number;
+  hotspot: 'book' | 'paper' | 'bread'; footprint: [number, number]; center: [number, number]; tableY: number;
 }): () => void {
   let cancelled = false;
   let roots: THREE.Object3D[] = [];

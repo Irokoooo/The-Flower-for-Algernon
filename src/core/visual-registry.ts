@@ -14,6 +14,7 @@ const slots = {
   'charlie-hands': 'assets/characters/charlie-hands-cutout.png',
   'lab-wall': 'assets/environments/lab-wall.png',
   'bakery-wall': 'assets/environments/bakery-wall.png',
+  'classroom-wall': 'assets/environments/learning-wall-v1.png',
   'wood-floor': 'assets/environments/wood-floor.png',
   'test-inkblot': 'assets/stimuli/inkblot-test-v1.png',
   'desk-book': 'assets/models/book.glb',
@@ -32,11 +33,11 @@ export function resolveVisualAsset(id: VisualAssetId): string | undefined {
   const asset = visualRegistry.get(id);
   return asset ? files[`../../${asset.source}`] : undefined;
 }
-export function getRoomVisuals(scene: 'laboratory' | 'bakery') {
+export function getRoomVisuals(scene: 'laboratory' | 'bakery' | 'classroom' | 'research' | 'private-room') {
   return { floor: resolveVisualAsset('wood-floor'),
-    walls: resolveVisualAsset(scene === 'laboratory' ? 'lab-wall' : 'bakery-wall'),
-    npc: resolveVisualAsset(scene === 'laboratory' ? 'researcher' : 'baker'),
-    npcReaction: resolveVisualAsset(scene === 'laboratory' ? 'researcher-reaction' : 'baker-reaction'),
+    walls: resolveVisualAsset(scene === 'bakery' ? 'bakery-wall' : scene === 'classroom' ? 'classroom-wall' : 'lab-wall'),
+    npc: scene === 'bakery' ? resolveVisualAsset('baker') : scene === 'classroom' ? resolveVisualAsset('alice') : scene === 'laboratory' ? resolveVisualAsset('researcher') : undefined,
+    npcReaction: scene === 'bakery' ? resolveVisualAsset('baker-reaction') : scene === 'classroom' ? resolveVisualAsset('alice-reaction') : scene === 'laboratory' ? resolveVisualAsset('researcher-reaction') : undefined,
     hands: resolveVisualAsset('charlie-hands'),
     bookModel: resolveVisualAsset('desk-book'), diaryModel: resolveVisualAsset('desk-diary') };
 }

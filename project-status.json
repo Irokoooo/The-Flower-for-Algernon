@@ -1,45 +1,45 @@
 {
-  "updatedAt": "2026-09-12T09:25:46.1585204Z",
-  "overall": 0,
+  "updatedAt": "2026-09-19T06:47:13.8484532Z",
+  "overall": 18,
   "agents": [
     {
       "id": "core",
       "name": "Core / Architecture",
-      "status": "in_progress",
-      "progress": 0,
-      "note": "用户未验收旧原型；按新的视觉与交互要求重做",
+      "status": "review",
+      "progress": 85,
+      "note": "主流程状态机、JourneyPanel、v2存档契约已接入；typecheck/build通过，等待玩家试玩",
       "nickname": "Carson"
     },
     {
       "id": "cognition",
-      "name": "Cognition / Thought motion",
-      "status": "in_progress",
-      "progress": 0,
-      "note": "用户未验收旧原型；按新的视觉与交互要求重做",
+      "name": "Later scene interactions",
+      "status": "review",
+      "progress": 92,
+      "note": "动态思绪连线与迷宫基础机制已接入；等待玩家试玩",
       "nickname": "Hubble"
     },
     {
       "id": "narrative",
       "name": "Narrative / Content",
-      "status": "in_progress",
-      "progress": 0,
-      "note": "用户未验收旧原型；按新的视觉与交互要求重做",
+      "status": "review",
+      "progress": 100,
+      "note": "术前/恢复日记与五段旅程内容已交付；接入并通过构建",
       "nickname": "Darwin"
     },
     {
       "id": "scene-kit",
       "name": "Scene Kit",
-      "status": "in_progress",
-      "progress": 0,
-      "note": "用户未验收旧原型；按新的视觉与交互要求重做",
+      "status": "review",
+      "progress": 72,
+      "note": "五房间布局、Alice入口与门热点已接入；学习墙生图401阻塞，先回退已有墙面",
       "nickname": "Harvey"
     },
     {
       "id": "audio-assets",
       "name": "Audio / Assets",
-      "status": "in_progress",
-      "progress": 0,
-      "note": "用户未验收旧原型；按新的视觉与交互要求重做",
+      "status": "blocked",
+      "progress": 70,
+      "note": "书写WAV已接入；正式英语碎念与学习墙生图分别受429/401阻塞，无MP3/PNG成品",
       "nickname": "Kepler"
     }
   ],
@@ -716,17 +716,17 @@
       "status": "decided"
     }
   ],
-  "milestone": "移动思绪与实时拖线已接入；类型检查/构建通过，待试玩",
+  "milestone": "09-19路线已接入：实验室→面包店LOW→Alice课堂LOW→日记→手术→恢复LOW→复访ASCENDING；等待玩家试玩",
   "production": {
     "budgetLimitUSD": 100,
     "reservationUSD": 15,
     "actualBilledUSD": null,
-    "voice": "英文碎念单次诊断返回429：服务商当前分组负载已满。没有MP3，未启动批量/自动重试。",
+    "voice": "本地正式MP3为0；09-12单次诊断返回429，本轮未重试，今日服务状态未知。",
     "music": "20秒循环配乐与0.95秒原创铅笔书写声已接入；待人工听感与混音验收。",
     "art": "新增原创心理测试图及CC0摊开/合上笔记本GLB；可在素材库查看来源。"
   },
   "currentIteration": {
-    "title": "测试入口与混乱思绪",
+    "title": "主线节奏重规划（已接入，等待试玩）",
     "items": [
       {
         "title": "悬浮完整迷宫盒",
@@ -792,6 +792,31 @@
         "title": "测试中的游移思绪",
         "status": "review",
         "note": "目标本体和命中区域一起移动；支持拖线连接，预览/已连接线随端点走，选择不冻结其他思绪。可暂停；待用户试玩。"
+      },
+      {
+        "title": "课堂/研究/私人房间布局",
+        "status": "review",
+        "note": "本地布局代码已有，App尚未选择新房间，未提交GitHub；不能算可玩场景。"
+      },
+      {
+        "title": "高峰探索与主动研究",
+        "status": "planned",
+        "note": "尚未接入主流程；先讨论术前一轮、手术与渐进重访。"
+      },
+      {
+        "title": "社交/记忆/研究遗稿衰退",
+        "status": "review",
+        "note": "本地内容/面板已写，App未接入，旧物铺垫未完成；未提交GitHub。"
+      },
+      {
+        "title": "玩家优化TODO",
+        "status": "review",
+        "note": "33项稳定编号清单；新增OPT-33主线节奏，已接入不代表玩家验收。"
+      },
+      {
+        "title": "术前生活→手术→渐进重访",
+        "status": "review",
+        "note": "已接入：实验室→面包店LOW→Alice学习场所LOW→房间/日记→手术→恢复LOW→面包店/课堂复访ASCENDING；目标10–15分钟，代码检查通过，等待玩家试玩。"
       }
     ]
   }
