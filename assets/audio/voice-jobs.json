@@ -2,7 +2,7 @@
   "version": 1,
   "model": "tts-1-hd",
   "language": "en",
-  "productionRecordingsPresent": false,
+  "productionRecordingsPresent": true,
   "sourceHashes": {
     "src/content/experience.ts": "65b8697459ec031851f4ee8b7655f271b037b03b5bf9673a97f221c8cc4c6dd6",
     "src/App.tsx": "901150cda29b153e4fd4aefb9eee9a7f828481b175cc401786456a95c30efd6c"
@@ -40,7 +40,7 @@
       "speaker": "charlie",
       "text": "A big book. The words are very small.",
       "source": "src/content/experience.ts:observations.book",
-      "status": "failed-unknown-no-retry",
+      "status": "generated-awaiting-listening",
       "filename": "assets/audio/production/voice.observations.book.mp3"
     },
     {
@@ -48,7 +48,7 @@
       "speaker": "charlie",
       "text": "Some important paper. I hope they let me stay.",
       "source": "src/content/experience.ts:observations.paper",
-      "status": "failed-http-403-no-retry",
+      "status": "generated-awaiting-listening",
       "filename": "assets/audio/production/voice.observations.paper.mp3"
     },
     {
@@ -56,7 +56,7 @@
       "speaker": "charlie",
       "text": "A little white mouse. They say he knows the way.",
       "source": "src/content/experience.ts:observations.mouse",
-      "status": "planned",
+      "status": "generated-awaiting-listening",
       "filename": "assets/audio/production/voice.observations.mouse.mp3"
     },
     {
@@ -64,7 +64,7 @@
       "speaker": "dr-strauss",
       "text": "Charlie? Take your time. You can look around.",
       "source": "src/content/experience.ts:lines.welcome",
-      "status": "planned",
+      "status": "generated-awaiting-listening",
       "filename": "assets/audio/production/voice.lines.welcome.mp3"
     },
     {
@@ -72,7 +72,7 @@
       "speaker": "dr-strauss",
       "text": "What do you see?",
       "source": "src/content/experience.ts:lines.test",
-      "status": "planned",
+      "status": "generated-awaiting-listening",
       "filename": "assets/audio/production/voice.lines.test.mp3"
     },
     {
@@ -80,7 +80,7 @@
       "speaker": "gimpy",
       "text": "Charlie, three loaves for the counter. Take your time.",
       "source": "src/content/experience.ts:lines.bakery",
-      "status": "planned",
+      "status": "generated-awaiting-listening",
       "filename": "assets/audio/production/voice.lines.bakery.mp3"
     },
     {
@@ -88,7 +88,7 @@
       "speaker": "charlie",
       "text": "Everybody is laughing. I must have done something funny.",
       "source": "src/content/experience.ts:lines.laughter",
-      "status": "planned",
+      "status": "generated-awaiting-listening",
       "filename": "assets/audio/production/voice.lines.laughter.mp3"
     },
     {
@@ -96,7 +96,7 @@
       "speaker": "charlie",
       "text": "The parts belong together. I can follow them now.",
       "source": "src/content/experience.ts:lines.gain",
-      "status": "planned",
+      "status": "generated-awaiting-listening",
       "filename": "assets/audio/production/voice.lines.gain.mp3"
     },
     {
@@ -104,7 +104,7 @@
       "speaker": "charlie",
       "text": "I did it right. Why is he looking at me like that?",
       "source": "src/content/experience.ts:lines.success",
-      "status": "planned",
+      "status": "generated-awaiting-listening",
       "filename": "assets/audio/production/voice.lines.success.mp3"
     },
     {
@@ -112,7 +112,7 @@
       "speaker": "charlie",
       "text": "The laugh was already there. So was that glance.",
       "source": "src/content/experience.ts:lines.return",
-      "status": "planned",
+      "status": "generated-awaiting-listening",
       "filename": "assets/audio/production/voice.lines.return.mp3"
     },
     {
@@ -120,7 +120,7 @@
       "speaker": "charlie",
       "text": "I know how this worked. I know that I knew.",
       "source": "src/content/experience.ts:lines.decline",
-      "status": "planned",
+      "status": "generated-awaiting-listening",
       "filename": "assets/audio/production/voice.lines.decline.mp3"
     },
     {
@@ -128,7 +128,7 @@
       "speaker": "charlie",
       "text": "Maybe I did all right. I should write it down.",
       "source": "src/App.tsx:diary",
-      "status": "planned",
+      "status": "generated-awaiting-listening",
       "filename": "assets/audio/production/voice.inline.diary.mp3"
     },
     {
@@ -136,7 +136,7 @@
       "speaker": "charlie",
       "text": "He looks away. Nobody asks how I did it.",
       "source": "src/App.tsx:choice-away",
-      "status": "planned",
+      "status": "generated-awaiting-listening",
       "filename": "assets/audio/production/voice.inline.choice-away.mp3"
     },
     {
@@ -144,7 +144,7 @@
       "speaker": "charlie",
       "text": "“Nobody is angry,” he says, without looking at me.",
       "source": "src/App.tsx:choice-angry",
-      "status": "planned",
+      "status": "generated-awaiting-listening",
       "filename": "assets/audio/production/voice.inline.choice-angry.mp3"
     },
     {
@@ -152,7 +152,7 @@
       "speaker": "charlie",
       "text": "I stay quiet. So does he.",
       "source": "src/App.tsx:choice-silent",
-      "status": "planned",
+      "status": "generated-awaiting-listening",
       "filename": "assets/audio/production/voice.inline.choice-silent.mp3"
     }
   ],
@@ -184,5 +184,14 @@
     "license": "Provider output terms require Lead review before distribution; no third-party recording license claimed",
     "status": "planned"
   },
-  "frozenDialogueSha256": "623fea009c3e08cff0554f7e39b168d78b7caa950c58970e3d462e9db75e55f2"
+  "frozenDialogueSha256": "623fea009c3e08cff0554f7e39b168d78b7caa950c58970e3d462e9db75e55f2",
+  "generationProvider": {
+    "name": "Microsoft Azure Neural TTS via edge-tts",
+    "voices": {
+      "charlie": "en-US-GuyNeural",
+      "dr-strauss": "en-GB-RyanNeural",
+      "gimpy": "en-AU-WilliamMultilingualNeural"
+    },
+    "status": "generated-awaiting-human-listening"
+  }
 }

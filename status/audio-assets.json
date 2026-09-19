@@ -1,6 +1,6 @@
 {
-  "status": "blocked",
-  "updatedAt": "2026-09-19T14:56:00+08:00",
-  "progress": 70,
-  "note": "Pencil-writing.wav saved 41940 bytes and Lead manifest merged. Exactly one diary TTS diagnostic returned HTTP429 upstream_rate_limit: current group upstream saturated. No MP3 saved, no batch or retries. $0.01 reserved under diary-murmurs-v1 $1; actual billing unknown. diaryVoiceForFragment remains empty; DIARY_WRITING_ASSET ready. Learning-wall-v1: exactly one bounded gpt-image-2 generation call reached the approved OpenDev endpoint and returned HTTP401 Invalid token; no retry, PNG, hash, or dimensions; learning-wall-manifest-proposal.json records the blocked provenance."
+  "status": "review",
+  "updatedAt": "2026-09-19T15:30:00+08:00",
+  "progress": 92,
+  "note": "已切换独立路径：Microsoft Azure Neural TTS via edge-tts。15条主线英文对白与62条Charlie日记词片已保存为MP3并登记ASSET_MANIFEST.json；不同角色使用不同英文声线。等待人类听感验收。OpenDev图片401仍阻塞learning-wall-v1。"
 }

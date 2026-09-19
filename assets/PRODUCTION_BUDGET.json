@@ -6,7 +6,7 @@
   "authorizedLimit": 100,
   "spentByThisWorkflow": null,
   "pricingVerified": false,
-  "status": "eleven-images-generated-voice-blocked",
+  "status": "images-partial-voice-generated",
   "policy": "Verify provider model availability and pricing before paid calls. Reserve a known upper bound per request before dispatch. No automatic paid retries without accounting for the previous attempt. Stop before total reserved plus spent exceeds 100 USD.",
   "requests": [
     {
@@ -98,5 +98,10 @@
       "status": "reserved"
     }
   ],
-  "reservedUSD": 16
+  "reservedUSD": 16,
+  "voiceRoute": {
+    "provider": "Microsoft Azure Neural TTS via edge-tts",
+    "status": "generated-awaiting-human-listening",
+    "openDevFailure": "HTTP401 token rejected; no further OpenDev audio calls"
+  }
 }

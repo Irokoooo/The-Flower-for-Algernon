@@ -1,807 +1,7 @@
 {
-  "version": 1,
-  "language": {
-    "voice": "en",
-    "subtitles": [
-      "en",
-      "zhHans"
-    ]
-  },
-  "voiceProfiles": [],
+  "provider": "Microsoft Azure Neural TTS",
+  "voice": "en-US-GuyNeural",
   "assets": [
-    {
-      "id": "audio.room-tone.prototype",
-      "filename": "assets/audio/room-tone-prototype.wav",
-      "kind": "ambience",
-      "status": "prototype",
-      "productionStatus": "original-generated-prototype",
-      "durationSeconds": 4,
-      "loop": true,
-      "sampleRate": 22050,
-      "channels": 1,
-      "bitsPerSample": 16,
-      "bytes": 176444,
-      "sha256": "6335c5f7756fb5a78fc360f3a112b57797e2afd7b16f9a05116a4f9ea0f5adf3",
-      "provenance": {
-        "source": {
-          "kind": "original",
-          "url": null,
-          "creator": "ALGERNON project / procedural generator"
-        },
-        "license": {
-          "identifier": "LicenseRef-ALGERNON-Original-Prototype",
-          "evidence": "assets/audio/PROVENANCE.md",
-          "attribution": "Original procedural audio for ALGERNON",
-          "reviewed": true
-        },
-        "adaptations": [
-          "Generated from mathematical waveforms and seeded noise with generate-prototypes.mjs; no external samples."
-        ]
-      },
-      "source": "ALGERNON original procedural audio",
-      "license": "LicenseRef-ALGERNON-Original-Prototype"
-    },
-    {
-      "id": "audio.paper.prototype",
-      "filename": "assets/audio/paper-soft-prototype.wav",
-      "kind": "sfx",
-      "status": "prototype",
-      "productionStatus": "original-generated-prototype",
-      "durationSeconds": 0.65,
-      "loop": false,
-      "sampleRate": 22050,
-      "channels": 1,
-      "bitsPerSample": 16,
-      "bytes": 28710,
-      "sha256": "2111154c29c5434ff7f993b665625b7827cf2d985625d5d1c1a17d2da2712a1c",
-      "provenance": {
-        "source": {
-          "kind": "original",
-          "url": null,
-          "creator": "ALGERNON project / procedural generator"
-        },
-        "license": {
-          "identifier": "LicenseRef-ALGERNON-Original-Prototype",
-          "evidence": "assets/audio/PROVENANCE.md",
-          "attribution": "Original procedural audio for ALGERNON",
-          "reviewed": true
-        },
-        "adaptations": [
-          "Generated from mathematical waveforms and seeded noise with generate-prototypes.mjs; no external samples."
-        ]
-      },
-      "source": "ALGERNON original procedural audio",
-      "license": "LicenseRef-ALGERNON-Original-Prototype"
-    },
-    {
-      "id": "audio.chime.prototype",
-      "filename": "assets/audio/chime-soft-prototype.wav",
-      "kind": "sfx",
-      "status": "prototype",
-      "productionStatus": "original-generated-prototype",
-      "durationSeconds": 1.2,
-      "loop": false,
-      "sampleRate": 22050,
-      "channels": 1,
-      "bitsPerSample": 16,
-      "bytes": 52964,
-      "sha256": "da3691fabac17c834b3f5cbb39d1ae5ba7548485d8ce746147b2edc981ad2aa4",
-      "provenance": {
-        "source": {
-          "kind": "original",
-          "url": null,
-          "creator": "ALGERNON project / procedural generator"
-        },
-        "license": {
-          "identifier": "LicenseRef-ALGERNON-Original-Prototype",
-          "evidence": "assets/audio/PROVENANCE.md",
-          "attribution": "Original procedural audio for ALGERNON",
-          "reviewed": true
-        },
-        "adaptations": [
-          "Generated from mathematical waveforms and seeded noise with generate-prototypes.mjs; no external samples."
-        ]
-      },
-      "source": "ALGERNON original procedural audio",
-      "license": "LicenseRef-ALGERNON-Original-Prototype"
-    },
-    {
-      "id": "art.npc.layered-prototype",
-      "kind": "image",
-      "status": "prototype",
-      "source": "src/components/interaction/IllustratedNPC.tsx",
-      "license": "Project original",
-      "description": "Interactive SVG puppet, awaiting final illustrated character sheet"
-    },
-    {
-      "id": "art.environment.prototype",
-      "kind": "image",
-      "status": "prototype",
-      "source": "src/components/world/FirstPersonStage.tsx",
-      "license": "Project original",
-      "description": "Laboratory / bakery procedural stage"
-    },
-    {
-      "id": "voice.english.production",
-      "kind": "voice",
-      "status": "missing",
-      "source": "Casting and recording pending",
-      "license": "Pending",
-      "description": "Distinct recorded English voices are not yet produced"
-    },
-    {
-      "id": "art.researcher.generated.v1",
-      "filename": "assets/characters/researcher-v1.png",
-      "kind": "image",
-      "status": "review",
-      "source": "OpenDev / gpt-image-2",
-      "license": "Generated asset; provider terms apply, review pending",
-      "description": "用户认可的研究员画风原图；透明衍生图已接入3D实验室",
-      "prompt": "assets/prompts/researcher-v1.txt"
-    },
-    {
-      "id": "art.alice.generated",
-      "filename": "assets/characters/alice-cutout.png",
-      "kind": "image",
-      "status": "review",
-      "description": "Alice：倾听姿态、朴素服装",
-      "source": "OpenDev / gpt-image-2",
-      "license": "Generated; provider terms review pending",
-      "prompt": "assets/prompts/production-wave2.jsonl"
-    },
-    {
-      "id": "art.charlie.hands",
-      "filename": "assets/characters/charlie-hands-cutout.png",
-      "kind": "image",
-      "status": "review",
-      "description": "查理第一人称双手",
-      "source": "OpenDev / gpt-image-2",
-      "license": "Generated; provider terms review pending",
-      "prompt": "assets/prompts/production-wave2.jsonl"
-    },
-    {
-      "id": "art.lab.wall",
-      "filename": "assets/environments/lab-wall.png",
-      "kind": "image",
-      "status": "review",
-      "description": "实验室插画墙面",
-      "source": "OpenDev / gpt-image-2",
-      "license": "Generated; provider terms review pending",
-      "prompt": "assets/prompts/production-wave2.jsonl"
-    },
-    {
-      "id": "art.bakery.wall",
-      "filename": "assets/environments/bakery-wall.png",
-      "kind": "image",
-      "status": "review",
-      "description": "面包店插画墙面",
-      "source": "OpenDev / gpt-image-2",
-      "license": "Generated; provider terms review pending",
-      "prompt": "assets/prompts/production-wave2.jsonl"
-    },
-    {
-      "id": "art.floor.wood",
-      "filename": "assets/environments/wood-floor.png",
-      "kind": "image",
-      "status": "review",
-      "description": "木地板插画纹理",
-      "source": "OpenDev / gpt-image-2",
-      "license": "Generated; provider terms review pending",
-      "prompt": "assets/prompts/production-wave2.jsonl"
-    },
-    {
-      "id": "audio.music.still-room",
-      "kind": "ambience",
-      "filename": "assets/audio/music/still-room.wav",
-      "status": "review",
-      "durationSeconds": 20,
-      "loop": true,
-      "sha256": "32b6cd21912e322ca0a94c35ece56f6d62a0b25300254ef7714ed1dae4113d08",
-      "review": "Original composition; final human listening review pending",
-      "provenance": {
-        "source": {
-          "kind": "original",
-          "url": null,
-          "creator": "ALGERNON / Still Room procedural composition"
-        },
-        "license": {
-          "identifier": "LicenseRef-ALGERNON-Original-Prototype",
-          "evidence": "assets/audio/music/PROVENANCE.md",
-          "reviewed": true,
-          "attribution": "Still Room — original ALGERNON composition"
-        },
-        "adaptations": [
-          "Layered original harmony and sparse synthesized piano-like notes; circular release tails and reflections; no external samples"
-        ]
-      },
-      "source": "ALGERNON original composition",
-      "license": "LicenseRef-ALGERNON-Original-Prototype"
-    },
-    {
-      "id": "art.researcher.cutout",
-      "filename": "assets/characters/researcher-cutout.png",
-      "kind": "image",
-      "status": "review",
-      "description": "研究员：克制、专注；已接入实验室",
-      "source": "OpenDev / gpt-image-2",
-      "license": "Generated asset; provider terms review pending",
-      "adaptation": "Border-connected white background extracted; original raster retained.",
-      "prompt": "assets/prompts/researcher-v1.txt"
-    },
-    {
-      "id": "art.researcher.concerned",
-      "filename": "assets/characters/researcher-concerned-cutout.png",
-      "kind": "image",
-      "status": "review",
-      "description": "研究员：担忧表情；近距离互动变体",
-      "source": "OpenDev / gpt-image-2",
-      "license": "Generated asset; provider terms review pending",
-      "adaptation": "Border-connected white background extracted; original raster retained."
-    },
-    {
-      "id": "art.baker.generated",
-      "filename": "assets/characters/baker-cutout.png",
-      "kind": "image",
-      "status": "review",
-      "description": "面包师：结实轮廓、赭红衬衫、面粉围裙；已提供运行时素材",
-      "source": "OpenDev / gpt-image-2",
-      "license": "Generated asset; provider terms review pending",
-      "adaptation": "Border-connected white background extracted; original raster retained.",
-      "prompt": "assets/prompts/production-wave2.jsonl"
-    },
-    {
-      "id": "art.baker.welcoming",
-      "filename": "assets/characters/baker-welcoming-cutout.png",
-      "kind": "image",
-      "status": "review",
-      "description": "面包师：友善表情与伸手示意",
-      "source": "OpenDev / gpt-image-2",
-      "license": "Generated asset; provider terms review pending",
-      "adaptation": "Border-connected white background extracted; original raster retained.",
-      "prompt": "assets/prompts/baker-welcoming.txt"
-    },
-    {
-      "id": "art.alice.encouraging",
-      "filename": "assets/characters/alice-encouraging-cutout.png",
-      "kind": "image",
-      "status": "review",
-      "description": "Alice：鼓励表情与邀请尝试的手势",
-      "source": "OpenDev / gpt-image-2",
-      "license": "Generated asset; provider terms review pending",
-      "adaptation": "Border-connected white background extracted; original raster retained.",
-      "prompt": "assets/prompts/alice-encouraging.txt"
-    },
-    {
-      "id": "art.test.inkblot",
-      "filename": "assets/stimuli/inkblot-test-v1.png",
-      "kind": "image",
-      "status": "review",
-      "source": "OpenDev / gpt-image-2",
-      "license": "Generated asset; provider terms review pending",
-      "description": "原创心理测试墨迹卡：暖纸、深褐手工墨迹；测试与后期回调共享，点击近看。",
-      "prompt": "assets/prompts/inkblot-test-v1.txt",
-      "adaptation": "No cognition-specific image edits; interpretations remain in shared cognition graph."
-    },
-    {
-      "id": "model.desk.diary",
-      "kind": "model",
-      "status": "review",
-      "description": "Poly Haven 旧皮封面笔记本：摊开日记；已接入桌面，待用户试玩。",
-      "filename": "assets/models/diary.glb",
-      "source": "https://polyhaven.com/a/binder_notebook",
-      "author": "DaDrood",
-      "license": "CC0-1.0",
-      "licenseEvidence": "https://polyhaven.com/license",
-      "bytes": 2136648,
-      "sha256": "d8e7c580f70e680d64c82ac40c64bb3ebeec6fa5674231ec08f00874ce9d9351",
-      "dimensionsXYZ": [
-        0.36523866653442383,
-        0.017854944802820683,
-        0.19995830953121185
-      ],
-      "orientation": "Y-up, flat XZ, minY=0, centered XZ; original source had no rotation",
-      "adaptation": "Selected binder_notebook from same source; matte nonmetal material, tinted; small emblem patched from adjacent leather; original retained",
-      "visualReview": "Diffuse texture inspected; no rendered model or game test performed"
-    },
-    {
-      "id": "model.desk.book",
-      "kind": "model",
-      "status": "review",
-      "description": "Poly Haven 旧皮封面笔记本：合上书本；已接入桌面，待用户试玩。",
-      "filename": "assets/models/book.glb",
-      "source": "https://polyhaven.com/a/binder_notebook",
-      "author": "DaDrood",
-      "license": "CC0-1.0",
-      "licenseEvidence": "https://polyhaven.com/license",
-      "bytes": 2136656,
-      "sha256": "cdec6c2e917b70869ee4c8c185692b8a7236b37ab8850811af335c69cd21b287",
-      "dimensionsXYZ": [
-        0.1706455759704113,
-        0.025289426557719707,
-        0.19995832443237305
-      ],
-      "orientation": "Y-up, flat XZ, minY=0, centered XZ; original source had no rotation",
-      "adaptation": "Selected binder_notebook_closed from same source; matte nonmetal material, tinted; small emblem patched from adjacent leather; original retained",
-      "visualReview": "Diffuse texture inspected; no rendered model or game test performed"
-    },
-    {
-      "id": "audio.diary.pencil",
-      "filename": "assets/audio/pencil-writing.wav",
-      "kind": "sfx",
-      "status": "available",
-      "durationSeconds": 0.9500226757369614,
-      "bytes": 41940,
-      "sha256": "52a3e5c5206863bd62c4c638a2c3f83d7f411fddf955da899809377b18df20e6",
-      "review": "Original procedural writing SFX; human listening pending",
-      "provenance": {
-        "source": {
-          "kind": "original",
-          "url": null,
-          "creator": "ALGERNON procedural pencil sound"
-        },
-        "license": {
-          "identifier": "LicenseRef-ALGERNON-Original-Prototype",
-          "evidence": "assets/audio/DIARY_AUDIO.md",
-          "attribution": "Original ALGERNON pencil-writing synthesis",
-          "reviewed": true
-        },
-        "adaptations": [
-          "Seeded filtered noise with five writing-stroke envelopes, saved as PCM WAV; no external sample"
-        ]
-      },
-      "source": "ALGERNON original pencil-writing synthesis",
-      "license": "LicenseRef-ALGERNON-Original-Prototype"
-    },
-    {
-      "id": "voice.observations.book",
-      "filename": "assets/audio/production/voice.observations.book.mp3",
-      "kind": "voice",
-      "status": "review",
-      "language": "en",
-      "voiceProfileId": "voice.charlie.en",
-      "bytes": 27072,
-      "sha256": "7d6109b9b0abbef76208b5fa0fd09062a660a24d2e574719cbfe4d08325133d7",
-      "provenance": {
-        "source": {
-          "kind": "online-tts",
-          "provider": "Microsoft Azure Neural TTS via edge-tts",
-          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
-          "creator": "en-US-GuyNeural"
-        },
-        "license": {
-          "identifier": "Provider terms; review required",
-          "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
-        },
-        "adaptations": [
-          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
-        ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English production voice; human listening review pending."
-    },
-    {
-      "id": "voice.observations.paper",
-      "filename": "assets/audio/production/voice.observations.paper.mp3",
-      "kind": "voice",
-      "status": "review",
-      "language": "en",
-      "voiceProfileId": "voice.charlie.en",
-      "bytes": 30240,
-      "sha256": "00bb812c158bb078d2ae6a071b711507f638960187095fb659382a6ef3e8268c",
-      "provenance": {
-        "source": {
-          "kind": "online-tts",
-          "provider": "Microsoft Azure Neural TTS via edge-tts",
-          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
-          "creator": "en-US-GuyNeural"
-        },
-        "license": {
-          "identifier": "Provider terms; review required",
-          "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
-        },
-        "adaptations": [
-          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
-        ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English production voice; human listening review pending."
-    },
-    {
-      "id": "voice.observations.mouse",
-      "filename": "assets/audio/production/voice.observations.mouse.mp3",
-      "kind": "voice",
-      "status": "review",
-      "language": "en",
-      "voiceProfileId": "voice.charlie.en",
-      "bytes": 28944,
-      "sha256": "2c8d3a6dda910bfd2ecdfab8f886b335a611a6ab1e6fced44b8c29fe329fa561",
-      "provenance": {
-        "source": {
-          "kind": "online-tts",
-          "provider": "Microsoft Azure Neural TTS via edge-tts",
-          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
-          "creator": "en-US-GuyNeural"
-        },
-        "license": {
-          "identifier": "Provider terms; review required",
-          "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
-        },
-        "adaptations": [
-          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
-        ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English production voice; human listening review pending."
-    },
-    {
-      "id": "voice.lines.welcome",
-      "filename": "assets/audio/production/voice.lines.welcome.mp3",
-      "kind": "voice",
-      "status": "review",
-      "language": "en",
-      "voiceProfileId": "voice.dr-strauss.en",
-      "bytes": 31968,
-      "sha256": "65525ff4d851726ab397c289f0a680bbc7acebaaf1f8187729f38569f8c8a3df",
-      "provenance": {
-        "source": {
-          "kind": "online-tts",
-          "provider": "Microsoft Azure Neural TTS via edge-tts",
-          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
-          "creator": "en-GB-RyanNeural"
-        },
-        "license": {
-          "identifier": "Provider terms; review required",
-          "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
-        },
-        "adaptations": [
-          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
-        ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English production voice; human listening review pending."
-    },
-    {
-      "id": "voice.lines.test",
-      "filename": "assets/audio/production/voice.lines.test.mp3",
-      "kind": "voice",
-      "status": "review",
-      "language": "en",
-      "voiceProfileId": "voice.dr-strauss.en",
-      "bytes": 11664,
-      "sha256": "b161ca310796928f092d4708ec60290b64801d7fee5037d601c390c10d5e8489",
-      "provenance": {
-        "source": {
-          "kind": "online-tts",
-          "provider": "Microsoft Azure Neural TTS via edge-tts",
-          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
-          "creator": "en-GB-RyanNeural"
-        },
-        "license": {
-          "identifier": "Provider terms; review required",
-          "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
-        },
-        "adaptations": [
-          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
-        ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English production voice; human listening review pending."
-    },
-    {
-      "id": "voice.lines.bakery",
-      "filename": "assets/audio/production/voice.lines.bakery.mp3",
-      "kind": "voice",
-      "status": "review",
-      "language": "en",
-      "voiceProfileId": "voice.gimpy.en",
-      "bytes": 23616,
-      "sha256": "0ed0e308f0468bbc543b160dc6cbff6b94bc9f090c40a573cda448fced661149",
-      "provenance": {
-        "source": {
-          "kind": "online-tts",
-          "provider": "Microsoft Azure Neural TTS via edge-tts",
-          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
-          "creator": "en-AU-WilliamMultilingualNeural"
-        },
-        "license": {
-          "identifier": "Provider terms; review required",
-          "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
-        },
-        "adaptations": [
-          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
-        ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English production voice; human listening review pending."
-    },
-    {
-      "id": "voice.lines.laughter",
-      "filename": "assets/audio/production/voice.lines.laughter.mp3",
-      "kind": "voice",
-      "status": "review",
-      "language": "en",
-      "voiceProfileId": "voice.charlie.en",
-      "bytes": 31392,
-      "sha256": "14f4d1ffd68cd286d6bcf6ca35f089a77b475bcc08dd41d4ebf2848a7c47b75c",
-      "provenance": {
-        "source": {
-          "kind": "online-tts",
-          "provider": "Microsoft Azure Neural TTS via edge-tts",
-          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
-          "creator": "en-US-GuyNeural"
-        },
-        "license": {
-          "identifier": "Provider terms; review required",
-          "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
-        },
-        "adaptations": [
-          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
-        ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English production voice; human listening review pending."
-    },
-    {
-      "id": "voice.lines.gain",
-      "filename": "assets/audio/production/voice.lines.gain.mp3",
-      "kind": "voice",
-      "status": "review",
-      "language": "en",
-      "voiceProfileId": "voice.charlie.en",
-      "bytes": 30816,
-      "sha256": "56ea428a02a316648a41bc94a4d4ea19171b2d73e68082d3671c73d176393565",
-      "provenance": {
-        "source": {
-          "kind": "online-tts",
-          "provider": "Microsoft Azure Neural TTS via edge-tts",
-          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
-          "creator": "en-US-GuyNeural"
-        },
-        "license": {
-          "identifier": "Provider terms; review required",
-          "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
-        },
-        "adaptations": [
-          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
-        ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English production voice; human listening review pending."
-    },
-    {
-      "id": "voice.lines.success",
-      "filename": "assets/audio/production/voice.lines.success.mp3",
-      "kind": "voice",
-      "status": "review",
-      "language": "en",
-      "voiceProfileId": "voice.charlie.en",
-      "bytes": 30240,
-      "sha256": "2800021e13fd4ec5455d7bf9a7e314c12d50a37b8e046b6c7f5f547cb9120a5b",
-      "provenance": {
-        "source": {
-          "kind": "online-tts",
-          "provider": "Microsoft Azure Neural TTS via edge-tts",
-          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
-          "creator": "en-US-GuyNeural"
-        },
-        "license": {
-          "identifier": "Provider terms; review required",
-          "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
-        },
-        "adaptations": [
-          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
-        ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English production voice; human listening review pending."
-    },
-    {
-      "id": "voice.lines.return",
-      "filename": "assets/audio/production/voice.lines.return.mp3",
-      "kind": "voice",
-      "status": "review",
-      "language": "en",
-      "voiceProfileId": "voice.charlie.en",
-      "bytes": 30240,
-      "sha256": "69f2833e601f7c50a5c8bf1c3c5f1eaf9cc7cf7da6bc619027afc111db197cd4",
-      "provenance": {
-        "source": {
-          "kind": "online-tts",
-          "provider": "Microsoft Azure Neural TTS via edge-tts",
-          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
-          "creator": "en-US-GuyNeural"
-        },
-        "license": {
-          "identifier": "Provider terms; review required",
-          "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
-        },
-        "adaptations": [
-          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
-        ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English production voice; human listening review pending."
-    },
-    {
-      "id": "voice.lines.decline",
-      "filename": "assets/audio/production/voice.lines.decline.mp3",
-      "kind": "voice",
-      "status": "review",
-      "language": "en",
-      "voiceProfileId": "voice.charlie.en",
-      "bytes": 27072,
-      "sha256": "fcae56f31c25d23d565fe9b5c327fecef15725d6f07a67166a6ba8da08c1a118",
-      "provenance": {
-        "source": {
-          "kind": "online-tts",
-          "provider": "Microsoft Azure Neural TTS via edge-tts",
-          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
-          "creator": "en-US-GuyNeural"
-        },
-        "license": {
-          "identifier": "Provider terms; review required",
-          "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
-        },
-        "adaptations": [
-          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
-        ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English production voice; human listening review pending."
-    },
-    {
-      "id": "voice.inline.diary",
-      "filename": "assets/audio/production/voice.inline.diary.mp3",
-      "kind": "voice",
-      "status": "review",
-      "language": "en",
-      "voiceProfileId": "voice.charlie.en",
-      "bytes": 28224,
-      "sha256": "2c0b384f47240337d472735ca8058428d9d073d63bb196f6ad4a13baf747f77b",
-      "provenance": {
-        "source": {
-          "kind": "online-tts",
-          "provider": "Microsoft Azure Neural TTS via edge-tts",
-          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
-          "creator": "en-US-GuyNeural"
-        },
-        "license": {
-          "identifier": "Provider terms; review required",
-          "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
-        },
-        "adaptations": [
-          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
-        ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English production voice; human listening review pending."
-    },
-    {
-      "id": "voice.inline.choice-away",
-      "filename": "assets/audio/production/voice.inline.choice-away.mp3",
-      "kind": "voice",
-      "status": "review",
-      "language": "en",
-      "voiceProfileId": "voice.charlie.en",
-      "bytes": 29376,
-      "sha256": "5516037ba8e2c62656eec4eb93c40303cba30f99a976e276d539198fb76e6f87",
-      "provenance": {
-        "source": {
-          "kind": "online-tts",
-          "provider": "Microsoft Azure Neural TTS via edge-tts",
-          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
-          "creator": "en-US-GuyNeural"
-        },
-        "license": {
-          "identifier": "Provider terms; review required",
-          "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
-        },
-        "adaptations": [
-          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
-        ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English production voice; human listening review pending."
-    },
-    {
-      "id": "voice.inline.choice-angry",
-      "filename": "assets/audio/production/voice.inline.choice-angry.mp3",
-      "kind": "voice",
-      "status": "review",
-      "language": "en",
-      "voiceProfileId": "voice.charlie.en",
-      "bytes": 25632,
-      "sha256": "6dbe7dfeac186a48c052eade5c445d2b5376358d6d6f3437a132002b3ccb1a73",
-      "provenance": {
-        "source": {
-          "kind": "online-tts",
-          "provider": "Microsoft Azure Neural TTS via edge-tts",
-          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
-          "creator": "en-US-GuyNeural"
-        },
-        "license": {
-          "identifier": "Provider terms; review required",
-          "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
-        },
-        "adaptations": [
-          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
-        ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English production voice; human listening review pending."
-    },
-    {
-      "id": "voice.inline.choice-silent",
-      "filename": "assets/audio/production/voice.inline.choice-silent.mp3",
-      "kind": "voice",
-      "status": "review",
-      "language": "en",
-      "voiceProfileId": "voice.charlie.en",
-      "bytes": 25056,
-      "sha256": "9a57dadbc4c5b5463745a8192828f4b8d7003f9459fa695e26b5fbba17d0837a",
-      "provenance": {
-        "source": {
-          "kind": "online-tts",
-          "provider": "Microsoft Azure Neural TTS via edge-tts",
-          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
-          "creator": "en-US-GuyNeural"
-        },
-        "license": {
-          "identifier": "Provider terms; review required",
-          "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
-        },
-        "adaptations": [
-          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
-        ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English production voice; human listening review pending."
-    },
     {
       "id": "voice.diary.first-i",
       "fragmentId": "first-i",
@@ -823,16 +23,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.first-mouse",
@@ -855,16 +51,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.first-try",
@@ -887,16 +79,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.first-again",
@@ -919,16 +107,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.first-test",
@@ -951,16 +135,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.first-route",
@@ -983,16 +163,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.first-smart",
@@ -1015,16 +191,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.first-remember",
@@ -1047,16 +219,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.first-today",
@@ -1079,16 +247,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.preop-i",
@@ -1111,16 +275,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.preop-want",
@@ -1143,16 +303,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.preop-bread",
@@ -1175,16 +331,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.preop-word",
@@ -1207,16 +359,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.preop-again",
@@ -1239,16 +387,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.preop-remember",
@@ -1271,16 +415,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.preop-ask",
@@ -1303,16 +443,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.preop-scared",
@@ -1335,16 +471,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.preop-slow",
@@ -1367,16 +499,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.recovery-i",
@@ -1399,16 +527,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.recovery-want",
@@ -1431,16 +555,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.recovery-rest",
@@ -1463,16 +583,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.recovery-paper",
@@ -1495,16 +611,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.recovery-look",
@@ -1527,16 +639,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.recovery-ask",
@@ -1559,16 +667,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.recovery-remember",
@@ -1591,16 +695,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.recovery-near",
@@ -1623,16 +723,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.recovery-later",
@@ -1655,16 +751,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.ascending-i",
@@ -1687,16 +779,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.ascending-now",
@@ -1719,16 +807,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.ascending-begin",
@@ -1751,16 +835,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.ascending-want",
@@ -1783,16 +863,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.ascending-lever",
@@ -1815,16 +891,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.ascending-roller",
@@ -1847,16 +919,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.ascending-links",
@@ -1879,16 +947,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.ascending-try",
@@ -1911,16 +975,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.ascending-happy",
@@ -1943,16 +1003,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.ascending-pace",
@@ -1975,16 +1031,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.peak-i",
@@ -2007,16 +1059,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.peak-understanding",
@@ -2039,16 +1087,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.peak-pages",
@@ -2071,16 +1115,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.peak-question",
@@ -2103,16 +1143,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.peak-explore",
@@ -2135,16 +1171,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.peak-follow",
@@ -2167,16 +1199,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.peak-before",
@@ -2199,16 +1227,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.peak-experiment",
@@ -2231,16 +1255,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.peak-cue",
@@ -2263,16 +1283,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.peak-bakery",
@@ -2295,16 +1311,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.peak-test",
@@ -2327,16 +1339,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.peak-maze",
@@ -2359,16 +1367,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.peak-connect",
@@ -2391,16 +1395,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.peak-joy",
@@ -2423,16 +1423,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.peak-more",
@@ -2455,16 +1451,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.last-i",
@@ -2487,16 +1479,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.last-before",
@@ -2519,16 +1507,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.last-want",
@@ -2551,16 +1535,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.last-keep",
@@ -2583,16 +1563,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.last-know",
@@ -2615,16 +1591,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.last-people",
@@ -2647,16 +1619,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.last-mouse",
@@ -2679,16 +1647,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.last-word",
@@ -2711,16 +1675,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.last-happiness",
@@ -2743,16 +1703,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     },
     {
       "id": "voice.diary.last-stay",
@@ -2775,16 +1731,12 @@
         "license": {
           "identifier": "Provider terms; review required",
           "evidence": "assets/audio/VOICE_HANDOFF.md",
-          "attribution": "Microsoft Azure Neural TTS",
-          "reviewed": false
+          "attribution": "Microsoft Azure Neural TTS"
         },
         "adaptations": [
           "Saved as MP3 for pre-generated English Charlie murmurs; slowed for low-cognition fragments."
         ]
-      },
-      "source": "Microsoft Azure Neural TTS via edge-tts",
-      "license": "Provider terms; review required",
-      "description": "Pre-generated English Charlie diary fragment; human listening review pending."
+      }
     }
   ]
 }

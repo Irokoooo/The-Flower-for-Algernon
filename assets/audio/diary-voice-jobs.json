@@ -9,55 +9,88 @@
       "id": "voice.diary.first-i",
       "fragmentId": "first-i",
       "text": "I",
-      "speaker": "charlie"
+      "speaker": "charlie",
+      "status": "generated-awaiting-listening",
+      "filename": "assets/audio/diary-production/voice.diary.first-i.mp3",
+      "english": "I"
     },
     {
       "id": "voice.diary.first-mouse",
       "fragmentId": "first-mouse",
       "text": "the little mouse",
-      "speaker": "charlie"
+      "speaker": "charlie",
+      "status": "generated-awaiting-listening",
+      "filename": "assets/audio/diary-production/voice.diary.first-mouse.mp3",
+      "english": "the little mouse"
     },
     {
       "id": "voice.diary.first-try",
       "fragmentId": "first-try",
       "text": "still want to",
-      "speaker": "charlie"
+      "speaker": "charlie",
+      "status": "generated-awaiting-listening",
+      "filename": "assets/audio/diary-production/voice.diary.first-try.mp3",
+      "english": "still want to"
     },
     {
       "id": "voice.diary.first-again",
       "fragmentId": "first-again",
       "text": "try again",
-      "speaker": "charlie"
+      "speaker": "charlie",
+      "status": "generated-awaiting-listening",
+      "filename": "assets/audio/diary-production/voice.diary.first-again.mp3",
+      "english": "try again"
     },
     {
       "id": "voice.diary.first-test",
       "fragmentId": "first-test",
       "text": "do well on the test",
-      "speaker": "charlie"
+      "speaker": "charlie",
+      "status": "generated-awaiting-listening",
+      "filename": "assets/audio/diary-production/voice.diary.first-test.mp3",
+      "english": "do well on the test"
     },
     {
       "id": "voice.diary.first-route",
       "fragmentId": "first-route",
       "text": "run fast",
-      "speaker": "charlie"
+      "speaker": "charlie",
+      "status": "generated-awaiting-listening",
+      "filename": "assets/audio/diary-production/voice.diary.first-route.mp3",
+      "english": "run fast"
     },
     {
       "id": "voice.diary.first-smart",
       "fragmentId": "first-smart",
       "text": "get smarter",
-      "speaker": "charlie"
+      "speaker": "charlie",
+      "status": "generated-awaiting-listening",
+      "filename": "assets/audio/diary-production/voice.diary.first-smart.mp3",
+      "english": "get smarter"
     },
     {
       "id": "voice.diary.first-remember",
       "fragmentId": "first-remember",
       "text": "remember today",
-      "speaker": "charlie"
+      "speaker": "charlie",
+      "status": "generated-awaiting-listening",
+      "filename": "assets/audio/diary-production/voice.diary.first-remember.mp3",
+      "english": "remember today"
     },
     {
       "id": "voice.diary.first-today",
       "fragmentId": "first-today",
       "text": "today",
-      "speaker": "charlie"
+      "speaker": "charlie",
+      "status": "generated-awaiting-listening",
+      "filename": "assets/audio/diary-production/voice.diary.first-today.mp3",
+      "english": "today"
     }
-  ]
+  ],
+  "generationProvider": {
+    "name": "Microsoft Azure Neural TTS via edge-tts",
+    "voice": "en-US-GuyNeural",
+    "status": "generated-awaiting-human-listening"
+  },
+  "productionRecordingsPresent": true
 }

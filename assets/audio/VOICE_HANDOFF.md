@@ -38,3 +38,7 @@ Latest: single authorized SDK diagnostic for “What do you see?” / onyx timed
 with APITimeoutError (60s, max_retries=0). No MP3 and no batch continuation.
 Combined upper reservation $0.0158515; actual billing unknown. Music is now
 registered and connected in App Start with duplicate-loop guard, verified in code.
+Append a short factual note to the existing handoff without rewriting historical failure records.
+
+## 2026-09-19 alternate route
+OpenDev speech was not retried after its prior rate-limit failure. Production English MP3s were generated through Microsoft Azure Neural TTS via edge-tts and saved under assets/audio/production/ and assets/audio/diary-production/. Voices: Charlie en-US-GuyNeural, Dr. Strauss en-GB-RyanNeural, Gimpy en-AU-WilliamMultilingualNeural. Provider terms and human listening review remain recorded requirements.

@@ -1,0 +1,400 @@
+{
+  "provider": "Microsoft Azure Neural TTS",
+  "voices": {
+    "charlie": "en-US-GuyNeural",
+    "dr-strauss": "en-GB-RyanNeural",
+    "gimpy": "en-AU-WilliamMultilingualNeural"
+  },
+  "assets": [
+    {
+      "id": "voice.observations.book",
+      "filename": "assets/audio/production/voice.observations.book.mp3",
+      "kind": "voice",
+      "status": "review",
+      "language": "en",
+      "voiceProfileId": "voice.charlie.en",
+      "bytes": 27072,
+      "sha256": "7d6109b9b0abbef76208b5fa0fd09062a660a24d2e574719cbfe4d08325133d7",
+      "provenance": {
+        "source": {
+          "kind": "online-tts",
+          "provider": "Microsoft Azure Neural TTS via edge-tts",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
+          "creator": "en-US-GuyNeural"
+        },
+        "license": {
+          "identifier": "Provider terms; review required",
+          "evidence": "assets/audio/VOICE_HANDOFF.md",
+          "attribution": "Microsoft Azure Neural TTS"
+        },
+        "adaptations": [
+          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
+        ]
+      }
+    },
+    {
+      "id": "voice.observations.paper",
+      "filename": "assets/audio/production/voice.observations.paper.mp3",
+      "kind": "voice",
+      "status": "review",
+      "language": "en",
+      "voiceProfileId": "voice.charlie.en",
+      "bytes": 30240,
+      "sha256": "00bb812c158bb078d2ae6a071b711507f638960187095fb659382a6ef3e8268c",
+      "provenance": {
+        "source": {
+          "kind": "online-tts",
+          "provider": "Microsoft Azure Neural TTS via edge-tts",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
+          "creator": "en-US-GuyNeural"
+        },
+        "license": {
+          "identifier": "Provider terms; review required",
+          "evidence": "assets/audio/VOICE_HANDOFF.md",
+          "attribution": "Microsoft Azure Neural TTS"
+        },
+        "adaptations": [
+          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
+        ]
+      }
+    },
+    {
+      "id": "voice.observations.mouse",
+      "filename": "assets/audio/production/voice.observations.mouse.mp3",
+      "kind": "voice",
+      "status": "review",
+      "language": "en",
+      "voiceProfileId": "voice.charlie.en",
+      "bytes": 28944,
+      "sha256": "2c8d3a6dda910bfd2ecdfab8f886b335a611a6ab1e6fced44b8c29fe329fa561",
+      "provenance": {
+        "source": {
+          "kind": "online-tts",
+          "provider": "Microsoft Azure Neural TTS via edge-tts",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
+          "creator": "en-US-GuyNeural"
+        },
+        "license": {
+          "identifier": "Provider terms; review required",
+          "evidence": "assets/audio/VOICE_HANDOFF.md",
+          "attribution": "Microsoft Azure Neural TTS"
+        },
+        "adaptations": [
+          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
+        ]
+      }
+    },
+    {
+      "id": "voice.lines.welcome",
+      "filename": "assets/audio/production/voice.lines.welcome.mp3",
+      "kind": "voice",
+      "status": "review",
+      "language": "en",
+      "voiceProfileId": "voice.dr-strauss.en",
+      "bytes": 31968,
+      "sha256": "65525ff4d851726ab397c289f0a680bbc7acebaaf1f8187729f38569f8c8a3df",
+      "provenance": {
+        "source": {
+          "kind": "online-tts",
+          "provider": "Microsoft Azure Neural TTS via edge-tts",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
+          "creator": "en-GB-RyanNeural"
+        },
+        "license": {
+          "identifier": "Provider terms; review required",
+          "evidence": "assets/audio/VOICE_HANDOFF.md",
+          "attribution": "Microsoft Azure Neural TTS"
+        },
+        "adaptations": [
+          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
+        ]
+      }
+    },
+    {
+      "id": "voice.lines.test",
+      "filename": "assets/audio/production/voice.lines.test.mp3",
+      "kind": "voice",
+      "status": "review",
+      "language": "en",
+      "voiceProfileId": "voice.dr-strauss.en",
+      "bytes": 11664,
+      "sha256": "b161ca310796928f092d4708ec60290b64801d7fee5037d601c390c10d5e8489",
+      "provenance": {
+        "source": {
+          "kind": "online-tts",
+          "provider": "Microsoft Azure Neural TTS via edge-tts",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
+          "creator": "en-GB-RyanNeural"
+        },
+        "license": {
+          "identifier": "Provider terms; review required",
+          "evidence": "assets/audio/VOICE_HANDOFF.md",
+          "attribution": "Microsoft Azure Neural TTS"
+        },
+        "adaptations": [
+          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
+        ]
+      }
+    },
+    {
+      "id": "voice.lines.bakery",
+      "filename": "assets/audio/production/voice.lines.bakery.mp3",
+      "kind": "voice",
+      "status": "review",
+      "language": "en",
+      "voiceProfileId": "voice.gimpy.en",
+      "bytes": 23616,
+      "sha256": "0ed0e308f0468bbc543b160dc6cbff6b94bc9f090c40a573cda448fced661149",
+      "provenance": {
+        "source": {
+          "kind": "online-tts",
+          "provider": "Microsoft Azure Neural TTS via edge-tts",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
+          "creator": "en-AU-WilliamMultilingualNeural"
+        },
+        "license": {
+          "identifier": "Provider terms; review required",
+          "evidence": "assets/audio/VOICE_HANDOFF.md",
+          "attribution": "Microsoft Azure Neural TTS"
+        },
+        "adaptations": [
+          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
+        ]
+      }
+    },
+    {
+      "id": "voice.lines.laughter",
+      "filename": "assets/audio/production/voice.lines.laughter.mp3",
+      "kind": "voice",
+      "status": "review",
+      "language": "en",
+      "voiceProfileId": "voice.charlie.en",
+      "bytes": 31392,
+      "sha256": "14f4d1ffd68cd286d6bcf6ca35f089a77b475bcc08dd41d4ebf2848a7c47b75c",
+      "provenance": {
+        "source": {
+          "kind": "online-tts",
+          "provider": "Microsoft Azure Neural TTS via edge-tts",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
+          "creator": "en-US-GuyNeural"
+        },
+        "license": {
+          "identifier": "Provider terms; review required",
+          "evidence": "assets/audio/VOICE_HANDOFF.md",
+          "attribution": "Microsoft Azure Neural TTS"
+        },
+        "adaptations": [
+          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
+        ]
+      }
+    },
+    {
+      "id": "voice.lines.gain",
+      "filename": "assets/audio/production/voice.lines.gain.mp3",
+      "kind": "voice",
+      "status": "review",
+      "language": "en",
+      "voiceProfileId": "voice.charlie.en",
+      "bytes": 30816,
+      "sha256": "56ea428a02a316648a41bc94a4d4ea19171b2d73e68082d3671c73d176393565",
+      "provenance": {
+        "source": {
+          "kind": "online-tts",
+          "provider": "Microsoft Azure Neural TTS via edge-tts",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
+          "creator": "en-US-GuyNeural"
+        },
+        "license": {
+          "identifier": "Provider terms; review required",
+          "evidence": "assets/audio/VOICE_HANDOFF.md",
+          "attribution": "Microsoft Azure Neural TTS"
+        },
+        "adaptations": [
+          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
+        ]
+      }
+    },
+    {
+      "id": "voice.lines.success",
+      "filename": "assets/audio/production/voice.lines.success.mp3",
+      "kind": "voice",
+      "status": "review",
+      "language": "en",
+      "voiceProfileId": "voice.charlie.en",
+      "bytes": 30240,
+      "sha256": "2800021e13fd4ec5455d7bf9a7e314c12d50a37b8e046b6c7f5f547cb9120a5b",
+      "provenance": {
+        "source": {
+          "kind": "online-tts",
+          "provider": "Microsoft Azure Neural TTS via edge-tts",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
+          "creator": "en-US-GuyNeural"
+        },
+        "license": {
+          "identifier": "Provider terms; review required",
+          "evidence": "assets/audio/VOICE_HANDOFF.md",
+          "attribution": "Microsoft Azure Neural TTS"
+        },
+        "adaptations": [
+          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
+        ]
+      }
+    },
+    {
+      "id": "voice.lines.return",
+      "filename": "assets/audio/production/voice.lines.return.mp3",
+      "kind": "voice",
+      "status": "review",
+      "language": "en",
+      "voiceProfileId": "voice.charlie.en",
+      "bytes": 30240,
+      "sha256": "69f2833e601f7c50a5c8bf1c3c5f1eaf9cc7cf7da6bc619027afc111db197cd4",
+      "provenance": {
+        "source": {
+          "kind": "online-tts",
+          "provider": "Microsoft Azure Neural TTS via edge-tts",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
+          "creator": "en-US-GuyNeural"
+        },
+        "license": {
+          "identifier": "Provider terms; review required",
+          "evidence": "assets/audio/VOICE_HANDOFF.md",
+          "attribution": "Microsoft Azure Neural TTS"
+        },
+        "adaptations": [
+          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
+        ]
+      }
+    },
+    {
+      "id": "voice.lines.decline",
+      "filename": "assets/audio/production/voice.lines.decline.mp3",
+      "kind": "voice",
+      "status": "review",
+      "language": "en",
+      "voiceProfileId": "voice.charlie.en",
+      "bytes": 27072,
+      "sha256": "fcae56f31c25d23d565fe9b5c327fecef15725d6f07a67166a6ba8da08c1a118",
+      "provenance": {
+        "source": {
+          "kind": "online-tts",
+          "provider": "Microsoft Azure Neural TTS via edge-tts",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
+          "creator": "en-US-GuyNeural"
+        },
+        "license": {
+          "identifier": "Provider terms; review required",
+          "evidence": "assets/audio/VOICE_HANDOFF.md",
+          "attribution": "Microsoft Azure Neural TTS"
+        },
+        "adaptations": [
+          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
+        ]
+      }
+    },
+    {
+      "id": "voice.inline.diary",
+      "filename": "assets/audio/production/voice.inline.diary.mp3",
+      "kind": "voice",
+      "status": "review",
+      "language": "en",
+      "voiceProfileId": "voice.charlie.en",
+      "bytes": 28224,
+      "sha256": "2c0b384f47240337d472735ca8058428d9d073d63bb196f6ad4a13baf747f77b",
+      "provenance": {
+        "source": {
+          "kind": "online-tts",
+          "provider": "Microsoft Azure Neural TTS via edge-tts",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
+          "creator": "en-US-GuyNeural"
+        },
+        "license": {
+          "identifier": "Provider terms; review required",
+          "evidence": "assets/audio/VOICE_HANDOFF.md",
+          "attribution": "Microsoft Azure Neural TTS"
+        },
+        "adaptations": [
+          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
+        ]
+      }
+    },
+    {
+      "id": "voice.inline.choice-away",
+      "filename": "assets/audio/production/voice.inline.choice-away.mp3",
+      "kind": "voice",
+      "status": "review",
+      "language": "en",
+      "voiceProfileId": "voice.charlie.en",
+      "bytes": 29376,
+      "sha256": "5516037ba8e2c62656eec4eb93c40303cba30f99a976e276d539198fb76e6f87",
+      "provenance": {
+        "source": {
+          "kind": "online-tts",
+          "provider": "Microsoft Azure Neural TTS via edge-tts",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
+          "creator": "en-US-GuyNeural"
+        },
+        "license": {
+          "identifier": "Provider terms; review required",
+          "evidence": "assets/audio/VOICE_HANDOFF.md",
+          "attribution": "Microsoft Azure Neural TTS"
+        },
+        "adaptations": [
+          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
+        ]
+      }
+    },
+    {
+      "id": "voice.inline.choice-angry",
+      "filename": "assets/audio/production/voice.inline.choice-angry.mp3",
+      "kind": "voice",
+      "status": "review",
+      "language": "en",
+      "voiceProfileId": "voice.charlie.en",
+      "bytes": 25632,
+      "sha256": "6dbe7dfeac186a48c052eade5c445d2b5376358d6d6f3437a132002b3ccb1a73",
+      "provenance": {
+        "source": {
+          "kind": "online-tts",
+          "provider": "Microsoft Azure Neural TTS via edge-tts",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
+          "creator": "en-US-GuyNeural"
+        },
+        "license": {
+          "identifier": "Provider terms; review required",
+          "evidence": "assets/audio/VOICE_HANDOFF.md",
+          "attribution": "Microsoft Azure Neural TTS"
+        },
+        "adaptations": [
+          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
+        ]
+      }
+    },
+    {
+      "id": "voice.inline.choice-silent",
+      "filename": "assets/audio/production/voice.inline.choice-silent.mp3",
+      "kind": "voice",
+      "status": "review",
+      "language": "en",
+      "voiceProfileId": "voice.charlie.en",
+      "bytes": 25056,
+      "sha256": "9a57dadbc4c5b5463745a8192828f4b8d7003f9459fa695e26b5fbba17d0837a",
+      "provenance": {
+        "source": {
+          "kind": "online-tts",
+          "provider": "Microsoft Azure Neural TTS via edge-tts",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/language-support?tabs=tts",
+          "creator": "en-US-GuyNeural"
+        },
+        "license": {
+          "identifier": "Provider terms; review required",
+          "evidence": "assets/audio/VOICE_HANDOFF.md",
+          "attribution": "Microsoft Azure Neural TTS"
+        },
+        "adaptations": [
+          "Saved as MP3 for pre-generated playback; no browser speech synthesis."
+        ]
+      }
+    }
+  ]
+}
